@@ -1,8 +1,11 @@
 ---
-title: About
-layout: about
+title: Über finanzlabor.blog
 date: 2019-08-13 20:32:06
+toc: true
 ---
+
+## Einführung
+
 Geschätzte Laborantinnen und Laboranten,
 
 Herzlich Willkommen in meinem Finanzlabor. Hier findet Ihr Theorie, Experimente und Analysen, welche sich aus folgenden Elementen zusammensetzen:
@@ -22,3 +25,12 @@ Es handelt sich hierbei um meine erste Anstellung in einem Finanzlabor, daher ne
 Nun wünsche ich Euch viel Spass auf dem Blog. Und denkt immer daran, während den Experimenten stets eine Schutzbrille zu tragen.
 
 Euer Laborleiter
+
+## Disclaimer
+
+Die Beiträge auf diesem Blog sind in keiner Art und Weise als Anlageempfehlung zu verstehen. Der Autor gibt seine objektive Meinung zu gewissen Anlageprodukten wieder und deklariert deren Besitz innerhalb des jeweiligen Beitrages.
+
+Die Grafiken auf dem Finanzlabor-Blog stammen, falls nicht anders vermerkt, aus folgenden Quellen:
+
+* [Pixabay](https://pixabay.com)
+* [Unsplash](https://unsplash.com)

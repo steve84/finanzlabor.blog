@@ -1,5 +1,4 @@
 ---
-layout: impressum
 date: 2019-07-12 23:00:07
 title: Impressum
 ---
