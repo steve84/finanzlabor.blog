@@ -3,9 +3,9 @@
 ## Source: https://github.com/hexojs/hexo/
 
 # Site
-title: Finanzlabor
-subtitle:
-description:
+title: Finanzlabor.blog
+description: Der Finanzlabor-Blog befasst sich mit den Themen Finanzen, Datenanalyse (Data Science) und Software-Programmierung und verpackt diese in lehrreiche Beiträge.
+keywords: Finanzen, Aktien, Blog, Datenanalyse, Software, Programming, Data Mining, Data Science, Tutorials, Python, Aktienanalyse, Investoren, ETF, Open Data, DCF, P2P, Diagramme, GNUplot
 author: Steve Aschwanden
 language: de
 timezone: Europe/Zurich
