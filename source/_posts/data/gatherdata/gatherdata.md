@@ -1,11 +1,13 @@
 ---
 title: Fundamentalkennzahlen für Aktien beschaffen
-p: data/gatherdata/index.md
+p: data/gatherdata/gatherdata.md
 date: 2019-09-01 10:33:25
 tags:
+- Theorie
+- Data Collection
 categories: Data Mining
 toc: true
-thumbnail: /gallery/thumbnails/data/gatherdata/mika-baumeister-Wpnoqo2plFA-unsplash.jpg
+thumbnail: /gallery/thumbnails/data/gatherdata/thumbnail.jpg
 ---
 
 In unserer Zeit werden Daten immer wichtiger. Jede Person hinterlässt auf der Welt digitale Spuren. Werden diese Informationen miteinander kombiniert, kann ein Profil dieses Individuums erstellt werden. Nun kann dieser Person spezifischere Werbung eingeblendet werden. Daten werden von vielen Experten als die Währung des 21. Jahrhunderts angesehen.
