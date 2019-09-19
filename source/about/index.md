@@ -18,7 +18,9 @@ Die Plattform soll aber auch Platz für andere Dinge haben, daher werden auch Be
 
 Es handelt sich hierbei um meine erste Anstellung in einem Finanzlabor, daher nehmt es  mir nicht übel, sollten gewisse Experimente nicht den gewünschten Ausgang nehmen:
 
-„Wer einen Fehler macht und ihn nicht korrigiert, begeht einen zweiten“ Konfuzius
+{% blockquote Konfuzius %}
+Wer einen Fehler macht und ihn nicht korrigiert, begeht einen zweiten
+{% endblockquote %}
 
 Über Rückmeldungen und Korrekturen via Mail (kontakt@finanzlabor.blog) würde ich mich sehr freuen, damit die Qualitätskontrolle nichts zu beanstanden hat.
 

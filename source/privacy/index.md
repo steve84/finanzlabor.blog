@@ -10,7 +10,7 @@ Verantwortliche Stelle im Sinne der Datenschutzgesetze, insbesondere der EU-Date
 Steve Aschwanden
 2540 Grenchen
 
-E-Mail: steve.aschwanden@bluewin.ch
+E-Mail: kontakt@finanzlabor.blog
 Website: https://www.finanzlabor.blog/
 
 

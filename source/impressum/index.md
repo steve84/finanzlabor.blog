@@ -10,6 +10,6 @@ Dammstrasse 4
 Schweiz
 
 E-Mail:
-steve.aschwanden@bluewin.ch
+kontakt@finanzlabor.blog
 
 Quelle: [Impressum-Generator von SwissAnwalt](https://www.swissanwalt.ch/impressum-generator.aspx)
