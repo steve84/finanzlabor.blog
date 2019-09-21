@@ -17,7 +17,7 @@ Um diese Papiere zu finden, braucht es aktuelle, vollständige sowie korrekte Fu
 
 <!-- more -->
 
-*Disclaimer:* Der Autor hält Logitech Namenaktien in seinem Privatbesitz. Dieser Beitrag verwendet diese in mehreren, fiktiven Beispielen.
+*Disclaimer:* Der Autor hält Logitech Namensaktien in seinem Privatbesitz. Dieser Beitrag verwendet diese in mehreren, fiktiven Beispielen.
 
 ## Methoden
 
@@ -37,7 +37,7 @@ Die heutigen Browser (Chrome und Firefox) bieten Entwicklertools (F12-Taste), um
 
 Die nicht dokumentierten REST-APIs sind meist durch ein Token (eine verschlüsselte Zeichenfolge) geschützt, welche durch den Empfänger validiert wird. Wird kein oder ein falsches Token mitgeschickt, werden keine Daten geliefert.
 
-Dieses Verfahren ist jedoch nicht sehr performant, da auch unwichtige Informationen von den jeweiligen Websiten geladen wird. Es kann mehrere Stunden dauern, um alle verfügbaren Wertpapier abzuarbeiten.
+Dieses Verfahren ist jedoch nicht sehr performant, da auch unwichtige Informationen von den jeweiligen Webseiten geladen wird. Es kann mehrere Stunden dauern, um alle verfügbaren Wertpapier abzuarbeiten.
 
 ###  API
 
@@ -96,7 +96,7 @@ Leider sind nur wenige Fundamentalkennzahlen verfügbar. Google Finance ist idea
 
 Das Ziel von [Simfin](https://simfin.com/) ist, Fundamentaldaten für Privatinvestoren frei verfügbar zu machen. Mit Hilfe von automatisierter Datensammlung und Machine Learning Algorithmen werden die Informationen aufbereitet. Danach werden diese mit Hilfe der Community validiert/korrigiert. Im Moment (Stand Ende August 2019) werden 2'540 Firmen (mehrheitlich US-Aktien) abgedeckt und ca. 277'000 Geschäftsabschlüsse wurden verarbeitet. Die Daten können mit Hilfe zweier uns nun bekannten Methoden abgerufen werden:
 * *API Zugriff*: Als normaler Benutzer können 2'000 Anfragen pro Tag gemacht werden. Für das zehnfache an Aufrufen ist eine Premium-Abo notwendig (SimFin+ regular, 9.99 Euro pro Monat). Für unlimitierten Zugriff werden 29.99 Euro pro Monat fällig
-* *Bulk Download*: Diese Möglichkeit steht allen registrierten Benutzern offen. Die Daten werden als CSV-Datei angeboten und es kann zwischen 4 verschiedenen Datensätzen (Kurs -und Fundamentaldaten, detaillierte Kurs- und Fundamentaldaten, nur Fundamentaldaten, nur detaillierte Fundamentaldaten) gewählt werden. Es kann ebenfalls der Intervall der Aufzeichnungen bestimmt werden (Jahres -oder Quartalszahlen)
+* *Bulk Download*: Diese Möglichkeit steht allen registrierten Benutzern offen. Die Daten werden als CSV-Datei angeboten und es kann zwischen 4 verschiedenen Datensätzen (Kurs- und Fundamentaldaten, detaillierte Kurs- und Fundamentaldaten, nur Fundamentaldaten, nur detaillierte Fundamentaldaten) gewählt werden. Es kann ebenfalls der Intervall der Aufzeichnungen bestimmt werden (Jahres- oder Quartalszahlen)
 
 ### Quandl
 
@@ -111,7 +111,7 @@ Ein weiterer guter Datenlieferant. Leider gibt es hier keine Möglichkeit alle D
 
 1. Standardmässig werden nur die Kennzahlen des aktiven Tabs (z.B. Financial, Technical, Momentum, usw.) exportiert. Mit dem Wechsel auf das Tab *Custom* besteht die Möglichkeit die Felder des Exports zu bestimmen
 2. Nach dem Öffnen der Entwicklertools (F12-Taste) und dem Selektieren (Ctrl + Shift + C) des Dropdrown-Feldes mit dem Namen *Choose a column* wird das HTML-Element *select* sichtbar (innerhalb des Entwicklertools)
-3. Nach einem Rechtsklick auf dieses Element erscheint ein Kontextmenü und mit Hilfe von *Kopieren* - *Äussers HTML* (Firefox) oder *Copy* - *Copy outerHTML* (Chrome)
+3. Nach einem Rechtsklick auf dieses Element erscheint ein Kontextmenü und mit Hilfe von *Kopieren* - *Äusseres HTML* (Firefox) oder *Copy* - *Copy outerHTML* (Chrome)
 4.  Der Inhalt wird nun in einen Texteditor kopiert (z.B. Notepad++) und die erste und letzte Zeile (*select*-Tags) entfernt. Nun sind nur noch *option*-Elemente vorhanden (diese Repräsentieren die Auswahlmöglichkeiten der Dropdown-Liste)
 5. Die erste Zeile wird ebenfalls gelöscht (mit dem Inhalt *Choose a column*), da sie als Platzhalter dient
 6. Durch das Ersetzen von '<option value="' durch '' wird der vordere Teil entfernt (siehe erstes Bild in der unteren Bildstrecke)

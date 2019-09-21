@@ -17,7 +17,7 @@ Um Experimente mit Daten durchzuführen braucht es eine Entwicklungsumgebung. Da
 
 ## Installation Betriebssystem und Anaconda
 
-Die meisten Leser dieses Blogs verwenden Windows als Betriebssystem. Der Autor möchte jedoch auch eine Alternative aufzeigen und daher werden zwei Varianten erleutert.
+Die meisten Leser dieses Blogs verwenden Windows als Betriebssystem. Der Autor möchte jedoch auch eine Alternative aufzeigen und daher werden zwei Varianten erläutert.
 
 ### Windows
 
@@ -25,7 +25,7 @@ Dieser Abschnitt beschreibt die Installation auf einer Windows-Umgebung. Anleitu
 
 #### Installation Anaconda
 
-Anaconda ist eine Python Data Science Plattform, also genau das richtige für unsere Experimente. Alle wichtigen Pakete für Datenanalyse, künstliche Intelligenz und Datenvisualisierung sind darin enthalten oder können einfach nachinstalliert werden. Anaconda ist ebenfalls für Linux und macOS verfügbar. Das [Handbuch](https://docs.anaconda.com/anaconda/install/) beschreibt die Installation.
+Anaconda ist eine Python Data Science Plattform, also genau das richtige für unsere Experimente. Alle wichtigen Pakete für Datenanalyse, künstliche Intelligenz und Datenvisualisierung sind darin enthalten oder können einfach nachinstalliert werden. Anaconda ist ebenfalls für Linux und macOS verfügbar. Das [Handbuch](https://docs.anaconda.com/anaconda/install/windows/) beschreibt die Installation.
 
 ### Ubuntu (Linux)
 
@@ -42,7 +42,7 @@ Nun wird eine neue virtuelle Maschine mit Ubuntu ausgestattet. Ubuntu eignet sic
 
 #### Installation Anaconda
 
-Nun ist die virtuelle Maschine bereit und kann mit diversen Programmen erweitert werden. Für die Installation von Anaconda folgen wir der Anleitung des Hersteller (siehe ). Es besteht auch die Mögichkeit ohne Anaconda zu arbeiten, dazu müssen die hier verwendeten Pakete manuell via [Python Pip](https://wiki.ubuntuusers.de/pip/) installiert werden.
+Nun ist die virtuelle Maschine bereit und kann mit diversen Programmen erweitert werden. Für die Installation von Anaconda folgen wir der [Anleitung](https://docs.anaconda.com/anaconda/install/linux/) des Herstellers. Es besteht auch die Möglichkeit ohne Anaconda zu arbeiten, dazu müssen die hier verwendeten Pakete manuell via [Python Pip](https://wiki.ubuntuusers.de/pip/) installiert werden.
 
 
 ## Installation Git
@@ -59,7 +59,7 @@ Um zu überprüfen, ob alle installierten Komponenten funktionieren, kann folgen
 * Wechsel in das geklonte Git-Repository (mit Hilfe von *cd*)
 * Eingabe des Befehls *python sample-extraction.py*
 
-Nun sollten mehrere Zeilen ausgegeben werden, welche wiefolgt beginnen:
+Nun sollten mehrere Zeilen ausgegeben werden, welche wie folgt beginnen:
 
 {% codeblock %}
 Number of indicators in dataset: 33
