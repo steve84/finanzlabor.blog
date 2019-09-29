@@ -10,7 +10,7 @@ categories: Data Mining
 toc: true
 thumbnail: /gallery/thumbnails/data/simfin_transformation/thumbnail.jpg
 ---
-Dieser Blog-Beitrag beschäftigt sich mit der Transformation von Daten. Es kann vorkommen, dass die Struktur von bestehenden Datenquellen nicht für die Weiterverarbeitung passt. Die von [Simfin](https://simfin.com/) bereitgestellten Exporte haben einen eher exotischen Aufbau. In unserem Experiment wird ein solcher Export eingelesen und, nach dem Motto "Was nicht passt wird passend gemacht", in einen anderen Export (als CSV) geschrieben. Dazu wird eine Entwicklungsumgebung vorausgesetzt, welche in einem {% post_link data/environment/environment 'älteren Beitrag' %} beschrieben wurde.
+Dieser Blog-Beitrag beschäftigt sich mit der Transformation von Daten. Es kann vorkommen, dass die Struktur von bestehenden Datenquellen nicht für die Weiterverarbeitung passt. Die von [SimFin](https://simfin.com/) bereitgestellten Exporte haben einen eher exotischen Aufbau. In unserem Experiment wird ein solcher Export eingelesen und, nach dem Motto "Was nicht passt wird passend gemacht", in einen anderen Export (als CSV) geschrieben. Dazu wird eine Entwicklungsumgebung vorausgesetzt, welche in einem {% post_link data/environment/environment 'älteren Beitrag' %} beschrieben wurde.
 
 <!-- more -->
 

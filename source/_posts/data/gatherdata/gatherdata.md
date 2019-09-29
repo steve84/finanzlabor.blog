@@ -92,15 +92,15 @@ Und der aktuelle Kurs (inkl. Währung) der gleichen Firma:
 
 Leider sind nur wenige Fundamentalkennzahlen verfügbar. Google Finance ist ideal für die Beschaffung von historischen Kursdaten.
 
-### Simfin
+### SimFin
 
-Das Ziel von [Simfin](https://simfin.com/) ist, Fundamentaldaten für Privatinvestoren frei verfügbar zu machen. Mit Hilfe von automatisierter Datensammlung und Machine Learning Algorithmen werden die Informationen aufbereitet. Danach werden diese mit Hilfe der Community validiert/korrigiert. Im Moment (Stand Ende August 2019) werden 2'540 Firmen (mehrheitlich US-Aktien) abgedeckt und ca. 277'000 Geschäftsabschlüsse wurden verarbeitet. Die Daten können mit Hilfe zweier uns nun bekannten Methoden abgerufen werden:
+Das Ziel von [SimFin](https://simfin.com/) ist, Fundamentaldaten für Privatinvestoren frei verfügbar zu machen. Mit Hilfe von automatisierter Datensammlung und Machine Learning Algorithmen werden die Informationen aufbereitet. Danach werden diese mit Hilfe der Community validiert/korrigiert. Im Moment (Stand Ende August 2019) werden 2'540 Firmen (mehrheitlich US-Aktien) abgedeckt und ca. 277'000 Geschäftsabschlüsse wurden verarbeitet. Die Daten können mit Hilfe zweier uns nun bekannten Methoden abgerufen werden:
 * *API Zugriff*: Als normaler Benutzer können 2'000 Anfragen pro Tag gemacht werden. Für das zehnfache an Aufrufen ist eine Premium-Abo notwendig (SimFin+ regular, 9.99 Euro pro Monat). Für unlimitierten Zugriff werden 29.99 Euro pro Monat fällig
 * *Bulk Download*: Diese Möglichkeit steht allen registrierten Benutzern offen. Die Daten werden als CSV-Datei angeboten und es kann zwischen 4 verschiedenen Datensätzen (Kurs- und Fundamentaldaten, detaillierte Kurs- und Fundamentaldaten, nur Fundamentaldaten, nur detaillierte Fundamentaldaten) gewählt werden. Es kann ebenfalls der Intervall der Aufzeichnungen bestimmt werden (Jahres- oder Quartalszahlen)
 
 ### Quandl
 
-Ähnlich wie Simfin bietet [Quandl](https://www.quandl.com) Datensätze im Bereich Finanzen an. Es werden jedoch andere Asset-Klassen wie zum Beispiel Immobilien oder Rohstoffe abgedeckt. Die Website stellt die Daten nicht selber zur Verfügung sondern vermittelt zwischen Datenbezüger und Datenanbieter. Die meisten Angebote sind kostenpflichtig, es existieren jedoch auch einige kostenlose. Unter *Explore* kann man nach verschiedenen Datensätzen filtern. Hier einige meiner Favoriten:
+Ähnlich wie SimFin bietet [Quandl](https://www.quandl.com) Datensätze im Bereich Finanzen an. Es werden jedoch andere Asset-Klassen wie zum Beispiel Immobilien oder Rohstoffe abgedeckt. Die Website stellt die Daten nicht selber zur Verfügung sondern vermittelt zwischen Datenbezüger und Datenanbieter. Die meisten Angebote sind kostenpflichtig, es existieren jedoch auch einige kostenlose. Unter *Explore* kann man nach verschiedenen Datensätzen filtern. Hier einige meiner Favoriten:
 * *Aktienpreise an den verschiedenen Börsen*: Frankfurt (Name des Datensatzes: FSE, kostenlos), Euronext (EURONEXT, kostenlos)
 * *Fundamentaldaten*: Robur Global Select Stock Fundamentals (RB1, Premium), Core US Fundamentals (SF1, Premium)
 
@@ -133,4 +133,4 @@ https://wallmine.com/screener/csv?d=d&f=e&o=m&page=282&r=cu
 
 ## Ausblick
 
-Für die weiteren Verarbeitungsschritte sind wir auf eine solide Datenbasis angewiesen. In einem der nächsten Beiträge werden ich zeigen, wie die Daten von Simfin bezogen und in ein eigenes Format
+Für die weiteren Verarbeitungsschritte sind wir auf eine solide Datenbasis angewiesen. In einem der nächsten Beiträge werden ich zeigen, wie die Daten von SimFin bezogen und in ein eigenes Format
