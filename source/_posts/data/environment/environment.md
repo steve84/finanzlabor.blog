@@ -1,7 +1,7 @@
 ---
 title: Entwicklungsumgebung für Datenanalyse einrichten
 p: data/environment/environment.md
-date: 2019-09-14 09:26:37
+date: 2019-10-09 00:00:01
 tags:
 - Experiment
 - Python

@@ -1,7 +1,7 @@
 ---
 title: SimFin Bulk Export transformieren
 p: data/simfin_transformation/simfin_transformation.md
-date: 2019-09-16 16:46:21
+date: 2019-10-16 00:00:01
 tags:
 - Experiment
 - Python

@@ -1,7 +1,7 @@
 ---
 title: Gaming-Aktien – Fundamentalanalyse
 p: finance/gaming_stocks/gaming_stocks.md
-date: 2019-09-29 12:37:37
+date: 2019-10-23 00:00:01
 tags:
 - Theorie
 - Aktien
@@ -33,7 +33,7 @@ Einzelheiten zu den einzelnen Firmen können auf den firmeneigenen Webseiten gef
 
 ### Stabilität
 
-{% asset_img gaming_trends.png %}
+{% asset_img gaming_trends.png 'Stabilität' %}
 
 Die Grafik zeigt den Verlauf von Cash Flows sowie Gewinne pro Aktie über mehrere Geschäftsjahre. EA und ZNGA steigern ihren Cashflow aus operativen Tätigkeiten (engl. Operating cash flow) kontinuierlich (EA seit 2011, ZNGA seit 2015).
 
@@ -43,19 +43,19 @@ Alle vier Unternehmen müssen in der Zukunft zeigen, dass sie ihre Gewinne pro A
 
 ### Rentabilität
 
-{% asset_img gaming_profitability.png %}
+{% asset_img gaming_profitability.png 'Rentabilität' %}
 
 EA macht am Meisten aus ihrem eingesetzten Kapital. ZNGA fällt deutlich vom Rest der Konkurrenz ab.
 
 #### Margen
 
-{% asset_img gaming_margins.png %}
+{% asset_img gaming_margins.png 'Margen' %}
 
 Nach Abzug der Kosten für die verkaufte Ware (COGS) vom Umsatz bleibt EA am Meisten übrig. Alle ausser TTWO haben eine Bruttomarge (Gross margin) über 65 Prozent. Bei der operativen Marge (Operating margin), also nach Abzug von Forschung/Entwicklung sowie Vertriebskosten, sieht das Bild ein wenig anders aus. ZNGA hat noch knapp ein positives Ergebnis. Grund dafür sind hohe Investitionen in Forschung und Entwicklung (ZNGA: 30% des Umsatzes, EA: 29%, ATVI: 15%, TTWO: 8%) und höhere Vertriebskosten als bei der Konkurrenz (ZNGA: 35% des Umsatzes, ATVI/TTWO: 25%, EA: 23%). Am Ende zählt jedoch nur das Geld, welches nach Abzug aller Kosten und Addition von Steuerrückzahlungen und Zinsen resultiert (Net profit margin). Dabei überholt ATVI die Konkurrenz und profitiert dabei von der überdurchschnittlich hohen Steuerbelastung von EA.
 
 ### Finanzielle Lage
 
-{% asset_img gaming_financial_health.png %}
+{% asset_img gaming_financial_health.png 'Finanzielle Lage' %}
 
 EA und ATVI verfügen über mehr als doppelt soviel kurzfristiges Umlaufvermögen wie kurzfristige Verbindlichkeiten (Current ratio). Die anderen Mitspieler haben ein deutlich kleineres Verhältnis in der Bilanz aufzuweisen.
 
@@ -70,7 +70,7 @@ Allgemein lässt sich sagen, dass alle Firmen finanziell gesund sind und mit eig
 
 ### Bewertungsmetriken
 
-{% asset_img gaming_metrics.png %}
+{% asset_img gaming_metrics.png 'Bewertungsmetriken' %}
 
 Die in der Grafik visualisierten Kennzahlen stammen aus dem Datensatz von Wallmine und stammen vom letzten verfügbaren Quartals- oder Jahresabschluss (EV/EBITDA) oder wurden anhand des Preises vom 22. September 2019 berechnet.
 
@@ -78,7 +78,7 @@ Die Kennzahlen werden hier nicht weiter kommentiert, da keine globale Aussage zu
 
 ### Performance
 
-{% asset_img gaming_performance.png %}
+{% asset_img gaming_performance.png 'Performance' %}
 
 Die 4 Aktien haben in den letzten 5 Jahren extrem gut performt. In den letzten 12 Monaten mussten alle ausser ZNGA eine Schwächeperiode durchlaufen. Nun hat sich das Momentum wieder zum positiven gewendet und ATVI und EA versuchen die massiven Kursverluste aus Q4 2018 wieder auszugleichen. TTWO ist bereits wieder sehr nahe am absoluten Allzeithoch.
 
