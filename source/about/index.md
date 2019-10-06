@@ -32,6 +32,19 @@ Euer Laborleiter
 
 Die Leitung des Finanzlabors hat eine Person aus der Schweiz mit Baujahr 1984 inne. Neben dieser Tätigkeit arbeitet er als Software-Entwickler in einem kleinen KMU. In seiner Freizeit beschäftigt er sich mit Finanzthemen und übt verschiedene Sportarten aus.
 
+## Social Media
+Der Finanzlabor-Blog ist auf den wichtigsten sozialen Medien vertreten:
+* [Facebook](https://www.facebook.com/Finanzlabor-2738051906209104)
+* [Instagram](https://www.instagram.com/finanzlabor)
+* [Twitter](https://twitter.com/finanzlabor)
+
+## Kommentare zu den Blog-Artikeln
+Der Blog verzichtet im Moment auf eine eigene Kommentarfunktion. Gründe dafür sind:
+
+* Anonyme Kommentare müssen von Hand freigegeben werden, was den Diskussionsfluss stört.
+* Bestehende Lösungen erfüllen die Anforderungen (Werbefrei, freie Wahl der Authentifizierungsmöglichkeiten) des Autors nicht
+
+Daher werden die Beiträge auf den sozialen Medien verlinkt und können dort kommentiert werden.
 
 ## Disclaimer
 
