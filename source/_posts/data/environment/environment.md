@@ -55,7 +55,7 @@ Um gewisse bestehende Projekte zu verwenden, muss Git installiert werden. [Was G
 Um zu überprüfen, ob alle installierten Komponenten funktionieren, kann folgender Test durchgeführt werden:
 
 * Klonen des Git-Repositories von SimFin: *git clone https://github.com/SimFin/bd-extractor.git*
-* Öffnen des Anaconda Powershell Prompts (oder eines Terminals unter Linux)
+* Öffnen des Anaconda Prompts (oder eines Terminals unter Linux)
 * Wechsel in das geklonte Git-Repository (mit Hilfe von *cd*)
 * Eingabe des Befehls *python sample-extraction.py*
 
