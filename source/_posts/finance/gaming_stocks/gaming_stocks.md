@@ -1,7 +1,7 @@
 ---
 title: Gaming-Aktien – Fundamentalanalyse
 p: finance/gaming_stocks/gaming_stocks.md
-date: 2019-10-23 00:00:01
+date: 2019-10-22 20:00:00
 tags:
 - Theorie
 - Aktien
@@ -84,20 +84,35 @@ Die 4 Aktien haben in den letzten 5 Jahren extrem gut performt. In den letzten 1
 
 ### Fazit
 
-Müsste ich mich für eine der vier Aktien entscheiden, dann würde ich mir die Papiere von EA ins Depot legen. Sie sind relativ günstig (tiefstes KGV), die Firma ist gesund und weist die höchste Rentabilität der untersuchten Aktiengesellschaften auf. Es handelt sich jedoch um einen schwierigen Markt um sich höhere Marktanteile zu erarbeiten. Jedes Unternehmen hat seine eigenen Franchises (EA mit der FIFA-Reihe, TTWO, ZYNGA, ATVI mit dem Warcraft-Universum) und es werden dazu regelmässig neue Inhalte produziert. Sie werden jedoch auch in der Zukunft innovativ sein müssen, um mit neuen Spielkonzepten verschiedene Altergruppen anzusprechen.
+Müsste ich mich für eine der vier Aktien entscheiden, dann würde ich mir die Papiere von EA ins Depot legen. Sie sind relativ günstig (tiefstes KGV), die Firma ist gesund und weist die höchste Rentabilität der untersuchten Aktiengesellschaften auf. Es handelt sich jedoch um einen schwierigen Markt um sich höhere Marktanteile zu erarbeiten. Jedes Unternehmen hat seine eigenen Franchises (EA mit der FIFA-Reihe, TTWO mit der GTA-Serie, ZYNGA mit FarmVille, ATVI mit dem Warcraft-Universum) und es werden dazu regelmässig neue Inhalte produziert. Sie werden jedoch auch in der Zukunft innovativ sein müssen, um mit neuen Spielkonzepten verschiedene Altersgruppen anzusprechen.
 
-Möchte man jedoch nicht alles auf eine Karte setzen und breit diversifiziert in den Gaming-Markt investieren, lohnt es sich die im nächsten Kapitel vorgestellten Indizes genauer anzuschauen.
+Um ein vollständigeres Bild der Unternehmen zu erhalten, sollten auch andere Faktoren einbezogen werden:
+* Erkenntnisse der SWOT-Analyse[^2] (Stärken, Schwächen, Chancen und Risiken)
+* Produkte aus der BCG-Matrix[^3] (Einteilung der Produkte in einer Marktanteil/Marktwachstums-Matrix)
+* Marktposition anhand der Umsatzrendite
+* Zusammensetzung der Geschäftsleitung
+* Qualität der Firmenwebseite und der Social-Media-Kanäle
+* Persönliche Erfahrungen mit den Produkten
+
+Es gibt auch einige Hersteller, welche nicht nur Spiele produzieren. Sie haben ein breiteres Produktportfolio und sind daher nicht so anfällig für Marktschwankungen (vorausgesetzt die anderen Sektoren korrelieren nicht positiv miteinander), dazu einige Beispiele:
+* [Microsoft](https://www.microsoft.com) (Spielekonsolen, Betriebssysteme, Bürosoftware)
+* [Sony](https://www.sony.com) (Spielekonsolen, Kopfhörer, Smartphones, Kameras)
+* [Tencent](https://www.tencent.com) (verschiedene Software-Produkte in den Bereichen Kommunikation, Mobile-Payment sowie Suchmaschinen)
+
+Möchte man jedoch nicht alles auf eine Karte setzen und breit diversifiziert in den (gesamten) Gaming-Markt investieren, lohnt es sich, die im nächsten Kapitel vorgestellten Indizes genauer anzuschauen.
 
 ## Gaming Indizes
 
 Es gibt jedoch auch neu ins Leben gerufene Indizes, welche den weltweiten Gaming-Markt abdecken. So müssen sich die Anlegenden nicht für eine einzelne Aktie entscheiden. Mittlerweile gibt es auch einige ETFs oder Indexzertifikate, welche diese Indizes abbilden. Diese weisen jedoch eine sehr geringe Fondsgrösse auf. Der VanEck Vectors Video Gaming and eSports UCITS ETF A (ISIN: 	IE00BYWQWR46, Referenzindex: MVIS Global Video Gaming and eSports Index) hat zum Beispiel ein Fondsgrösse von 7 Mio. Euro. Nachfolgend zwei existierende Indizes:
 
 ### Solactive Electronic Gaming Index
-Der Performanceindex beinhaltet 20 Einzelaktien und die Indexwährung ist Euro. Die Komponenten des Index sind gleich gewichtet (5 Prozent). Über die Hälfte der Unternehmen haben ihren Sitz in Japan, 30 Prozent in den USA. Performance seit der Auflage Juli 2016: 84%. Weitere Informationen sind auf der Produktseite von Solactive zu finden[^2].
+Der Performanceindex beinhaltet 20 Einzelaktien und die Indexwährung ist Euro. Die Komponenten des Index sind gleich gewichtet (5 Prozent). Über die Hälfte der Unternehmen haben ihren Sitz in Japan, 30 Prozent in den USA. Performance seit der Auflage Juli 2016: 84%. Weitere Informationen sind auf der Produktseite von Solactive zu finden[^4].
 
 ### MVIS Global Video Gaming and eSports Index (MVESPOTR)
-Der Index von MVIS beachtet nur Firmen, welche mindestens 50 Prozent ihres Umsatzes in den Branchen Gaming und eSport machen. Die Unternehmen müssen eine Marktkapitalisierung von mindestens 150 Mio. USD haben, über ein tägliches Handelsvolumen von mindestens 1 Mio. USD (Durchschnittswert über die letzten 3 Monate) verfügen und es müssen in den letzten sechs Monaten mindestens 250‘000 Aktien gehandelt worden sein. Die Gewichtung erfolgt anhand der Marktkapitalisierung und ist bei 8% gekappt. Aktuell sind 25 Einzelfirmen in diesem Index vertreten (Stand 28. September 2019). Zur Zusammensetzung: 35% USA, 26% Japan, 20% Kaimaninseln. Die  restlichen Prozentpunkte teilen sich Südkorea, Frankreich, Polen und Taiwan. Performance seit Auflage im Dezember 2014: 224%. Weitere Information sind auf der Produktseite von MVIS zu finden[^3].
+Der Index von MVIS beachtet nur Firmen, welche mindestens 50 Prozent ihres Umsatzes in den Branchen Gaming und eSport machen. Die Unternehmen müssen eine Marktkapitalisierung von mindestens 150 Mio. USD haben, über ein tägliches Handelsvolumen von mindestens 1 Mio. USD (Durchschnittswert über die letzten 3 Monate) verfügen und es müssen in den letzten sechs Monaten mindestens 250‘000 Aktien gehandelt worden sein. Die Gewichtung erfolgt anhand der Marktkapitalisierung und ist bei 8% gekappt. Aktuell sind 25 Einzelfirmen in diesem Index vertreten (Stand 28. September 2019). Zur Zusammensetzung: 35% USA, 26% Japan, 20% Kaimaninseln. Die  restlichen Prozentpunkte teilen sich Südkorea, Frankreich, Polen und Taiwan. Performance seit Auflage im Dezember 2014: 224%. Weitere Information sind auf der Produktseite von MVIS zu finden[^5].
 
 [^1]: [E-Gaming-Markt im Höhenflug?](https://derinet.vontobel.com/CH/DE/blog/Artikel/e-gaming-markt-im-hoehenflug)
-[^2]: [Produktseite Solactive Electronic Gaming Index](https://www.solactive.com/indices/?index=DE000SLA2EX3)
-[^3]: [Produktseite MVIS Global Video Gaming and eSports Index](https://www.mvis-indices.com/indices/sector/mvis-global-video-gaming-esports)
+[^2]: [Wikipedia-Artikel zur SWOT-Analyse](https://de.wikipedia.org/wiki/SWOT-Analyse)
+[^3]: [Wikipedia-Artikel zur BCG-Matrix](https://de.wikipedia.org/wiki/BCG-Matrix)
+[^4]: [Produktseite Solactive Electronic Gaming Index](https://www.solactive.com/indices/?index=DE000SLA2EX3)
+[^5]: [Produktseite MVIS Global Video Gaming and eSports Index](https://www.mvis-indices.com/indices/sector/mvis-global-video-gaming-esports)
