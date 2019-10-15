@@ -10,11 +10,11 @@ toc: true
 thumbnail: /gallery/thumbnails/finance/gaming_stocks/thumbnail.jpg
 ---
 
-Laut einer Studie des Marktforschungsunternehmens [Newzoo](https://newzoo.com) (Globaler Leader in der Analyse von Spielen und eSports) soll der globale Games-Markt im Jahr 2021 einen Umsatz von 180.1 Mio. USD erzielen. Das würde ein Umsatzwachstum von 11 Prozent pro Jahr (CAGR) seit den letzten 10 Jahren bedeuten. Mit welcher Einzelaktie kann der Privatanleger von diesem Trend profitieren? Gibt es Indexfonds, welche diesen Markt abdecken?
+Laut einer Studie des Marktforschungsunternehmens [Newzoo](https://newzoo.com) (Globaler Leader in der Analyse von Spielen und eSports) soll der globale Games-Markt im Jahr 2021 einen Umsatz von 180.1 Mio. USD erzielen. Das würde ein Umsatzwachstum von 11 Prozent pro Jahr (CAGR[^1]) seit den letzten 10 Jahren bedeuten. Mit welcher Einzelaktie kann der Privatanleger von diesem Trend profitieren? Gibt es Indexfonds, welche diesen Markt abdecken?
 
 <!-- more -->
 
-Ein Blog-Eintrag der Firma Vontobel[^1] zeigt ebenfalls, dass die Umsätze im Bereich der PC- sowie Konsolenspiele rückläufig sind. Der Anteil der Sparte "Mobile-Games" (also Spiele auf Smartphones oder Tablets) hat sich seit 2012 verdreifacht (von 18 auf 54 Prozent).
+Ein Blog-Eintrag der Firma Vontobel[^2] zeigt ebenfalls, dass die Umsätze im Bereich der PC- sowie Konsolenspiele rückläufig sind. Der Anteil der Sparte "Mobile-Games" (also Spiele auf Smartphones oder Tablets) hat sich seit 2012 verdreifacht (von 18 auf 54 Prozent).
 
 Der folgende Abschnitte vergleicht 4 Einzelaktien von reinen Spieleherstellern (diese produzieren ausschliesslich Videospiele). Daher fehlen Firmen wie Nintendo, Sony oder Microsoft in dieser Analyse. Ebenfalls sind nur Aktien von Unternehmen mit dabei, welche in den beiden Datensätzen von [SimFin](https://simfin.com) sowie [Wallmine](https://wallmine.com) (siehe {% post_link data/gatherdata/gatherdata 'Blog-Artikel' %}) vertreten sind. Es handelt sich hierbei um eine reine Fundamentaldaten-Analyse.
 
@@ -29,7 +29,7 @@ In der Analyse sollen folgende vier Unternehmen unter die Lupe genommen werden:
 * [Take-Two Interactive Software, Inc.](https://www.take2games.com) (Ticker: TTWO)
 * [Zynga Inc.](https://www.zynga.com) (Ticker: ZNGA)
 
-Einzelheiten zu den einzelnen Firmen können auf den firmeneigenen Webseiten gefunden werden. Die einzelnen Unternehmen werden ab jetzt nur noch mit ihrem Ticker-Symbol adressiert. Die Zahlen stammen, wenn nicht anders vermerkt, vom letzten Geschäftsabschluss der Unternehmen (ATVI: 31.12.2018, EA: 31.03.2018, TTWO: 31.03.2019, ZNGA: 31.12.2018). Für die Jahresabschlüsse, welche nicht auf den 31. Dezember enden, werden die Zahlen dem Jahr des ersten Tages des abgeschlossen Geschäftsjahres zugeordnet (z.B. der Geschäftsabschluss von EA wird dem Geschäftsjahr 2017 zugeordnet, da das Geschäftsjahr am 1.4.2017 begann). Die Zahlen von EA stammen also noch vom vorletzten Jahr, da die neusten Zahlen in der [SimFin](https://simfin.com)-Datenbank noch nicht verfügbar sind. Sobald sich dies ändert wird der Beitrag aktualisiert.
+Einzelheiten zu den einzelnen Firmen können auf den firmeneigenen Webseiten gefunden werden. Die einzelnen Unternehmen werden in den folgenden Abschnitten mit ihren Ticker-Symbolen abgekürzt. Die Zahlen stammen, wenn nicht anders vermerkt, vom letzten Geschäftsabschluss der Unternehmen (ATVI: 31.12.2018, EA: 31.03.2018, TTWO: 31.03.2019, ZNGA: 31.12.2018). Für die Jahresabschlüsse, welche nicht auf den 31. Dezember enden, werden die Zahlen dem Jahr des ersten Tages des abgeschlossen Geschäftsjahres zugeordnet (z.B. der Geschäftsabschluss von EA wird dem Geschäftsjahr 2017 zugeordnet, da das Geschäftsjahr am 1.4.2017 begann). Die Zahlen von EA stammen also noch vom vorletzten Jahr, da die neusten Zahlen in der [SimFin](https://simfin.com)-Datenbank noch nicht verfügbar sind. Sobald sich dies ändert wird der Beitrag aktualisiert.
 
 ### Stabilität
 
@@ -39,7 +39,7 @@ Die Grafik zeigt den Verlauf von Cash Flows sowie Gewinne pro Aktie über mehrer
 
 Einzig ZNGA konnte den Free Cashflow in den letzten Jahren stabil halten.
 
-Alle vier Unternehmen müssen in der Zukunft zeigen, dass sie ihre Gewinne pro Aktie weiter steigern können. TTWO hat dies seit 2014 bereits eindrücklich geschafft.
+Alle vier Unternehmen müssen in der Zukunft zeigen, dass sie ihre Gewinne pro Aktie (EPS) weiter steigern können. TTWO hat dies seit 2014 bereits eindrücklich geschafft.
 
 ### Rentabilität
 
@@ -87,8 +87,8 @@ Die 4 Aktien haben in den letzten 5 Jahren extrem gut performt. In den letzten 1
 Müsste ich mich für eine der vier Aktien entscheiden, dann würde ich mir die Papiere von EA ins Depot legen. Sie sind relativ günstig (tiefstes KGV), die Firma ist gesund und weist die höchste Rentabilität der untersuchten Aktiengesellschaften auf. Es handelt sich jedoch um einen schwierigen Markt um sich höhere Marktanteile zu erarbeiten. Jedes Unternehmen hat seine eigenen Franchises (EA mit der FIFA-Reihe, TTWO mit der GTA-Serie, ZYNGA mit FarmVille, ATVI mit dem Warcraft-Universum) und es werden dazu regelmässig neue Inhalte produziert. Sie werden jedoch auch in der Zukunft innovativ sein müssen, um mit neuen Spielkonzepten verschiedene Altersgruppen anzusprechen.
 
 Um ein vollständigeres Bild der Unternehmen zu erhalten, sollten auch andere Faktoren einbezogen werden:
-* Erkenntnisse der SWOT-Analyse[^2] (Stärken, Schwächen, Chancen und Risiken)
-* Produkte aus der BCG-Matrix[^3] (Einteilung der Produkte in einer Marktanteil/Marktwachstums-Matrix)
+* Erkenntnisse der SWOT-Analyse[^3] (Stärken, Schwächen, Chancen und Risiken)
+* Produkte aus der BCG-Matrix[^4] (Einteilung der Produkte in einer Marktanteil/Marktwachstums-Matrix)
 * Marktposition anhand der Umsatzrendite
 * Zusammensetzung der Geschäftsleitung
 * Qualität der Firmenwebseite und der Social-Media-Kanäle
@@ -106,13 +106,14 @@ Möchte man jedoch nicht alles auf eine Karte setzen und breit diversifiziert in
 Es gibt jedoch auch neu ins Leben gerufene Indizes, welche den weltweiten Gaming-Markt abdecken. So müssen sich die Anlegenden nicht für eine einzelne Aktie entscheiden. Mittlerweile gibt es auch einige ETFs oder Indexzertifikate, welche diese Indizes abbilden. Diese weisen jedoch eine sehr geringe Fondsgrösse auf. Der VanEck Vectors Video Gaming and eSports UCITS ETF A (ISIN: 	IE00BYWQWR46, Referenzindex: MVIS Global Video Gaming and eSports Index) hat zum Beispiel ein Fondsgrösse von 7 Mio. Euro. Nachfolgend zwei existierende Indizes:
 
 ### Solactive Electronic Gaming Index
-Der Performanceindex beinhaltet 20 Einzelaktien und die Indexwährung ist Euro. Die Komponenten des Index sind gleich gewichtet (5 Prozent). Über die Hälfte der Unternehmen haben ihren Sitz in Japan, 30 Prozent in den USA. Performance seit der Auflage Juli 2016: 84%. Weitere Informationen sind auf der Produktseite von Solactive zu finden[^4].
+Der Performanceindex beinhaltet 20 Einzelaktien und die Indexwährung ist Euro. Die Komponenten des Index sind gleich gewichtet (5 Prozent). Über die Hälfte der Unternehmen haben ihren Sitz in Japan, 30 Prozent in den USA. Performance seit der Auflage Juli 2016: 84%. Weitere Informationen sind auf der Produktseite von Solactive zu finden[^5].
 
 ### MVIS Global Video Gaming and eSports Index (MVESPOTR)
-Der Index von MVIS beachtet nur Firmen, welche mindestens 50 Prozent ihres Umsatzes in den Branchen Gaming und eSport machen. Die Unternehmen müssen eine Marktkapitalisierung von mindestens 150 Mio. USD haben, über ein tägliches Handelsvolumen von mindestens 1 Mio. USD (Durchschnittswert über die letzten 3 Monate) verfügen und es müssen in den letzten sechs Monaten mindestens 250‘000 Aktien gehandelt worden sein. Die Gewichtung erfolgt anhand der Marktkapitalisierung und ist bei 8% gekappt. Aktuell sind 25 Einzelfirmen in diesem Index vertreten (Stand 28. September 2019). Zur Zusammensetzung: 35% USA, 26% Japan, 20% Kaimaninseln. Die  restlichen Prozentpunkte teilen sich Südkorea, Frankreich, Polen und Taiwan. Performance seit Auflage im Dezember 2014: 224%. Weitere Information sind auf der Produktseite von MVIS zu finden[^5].
+Der Index von MVIS beachtet nur Firmen, welche mindestens 50 Prozent ihres Umsatzes in den Branchen Gaming und eSport machen. Die Unternehmen müssen eine Marktkapitalisierung von mindestens 150 Mio. USD haben, über ein tägliches Handelsvolumen von mindestens 1 Mio. USD (Durchschnittswert über die letzten 3 Monate) verfügen und es müssen in den letzten sechs Monaten mindestens 250‘000 Aktien gehandelt worden sein. Die Gewichtung erfolgt anhand der Marktkapitalisierung und ist bei 8% gekappt. Aktuell sind 25 Einzelfirmen in diesem Index vertreten (Stand 28. September 2019). Zur Zusammensetzung: 35% USA, 26% Japan, 20% Kaimaninseln. Die  restlichen Prozentpunkte teilen sich Südkorea, Frankreich, Polen und Taiwan. Performance seit Auflage im Dezember 2014: 224%. Weitere Information sind auf der Produktseite von MVIS zu finden[^6].
 
-[^1]: [E-Gaming-Markt im Höhenflug?](https://derinet.vontobel.com/CH/DE/blog/Artikel/e-gaming-markt-im-hoehenflug)
-[^2]: [Wikipedia-Artikel zur SWOT-Analyse](https://de.wikipedia.org/wiki/SWOT-Analyse)
-[^3]: [Wikipedia-Artikel zur BCG-Matrix](https://de.wikipedia.org/wiki/BCG-Matrix)
-[^4]: [Produktseite Solactive Electronic Gaming Index](https://www.solactive.com/indices/?index=DE000SLA2EX3)
-[^5]: [Produktseite MVIS Global Video Gaming and eSports Index](https://www.mvis-indices.com/indices/sector/mvis-global-video-gaming-esports)
+[^1]: [Artikel zum Thema CAGR vom DIY Investor](https://diyinvestor.de/cagr-berechnen-wieso-weshalb-warum-und-wie/)
+[^2]: [E-Gaming-Markt im Höhenflug?](https://derinet.vontobel.com/CH/DE/blog/Artikel/e-gaming-markt-im-hoehenflug)
+[^3]: [Wikipedia-Artikel zur SWOT-Analyse](https://de.wikipedia.org/wiki/SWOT-Analyse)
+[^4]: [Wikipedia-Artikel zur BCG-Matrix](https://de.wikipedia.org/wiki/BCG-Matrix)
+[^5]: [Produktseite Solactive Electronic Gaming Index](https://www.solactive.com/indices/?index=DE000SLA2EX3)
+[^6]: [Produktseite MVIS Global Video Gaming and eSports Index](https://www.mvis-indices.com/indices/sector/mvis-global-video-gaming-esports)

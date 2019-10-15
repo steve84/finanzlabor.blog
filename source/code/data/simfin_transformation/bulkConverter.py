@@ -65,7 +65,7 @@ with open('extracted_data.csv', 'w') as csvfile:
     writer.writeheader()
     for company in dataset.companies:
         try:
-            # Go through every observations
+            # Go through every observation
             for i in range(0, len(dataset.timePeriodsDates)):
                 # Check if end of month
                 if isEndOfMonth(dataset.timePeriodsDates[i]):
@@ -92,7 +92,7 @@ with open('extracted_data.csv', 'w') as csvfile:
                             if value:
                                 row[indicatorName] = value
 
-                        # Check if a value was found for the given indicator
+                        # Check if value was found for the given indicator
                         if indicatorName not in row.keys():
                             if indicatorValue is not None:
                                 row[indicatorName] = float(indicatorValue)

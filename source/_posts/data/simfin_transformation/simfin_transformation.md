@@ -15,23 +15,23 @@ Dieser Blog-Beitrag beschäftigt sich mit der Transformation von Daten. Es kann 
 <!-- more -->
 
 ## Theorie
-Bevor mit dem praktischen Teil begonnen werden kann, sollten noch einige theoretische Inhalte vermittelt werden.
+Bevor mit dem praktischen Teil begonnen werden kann, folgen anbei noch einige theoretische Inhalte. Sie sollen dabei helfen, die bereitgestellte Lösungsvariante besser zu verstehen.
 
 ### Datenformat
 
-SimFin bietet zwei verschiedene Datenformate an. Welche dies sind und wie sie sich voneinander unterscheiden, soll kurz erläutert werden.
+SimFin bietet zwei verschiedene Datenformate an. Welche dies sind und wie sie sich voneinander unterscheiden, soll kurz erläutert werden:
 
 #### Narrow
 
-Hier gibt es für jedes Unternehmen pro Kennzahl pro Zeitperiode einen Eintrag. Für die Firma Apple sind 11 Geschäftsjahre (ohne Quartalszahlen) mit je 51 Kennzahlen vorhanden. Das sind bereits über 500 Zeilen für ein Unternehmen. Dies resultiert in fast 3 Millionen Einträge in dem heruntergeladenen CSV. Die Datei ist also vertikal aufgebaut.
+Hier gibt es für jedes Unternehmen pro Kennzahl pro Zeitperiode einen Eintrag. Für die Firma Apple sind 11 Geschäftsjahre (ohne Quartalszahlen) mit je 51 Kennzahlen vorhanden. Das sind bereits über 500 Zeilen für ein einziges Unternehmen. Dies erklärt die fast 3 Millionen Einträge in der heruntergeladenen CSV-Datei. Die Datei ist also vertikal aufgebaut.
 
 #### Wide
 
-Bei diesem Format haben wir pro Firma und Kennzahl eine Spalte. Die Zeilen stellen Beobachtungszeitpunkte dar, wo mindestens ein Unternehmen eine Kennzahl veröffentlicht hat. Der Nachteil dieses Formates besteht darin, dass ein Unternehmen höchstens 4 Mal im Jahr ihre Zahlen veröffentlicht und es entstehen dadurch viele leer Einträge (Löcher) in der CSV-Datei.
+Bei diesem Format haben wir pro Firma und Kennzahl eine Spalte (horizontaler Aufbau). Die Zeilen stellen Beobachtungszeitpunkte dar, wo mindestens ein Unternehmen eine Kennzahl veröffentlicht hat. Der Nachteil dieses Formates besteht darin, dass ein Unternehmen höchstens 4 Mal im Jahr ihre Zahlen veröffentlicht und es entstehen dadurch viele leer Einträge (Löcher) in der CSV-Datei.
 
 ### SimFin Python Bibliothek
 
-SimFin bietet eine eigene Python-Bibliothek[^1] an, um die Daten aus einem Bulk-Export zu laden. Diese kann jedoch nur mit Dateien im [Wide](#Wide)-Format umgehen. Das GitHub-Repository beinhaltet ebenfalls einfache Beispiele. Die wichtigsten Funktionen und Klassen der Python-Dateien werden nun etwas genauer unter die Lupe genommen.
+SimFin bietet eine eigene Python-Bibliothek[^1] an, um die Daten aus einem Bulk-Export zu laden. Diese kann jedoch nur mit Dateien im [Wide](#Wide)-Format umgehen. Das GitHub-Repository beinhaltet ebenfalls einfache Beispiele. Die wichtigsten Funktionen und Klassen der Python-Dateien werden nun etwas genauer unter die Lupe genommen:
 
 Die Klasse *SimFinDataset* in der Datei *extractor.py* hat einen Konstruktor mit folgenden Argumenten:
 * *dataFilePath*: Der Pfad zu dem heruntergeladenen Bulk Export
@@ -50,8 +50,8 @@ Die Klasse *Company* in der Datei *extractor.py* repräsentiert ein einzelnes Un
 * *id*: Eine eindeutige Identifikationsnummer, um die einzelnen Unternehmen voneinander zu unterscheiden
 * *name*: Der Name der Firma
 * *ticker*: Das Kürzel
-* *industryCode*: Die Branchen-Zuordnung der Firma.
-* *finYearMonthEnd*: Der Monat, in welchem das Geschäftsjahr endet (als Integer)
+* *industryCode*: Die Branchen-Zuordnung der Firma. Die ersten 3 Ziffern repräsentieren den Sektor, die Letzten 3 die Industrie innerhalb des Sektors. Die Zuordnungstabelle wurde vor einiger Zeit in einem Forum-Eintrag veröffentlicht[^2]
+* *finYearMonthEnd*: Der Monat, in welchem das Geschäftsjahr endet (als Ganzzahl, z.B. 2 für Februar)
 * *data*: Hier werden die Kennzahlen abgelegt (in einem Array mit Objekten der Klasse *Indicator*, welche wir unten behandeln)
 
 Eine weitere wichtige Klasse ist, wie oben erwähnt, die *Indicator*-Klasse in der Datei *extractor.py*:
@@ -63,7 +63,7 @@ Eine weitere wichtige Klasse ist, wie oben erwähnt, die *Indicator*-Klasse in d
 Nun zum praktischen Teil. Für den Export soll pro Firma und Zeitpunkt nur eine Zeile existieren. Dies ist einfacher zu lesen und die meisten Datenverarbeitungswerkzeuge erwarten dieses Format.
 
 ### Bulk Export herunterladen
-Nach der Anmeldung auf der SimFin-Website kann unter *Data Access* die Option *Bulk Download* gewählt werden. Nun stehen verschiedene Varianten des Exports zur Verfügung. Die nachfolgenden  Abschnitte erklären die einzelnen Optionen. Für unser Experiment werden folgende Einstellungen verwendet:
+Nach der Anmeldung auf der SimFin-Website kann unter *Data Access* die Option *Bulk Download* gewählt werden. Es stehen verschiedene Varianten des Exports zur Verfügung. Die einzelnen Optionen werden auf der Website kurz und verständlich erklärt (Via "show explanation"). Für unser Experiment werden folgende Einstellungen verwendet:
 * *Dataset*: Stock prices + Fundamentals (Detailed)
 * *Options*
   * *Update fundamentals & ratios on*: Period end-date
@@ -84,7 +84,7 @@ Nun können die Daten gelesen und in das gewünschte Format konvertiert werden. 
   * *Share Price* (Aktienkurs)
   * *Common Shares Outstanding* (Ausstehende Stammaktien)
   * *Avg. Basic Shares Outstanding* (Durchschn. ausstehende Aktien)
-  * *Avg. Diluted Shares Outstanding* (Durchschn. ausstehende verwässerten Aktien)
+  * *Avg. Diluted Shares Outstanding* (Durchschn. ausstehende verwässerte Aktien)
   * *Market Capitalisation* (Marktkapitalisierung)
 7. Schritte 2-6 wiederholen, bis alle Unternehmen abgearbeitet wurden
 
@@ -101,18 +101,19 @@ Die Lösung befindet sich unterhalb dieses Abschnittes (kann zugeklappt werden).
 {% include_code Lösungsdatei lang:python data/simfin_transformation/bulkConverter.py %}
 
 ### CSV lesen und schreiben
-Der Export wird mit der Funktion *SimFinDataset* geladen, welche aus der SimFin Bibliothek stammt. Für das Schreiben der neuen Datei wird ein *csv.DictWriter*[^2] verwendet. Dieser ermöglicht es, Schlüssel/Wert-Paare direkt in die Ausgabedatei zu schreiben (ohne sich um die Reihenfolge kümmern zu müssen). Mit dem Attribut *fieldnames* werden die Schlüsselfelder (sowie ihre Reihenfolge) definiert. Um der Datei eine Kopfzeile hinzuzufügen, wird die Funktion *writeheader* einmalig (noch bevor die erste Datenzeile mit *writerow* geschrieben wird) aufgerufen.
+Der Export wird mit der Funktion *SimFinDataset* geladen, welche aus der SimFin Bibliothek stammt. Für das Schreiben der neuen Datei wird ein *csv.DictWriter*[^3] verwendet. Dieser ermöglicht es, Schlüssel/Wert-Paare direkt in die Ausgabedatei zu schreiben (ohne sich um die Reihenfolge kümmern zu müssen). Mit dem Attribut *fieldnames* werden die Schlüsselfelder (sowie ihre Reihenfolge) definiert. Um der Datei eine Kopfzeile hinzuzufügen, wird die Funktion *writeheader* einmalig (noch bevor die erste Datenzeile mit *writerow* geschrieben wird) aufgerufen.
 
 ### Monatsende überprüfen
-Es sollen nur Beobachtungszeitpunkte näher angeschaut werden, welche den letzten Tag eines Monats repräsentieren. Mit Hilfe der Funktion *calendar.monthrange*[^3] wird anhand von Monat und Jahr der erste sowie letzte Tag ermittelt. Dies ist für den Februar sehr hilfreich, weil die Funktion Schaltjahre berücksichtigt.
+Es sollen nur Beobachtungszeitpunkte näher angeschaut werden, welche den letzten Tag eines Monats repräsentieren. Mit Hilfe der Funktion *calendar.monthrange*[^4] wird anhand von Monat und Jahr der erste sowie letzte Tag ermittelt. Dies ist für den Februar sehr hilfreich, weil die Funktion Schaltjahre berücksichtigt.
 
 ### Wochentag ermitteln
-Die Funktion *weekday* auf dem *datetime*[^4] Objekt ermittelt den dazugehörigen Wochentag. 0 steht für Montag, 6 für Sonntag.
+Die Funktion *weekday* auf dem *datetime*[^5] Objekt ermittelt den dazugehörigen Wochentag. 0 steht für Montag, 6 für Sonntag.
 
 ### Laufzeit und Ressourcen
 Die Durchlaufzeit des Skripts hängt stark von der Rechenpower der Maschine ab. Die Funktion zum Laden aller Einträge benötigt einige Gigabytes an Speicher und es kann zu einem MemoryError (vor allem bei 32bit Systemen) kommen. Sollte dies vorkommen, sollte man falls möglich ein anderes System verwenden. Die Einschränkungen mit Hilfe von *startDate*/*endDate* sollten die Menge an verwendetem Speicher reduzieren (danach können die einzelnen, kleineren Exporte zusammengefügt werden).
 
 [^1]: [SimFin Repository auf GitHub.com](https://github.com/SimFin/bd-extractor)
-[^2]: [Offizielle Python-Dokumentation zu csv.DictWriter](https://docs.python.org/3/library/csv.html#csv.DictWriter)
-[^3]: [Offizielle Python-Dokumentation zu calendar.monthrange](https://docs.python.org/3.7/library/calendar.html)
-[^4]: [Offizielle Python-Dokumentation zu datetime](https://docs.python.org/3.7/library/datetime.html#datetime.datetime)
+[^2]: [Diskussion im SimFin-Forum zum Thema Industry Codes inkl. CSV-Datei](https://simfin.com/forum/discussion/44/industry-code)
+[^3]: [Offizielle Python-Dokumentation zu csv.DictWriter](https://docs.python.org/3/library/csv.html#csv.DictWriter)
+[^4]: [Offizielle Python-Dokumentation zu calendar.monthrange](https://docs.python.org/3.7/library/calendar.html)
+[^5]: [Offizielle Python-Dokumentation zu datetime](https://docs.python.org/3.7/library/datetime.html#datetime.datetime)
