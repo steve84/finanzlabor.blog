@@ -1,10 +1,11 @@
 ---
 title: Gaming-Aktien – Fundamentalanalyse
 p: finance/gaming_stocks/gaming_stocks.md
-date: 2019-10-22 20:00:00
+date: 2019-10-27 08:00:00
 tags:
 - Theorie
 - Aktien
+- Data Visualization
 categories: Finanzen
 toc: true
 thumbnail: /gallery/thumbnails/finance/gaming_stocks/thumbnail.jpg
@@ -16,7 +17,7 @@ Laut einer Studie des Marktforschungsunternehmens [Newzoo](https://newzoo.com) (
 
 Ein Blog-Eintrag der Firma Vontobel[^2] zeigt ebenfalls, dass die Umsätze im Bereich der PC- sowie Konsolenspiele rückläufig sind. Der Anteil der Sparte "Mobile-Games" (also Spiele auf Smartphones oder Tablets) hat sich seit 2012 verdreifacht (von 18 auf 54 Prozent).
 
-Der folgende Abschnitte vergleicht 4 Einzelaktien von reinen Spieleherstellern (diese produzieren ausschliesslich Videospiele). Daher fehlen Firmen wie Nintendo, Sony oder Microsoft in dieser Analyse. Ebenfalls sind nur Aktien von Unternehmen mit dabei, welche in den beiden Datensätzen von [SimFin](https://simfin.com) sowie [Wallmine](https://wallmine.com) (siehe {% post_link data/gatherdata/gatherdata 'Blog-Artikel' %}) vertreten sind. Es handelt sich hierbei um eine reine Fundamentaldaten-Analyse.
+Die folgenden Abschnitte vergleichen 4 Einzelaktien von reinen Spieleherstellern (diese produzieren ausschliesslich Videospiele). Daher fehlen Firmen wie Nintendo, Sony oder Microsoft in dieser Analyse. Ebenfalls sind nur Aktien von Unternehmen mit dabei, welche in den beiden Datensätzen von [SimFin](https://simfin.com) sowie [Wallmine](https://wallmine.com) (siehe {% post_link data/gatherdata/gatherdata 'Blog-Artikel' %}) vertreten sind. Es handelt sich hierbei um eine reine Fundamentaldaten-Analyse.
 
 Am Schluss des Artikels werden noch zwei Indizes erläutert, welche die Bereiche Gaming und eSports abdecken.
 
@@ -29,7 +30,7 @@ In der Analyse sollen folgende vier Unternehmen unter die Lupe genommen werden:
 * [Take-Two Interactive Software, Inc.](https://www.take2games.com) (Ticker: TTWO)
 * [Zynga Inc.](https://www.zynga.com) (Ticker: ZNGA)
 
-Einzelheiten zu den einzelnen Firmen können auf den firmeneigenen Webseiten gefunden werden. Die einzelnen Unternehmen werden in den folgenden Abschnitten mit ihren Ticker-Symbolen abgekürzt. Die Zahlen stammen, wenn nicht anders vermerkt, vom letzten Geschäftsabschluss der Unternehmen (ATVI: 31.12.2018, EA: 31.03.2018, TTWO: 31.03.2019, ZNGA: 31.12.2018). Für die Jahresabschlüsse, welche nicht auf den 31. Dezember enden, werden die Zahlen dem Jahr des ersten Tages des abgeschlossen Geschäftsjahres zugeordnet (z.B. der Geschäftsabschluss von EA wird dem Geschäftsjahr 2017 zugeordnet, da das Geschäftsjahr am 1.4.2017 begann). Die Zahlen von EA stammen also noch vom vorletzten Jahr, da die neusten Zahlen in der [SimFin](https://simfin.com)-Datenbank noch nicht verfügbar sind. Sobald sich dies ändert wird der Beitrag aktualisiert.
+Einzelheiten zu den aufgeführten Firmen können auf den firmeneigenen Webseiten gefunden werden. Die Unternehmen werden in den folgenden Abschnitten mit ihren Ticker-Symbolen abgekürzt. Die Zahlen stammen, wenn nicht anders vermerkt, vom letzten Geschäftsabschluss der Unternehmen (ATVI: 31.12.2018, EA: 31.03.2018, TTWO: 31.03.2019, ZNGA: 31.12.2018). Für die Jahresabschlüsse, welche nicht auf den 31. Dezember enden, werden die Zahlen dem Jahr des ersten Tages des abgeschlossen Geschäftsjahres zugeordnet (z.B. der Geschäftsabschluss von EA wird dem Geschäftsjahr 2017 zugeordnet, da das Geschäftsjahr am 1.4.2017 begann). Die Zahlen von EA stammen also noch vom vorletzten Jahr, da die neusten Zahlen in der [SimFin](https://simfin.com)-Datenbank noch nicht verfügbar sind. Sobald sich dies ändert wird der Beitrag aktualisiert.
 
 ### Stabilität
 
@@ -51,7 +52,7 @@ EA macht am Meisten aus ihrem eingesetzten Kapital. ZNGA fällt deutlich vom Res
 
 ![Margen](gaming_margins.png)
 
-Nach Abzug der Kosten für die verkaufte Ware (COGS) vom Umsatz bleibt EA am Meisten übrig. Alle ausser TTWO haben eine Bruttomarge (Gross margin) über 65 Prozent. Bei der operativen Marge (Operating margin), also nach Abzug von Forschung/Entwicklung sowie Vertriebskosten, sieht das Bild ein wenig anders aus. ZNGA hat noch knapp ein positives Ergebnis. Grund dafür sind hohe Investitionen in Forschung und Entwicklung (ZNGA: 30% des Umsatzes, EA: 29%, ATVI: 15%, TTWO: 8%) und höhere Vertriebskosten als bei der Konkurrenz (ZNGA: 35% des Umsatzes, ATVI/TTWO: 25%, EA: 23%). Am Ende zählt jedoch nur das Geld, welches nach Abzug aller Kosten und Addition von Steuerrückzahlungen und Zinsen resultiert (Net profit margin). Dabei überholt ATVI die Konkurrenz und profitiert dabei von der überdurchschnittlich hohen Steuerbelastung von EA.
+Nach Abzug der Kosten für die verkaufte Ware (COGS) vom Umsatz bleibt EA am Meisten übrig. Alle ausser TTWO haben eine Bruttomarge (Gross margin) von über 65 Prozent. Bei der operativen Marge (Operating margin), also nach Abzug von Forschung/Entwicklung sowie Vertriebskosten, sieht das Bild ein wenig anders aus. ZNGA hat noch knapp ein positives Ergebnis. Grund dafür sind hohe Investitionen in Forschung und Entwicklung (ZNGA: 30% des Umsatzes, EA: 29%, ATVI: 15%, TTWO: 8%) und höhere Vertriebskosten als bei der Konkurrenz (ZNGA: 35% des Umsatzes, ATVI/TTWO: 25%, EA: 23%). Am Ende zählt jedoch nur das Geld, welches nach Abzug aller Kosten und Addition von Steuerrückzahlungen und Zinsen resultiert (Net profit margin). Dabei überholt ATVI die Konkurrenz und profitiert dabei von der überdurchschnittlich hohen Steuerbelastung von EA.
 
 ### Finanzielle Lage
 
@@ -109,7 +110,7 @@ Es gibt jedoch auch neu ins Leben gerufene Indizes, welche den weltweiten Gaming
 Der Performanceindex beinhaltet 20 Einzelaktien und die Indexwährung ist Euro. Die Komponenten des Index sind gleich gewichtet (5 Prozent). Über die Hälfte der Unternehmen haben ihren Sitz in Japan, 30 Prozent in den USA. Performance seit der Auflage Juli 2016: 84%. Weitere Informationen sind auf der Produktseite von Solactive zu finden[^5].
 
 ### MVIS Global Video Gaming and eSports Index (MVESPOTR)
-Der Index von MVIS beachtet nur Firmen, welche mindestens 50 Prozent ihres Umsatzes in den Branchen Gaming und eSport machen. Die Unternehmen müssen eine Marktkapitalisierung von mindestens 150 Mio. USD haben, über ein tägliches Handelsvolumen von mindestens 1 Mio. USD (Durchschnittswert über die letzten 3 Monate) verfügen und es müssen in den letzten sechs Monaten mindestens 250‘000 Aktien gehandelt worden sein. Die Gewichtung erfolgt anhand der Marktkapitalisierung und ist bei 8% gekappt. Aktuell sind 25 Einzelfirmen in diesem Index vertreten (Stand 28. September 2019). Zur Zusammensetzung: 35% USA, 26% Japan, 20% Kaimaninseln. Die  restlichen Prozentpunkte teilen sich Südkorea, Frankreich, Polen und Taiwan. Performance seit Auflage im Dezember 2014: 224%. Weitere Information sind auf der Produktseite von MVIS zu finden[^6].
+Der Index von MVIS beachtet nur Firmen, welche mindestens 50 Prozent ihres Umsatzes in den Branchen Gaming und eSports machen. Die Unternehmen müssen eine Marktkapitalisierung von mindestens 150 Mio. USD haben, über ein tägliches Handelsvolumen von mindestens 1 Mio. USD (Durchschnittswert über die letzten 3 Monate) verfügen und es müssen in den letzten sechs Monaten mindestens 250‘000 Aktien gehandelt worden sein. Die Gewichtung erfolgt anhand der Marktkapitalisierung und ist bei 8% gekappt. Aktuell sind 25 Einzelfirmen in diesem Index vertreten (Stand 28. September 2019). Zur Zusammensetzung: 35% USA, 26% Japan, 20% Kaimaninseln. Die  restlichen Prozentpunkte teilen sich Südkorea, Frankreich, Polen und Taiwan. Performance seit Auflage im Dezember 2014: 224%. Weitere Information sind auf der Produktseite von MVIS zu finden[^6].
 
 [^1]: [Artikel zum Thema CAGR vom DIY Investor](https://diyinvestor.de/cagr-berechnen-wieso-weshalb-warum-und-wie/)
 [^2]: [E-Gaming-Markt im Höhenflug?](https://derinet.vontobel.com/CH/DE/blog/Artikel/e-gaming-markt-im-hoehenflug)
