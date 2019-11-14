@@ -38,14 +38,6 @@ Der Finanzlabor-Blog ist auf den wichtigsten sozialen Medien vertreten:
 * [Instagram](https://www.instagram.com/finanzlabor)
 * [Twitter](https://twitter.com/finanzlabor)
 
-## Kommentare zu den Blog-Artikeln
-Der Blog verzichtet im Moment auf eine eigene Kommentarfunktion. Gründe dafür sind:
-
-* Anonyme Kommentare müssen von Hand freigegeben werden, was den Diskussionsfluss stört.
-* Bestehende Lösungen erfüllen die Anforderungen (Werbefrei, freie Wahl der Authentifizierungsmöglichkeiten) des Autors nicht
-
-Daher werden die Beiträge auf den sozialen Medien verlinkt und können dort kommentiert werden.
-
 ## Disclaimer
 
 Die Beiträge auf diesem Blog sind in keiner Art und Weise als Anlageempfehlung zu verstehen. Der Autor (aka Laborleiter) gibt seine objektive Meinung zu gewissen Anlageprodukten wieder und deklariert deren Besitz innerhalb des jeweiligen Beitrages.

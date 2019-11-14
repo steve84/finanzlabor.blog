@@ -81,3 +81,9 @@ deploy:
 
 sitemap:
   path: sitemap.xml
+
+feed:
+  type: rss2
+  path: rss.xml
+  limit: 20
+  content: false
