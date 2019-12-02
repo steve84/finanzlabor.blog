@@ -10,6 +10,7 @@
     "gulp-clean-css": "^4.2.0",
     "gulp-htmlmin": "^5.0.1",
     "gulp-imagemin": "^6.1.1",
+    "gulp-replace": "^1.0.0",
     "hexo": "^3.9.0",
     "hexo-footnotes": "^1.0.2",
     "hexo-generator-archive": "^0.1.5",
