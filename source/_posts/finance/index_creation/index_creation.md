@@ -1,7 +1,7 @@
 ---
 title: Einen Aktien-Index kreieren - Wie funktioniert das?
 p: finance/index_creation/index_creation.md
-date: 2019-11-24 19:00:00
+date: 2019-11-25 19:00:00
 tags:
 - Theorie
 - Aktien
@@ -17,7 +17,7 @@ Im heutigen Blog-Artikel werden verschiedene Aktienindex-Arten sowie das dazugeh
 
 ## Einleitung
 
-Für die Einführung in das Thema wird zuerst ein Index genauer unter die Lupe genommen, welcher nichts mit Aktien zu tun hat. Der Landesindex der Konsumentenpreise (LIK)[^1] misst die Preisentwicklung anhand eines Warenkorbes. Dieser beinhaltet die wichtigsten, von privaten Haushalten konsumierten Waren und Dienstleistungen. Die Gewichtung der einzelnen Ausgabekategorien sind in der nachfolgenden Grafik ersichtlich:
+Als Einführung in das Thema wird zuerst ein Index genauer unter die Lupe genommen, welcher nichts mit Aktien zu tun hat. Der Landesindex der Konsumentenpreise (kurz LIK)[^1] misst die Preisentwicklung anhand eines fix vorgegebenen Warenkorbs. Dieser beinhaltet die wichtigsten, von privaten Haushalten konsumierten Waren und Dienstleistungen. Die Gewichtung der einzelnen Ausgabekategorien sind in der nachfolgenden Grafik ersichtlich:
 
 ![LIK-Warenkorb und Gewichte, 2019](lik_basket_weights.png)
 
@@ -30,7 +30,7 @@ Bei Aktienindizes sind die einzelnen Komponenten nicht fest vorgegeben, sondern 
 
 ## Freefloat-Marktkapitalisierungsindex
 
-Im restlichen Teil dieses Artikel wird die Bildung eines Freefloat-Marktkapitalisierungindex behandelt.
+Im restlichen Teil dieses Artikels wird die Bildung eines Freefloat-Marktkapitalisierungindex behandelt.
 
 ### Komponenten
 
@@ -78,7 +78,7 @@ Die Indexbasis wird bei der Erstellung eines Index festgelegt. Beim LKI wurde ei
 Der Divisor hat zwei Daseinsberechtigungen. Einerseits wird er dazu verwendet den Indexwert zu Beginn des Index auf eine sinnvolle Grösse zu standardisieren. Der Divisor wird ab dem Tag fortgeschrieben, an dem der Basiswert des Index bestimmt wurde. Andererseits wird er während der gesamten Laufzeit des Index dazu genutzt, um externe Effekte auszugleichen, die zu einer potentiell täglichen Änderung im Marktwert ($\Delta M$) führen können. Diese Effekte haben normalerweise die Form von Corporate Actions (Kapitalereignisse) und ein definiertes Effektivdatum. Daher wird der Divisor täglich angepasst und innerhalb eines Tages konstant gehalten. Berechnet wird der neue Divisor am Abend des Tages bevor die Corporate Action effektiv wird.
 {% endblockquote %}
 
-Um die nachfolgenden Berechnung zu vereinfachen, wird angenommen, dass der zu Beginn festgelegte Divisor konstant bleibt (keine externe Einflüsse).
+Beispiele für Kapitalereignisse sind Dividendenzahlungen oder Aktien-Splits. Um die nachfolgenden Berechnung zu vereinfachen, wird angenommen, dass der zu Beginn festgelegte Divisor konstant bleibt (keine externe Einflüsse).
 
 Ein einfaches Beispiel für die Berechnung des Indexwertes mit einer Feststellung von 1'500 Punkten und einem Divisor von 100:
 
@@ -92,7 +92,7 @@ Ein einfaches Beispiel für die Berechnung des Indexwertes mit einer Feststellun
 
 ### Kappungsfaktor
 
-Ein Kappungsfaktor ($c$) wird benutzt, um das Gewicht einer Indexkomponente im Index zu limitieren. Dieser Faktor wird mithilfe des aktuellen Gewichtes sowie dem maximalen Gewicht im Index berechnet. So wird zum Beispiel die Firma Nestlé (ca. ein Gewicht $g_{ist}$ von 18% im SMI) im SLI nach ca. 9 Prozent ($g_{soll}$) gekappt:
+Ein Kappungsfaktor ($c$) wird benutzt, um das Gewicht einer Indexkomponente im Index zu limitieren. Dieser Faktor wird mithilfe des aktuellen Gewichtes sowie dem maximalen Gewicht im Index berechnet. So wird zum Beispiel die Firma Nestlé (ca. ein Gewicht $g_{ist}$ von 18% im SMI) im SLI (Swiss Leader Index) nach ca. 9 Prozent ($g_{soll}$) gekappt:
 
 $$
 c = {g_{soll} \over g_{ist}} = {9 \over 18} = 0.5
@@ -102,7 +102,7 @@ Wird auf eine Kappung der einzelnen Komponenten verzichtet (z.B. SMI), wird der 
 
 ## Praktischer Teil
 
-Nun wird es Zeit, die theoretischen Inhalte in der Praxis umzusetzen. Ziel dieses letzten Abschnittes ist die Erstellung eines Freefloat-Markapitalisierungsindex mit Hilfe des SimFin-Datenexportes {% post_link data/simfin_transformation/simfin_transformation 'SimFin-Datenexportes' %}. Das nachfolgende Skript wählt die 30 grössten Unternehmungen anhand der Marktkapitalisierung aus:
+Nun wird es Zeit, die theoretischen Inhalte in der Praxis umzusetzen. Ziel dieses letzten Abschnittes ist die Erstellung eines Freefloat-Markapitalisierungsindex mit Hilfe des SimFin-Datenexportes {% post_link data/simfin_transformation/simfin_transformation 'SimFin-Datenexportes' %}. Es wird davon ausgegangen, dass die bereitgestellten Marktkapitalisierungswerte mit Hilfe des Freefloat-Anteils berechnet wurden. Das nachfolgende Skript wählt die 30 grössten Unternehmungen dieser Marktkapitalisierung aus:
 
 {% include_code Skript zur Index-Erstellung lang:python finance/index_creation/indexCreation.py %}
 
