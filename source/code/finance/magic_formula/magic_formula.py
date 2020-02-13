@@ -2,6 +2,7 @@ import pandas as pd
 import numpy as np
 import seaborn as sb
 import matplotlib.pyplot as plt
+from simfin.names import *
 
 
 # Get corresponding index
@@ -20,19 +21,19 @@ def isLonger(p1, p2):
 def createFigure(
         data, x1, x2, label1, label2, filename,
         legend_loc, number_format='%.2f', hscaling=1, vscaling=1):
-    order_list = data['Name'].tolist()
+    order_list = data[COMPANY_NAME].tolist()
 
     # Create subplots
     fig, axes = plt.subplots(1, 1, squeeze=False)
     sb.set_color_codes("pastel")
     # First barplot
     sb.barplot(
-        x=x1, y="Name", data=data, ax=axes[0][0],
+        x=x1, y=COMPANY_NAME, data=data, ax=axes[0][0],
         label=label1, order=order_list, color='b')
     sb.set_color_codes("muted")
     # Second barplot
     sb.barplot(
-        x=x2, y="Name", data=data, ax=axes[0][0],
+        x=x2, y=COMPANY_NAME, data=data, ax=axes[0][0],
         label=label2, order=order_list, color='g')
 
     num_patches = len(axes[0][0].patches)
@@ -77,76 +78,64 @@ sb.set()
 
 # Read SimFin export
 df = pd.read_csv("extracted_data.csv", sep=";")
-# Read SimFin instustries
-df_industries = pd.read_csv("simfin_industries_20180709.csv", sep=",")
-
-# Merge both datasets
-df["Industry Short Code"] = df.get(
-    "Industry Code").apply(lambda x: int(x / 1000))
-df_industries.columns = ["Industry Short Code", "Branch Name"]
-df = df.merge(df_industries, how="left", on="Industry Short Code")
-
-df_industries.columns = ["Industry Code", "Industry Name"]
-df = df.merge(df_industries, how="left", on="Industry Code")
 
 # Convert date string to datetime object
-df["Date"] = pd.to_datetime(df["Date"])
+df[REPORT_DATE] = pd.to_datetime(df[REPORT_DATE])
 
-df['Year'] = df['Date'].map(lambda x: x.year)
-# Calculate fiscal year
-df['FiscalYear'] = df.apply(
-    lambda x: x['Year'] if x['FinYearMonthEnd'] == 12
-    else int(x['Year']) - 1, axis=1)
-df['Month'] = df['Date'].map(lambda x: x.month)
-df['MonthYear'] = df['Date'].map(lambda x: str(x.month) + ' ' + str(x.year))
+df = df.dropna(subset=[INDUSTRY_ID])
+
+df["Industry Short Code"] = df.get(
+    INDUSTRY_ID).apply(lambda x: int(x / 1000))
+
 # Get last financial year
-df['LastFinYear'] = df[df['Month'] == df['FinYearMonthEnd']].groupby(
-    "Ticker").Date.transform("last")
-
-df['Sector'] = df['Industry Code'].map(lambda x: int(x / 1000))
+df['LastReportDate'] = df.groupby(
+    TICKER)[REPORT_DATE].transform("last")
 
 print('Total figures: %d' % len(df))
-df = df[df['Date'] == df['LastFinYear']]
+df = df[df[REPORT_DATE] == df['LastReportDate']]
 print('Total last figures: %d' % len(df))
 
 # Filter market capitalization greater than 50 Mio USD
-df = df[df['Market Capitalisation'] > 50]
+df = df[df[MARKET_CAP] > 50000000]
 # Drop some industries
 df = df[df['Industry Short Code'] != 104]
 df = df[df['Industry Short Code'] != 105]
+# Drop countries other than US
+df = df[df[CURRENCY] == 'USD']
+
 print('Total figures after market cap and industry removals: %d' % len(df))
 
-# Calculate Earnings Yield
-df['EY'] = (df['EBIT'] / df['Enterprise Value']) * 100
+# Calculate Working Capital
 df['Net Working Capital'] = (
-    df['Current Assets'] - df['Cash & Cash Equivalents'] -
-    df['Current Liabilities'])
-df['Net Fixed Assets'] = (
-    df['Total Assets'] - df['Current Assets'] -
-    df['Intangible Assets'] - df['Goodwill'])
+    df[TOTAL_CUR_ASSETS] - df[CASH_EQUIV_ST_INVEST] -
+    df[TOTAL_CUR_LIAB])
+# Calculate Net Fixed Assets (Ignore Intangible Assets and Goodwill)
+df['Net Fixed Assets'] = df[TOTAL_ASSETS] - df[TOTAL_CUR_ASSETS]
 
 # Calculate Return On Capital
 df['ROC'] = (
-    df['EBIT'] / (df['Net Working Capital'] + df['Net Fixed Assets'])) * 100
+    df[OP_INCOME] / (df['Net Working Capital'] + df['Net Fixed Assets'])) * 100
 
 # Drop none available entries
-df = df.dropna(subset=['EY'])
+df = df.dropna(subset=[EARNINGS_YIELD])
 df = df.dropna(subset=['ROC'])
 
 print('Total figures after n.a. removals: %d' % len(df))
 
+df[EARNINGS_YIELD] = df[EARNINGS_YIELD] * 100
+
 # Print out some statistic figures
-print('Median EY: %f' % df['EY'].median())
-print('Mean EY: %f' % df['EY'].mean())
+print('Median EY: %f' % df[EARNINGS_YIELD].median())
+print('Mean EY: %f' % df[EARNINGS_YIELD].mean())
 print('Median ROC: %f' % df['ROC'].median())
 print('Mean ROC: %f' % df['ROC'].mean())
-df['EY_ROC'] = df['EY'] + df['ROC']
+df['EY_ROC'] = df[EARNINGS_YIELD] + df['ROC']
 
 # Number of stocks for the Magic Formula (must be multiple of 2)
 nbrOfStocks = 20
 
 # Rank the numbers
-df['EY_rank'] = df['EY'].rank(
+df['EY_rank'] = df[EARNINGS_YIELD].rank(
     ascending=False, method='min')
 df['ROC_rank'] = df['ROC'].rank(
     ascending=False, method='min')
@@ -158,8 +147,9 @@ figure_data = df.sort_values(
     ascending=True).head(nbrOfStocks)
 
 # Create some figures
+figure_data_without_zynex = figure_data.copy().set_index(['Ticker']).drop(['ZYXI'])
 createFigure(
-    figure_data[1:], 'EY_ROC', 'EY', 'Return On Capital (%)',
+    figure_data_without_zynex, 'EY_ROC', EARNINGS_YIELD, 'Return On Capital (%)',
     'Earnings Yield (%)', 'ey_roc.png', 'lower right',
     vscaling=1.2, hscaling=2)
 createFigure(
@@ -168,13 +158,13 @@ createFigure(
     number_format='%d', vscaling=1.2, hscaling=2)
 
 # Drop outliers
-df_capped = df[df['EY'].between(
-    df['EY'].quantile(0.05), df['EY'].quantile(0.95))]
+df_capped = df[df[EARNINGS_YIELD].between(
+    df[EARNINGS_YIELD].quantile(0.05), df[EARNINGS_YIELD].quantile(0.95))]
 df_capped = df_capped[df_capped['ROC'].between(
     df_capped['ROC'].quantile(0.05), df_capped['ROC'].quantile(0.95))]
 
 # Save density plot
-ax = sb.jointplot('EY', 'ROC', data=df_capped, kind='kde', color="g")
+ax = sb.jointplot(EARNINGS_YIELD, 'ROC', data=df_capped, kind='kde', color="g")
 ax.set_axis_labels('Earnings Yield (%)', 'Return On Capital (%)')
 plt.tight_layout()
 plt.savefig('density_plot.png', format='png')
@@ -182,7 +172,7 @@ plt.savefig('density_plot.png', format='png')
 plt.clf()
 
 # Create industry histogram
-ax = sb.countplot(x='Branch Name', data=figure_data, palette='Blues_d')
+ax = sb.countplot(x=SECTOR, data=figure_data, palette='Blues_d')
 ax.set_xticklabels(ax.get_xticklabels(), rotation=45, ha='right')
 ax.set_ylabel('Amount')
 ax.set_xlabel('Industry')

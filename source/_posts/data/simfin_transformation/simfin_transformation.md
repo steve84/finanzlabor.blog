@@ -10,110 +10,94 @@ categories: Data Mining
 toc: true
 thumbnail: /gallery/thumbnails/data/simfin_transformation/thumbnail.jpg
 ---
-Dieser Blog-Beitrag beschäftigt sich mit der Transformation von Daten. Es kann vorkommen, dass die Struktur von Datenexporten nicht für die Weiterverarbeitung passt. Die von [SimFin](https://simfin.com/) bereitgestellten Bulk-Daten haben einen eher exotischen Aufbau. In unserem Experiment wird ein solcher Export eingelesen und, nach dem Motto "Was nicht passt wird passend gemacht", in einen anderen Export (als CSV) geschrieben. Dazu wird eine Entwicklungsumgebung vorausgesetzt, welche in einem {% post_link data/environment/environment 'älteren Beitrag' %} beschrieben wurde.
+Dieser Blog-Beitrag beschäftigt sich mit der Transformation von Daten. Es kann vorkommen, dass die Struktur von Datenexporten nicht für die Weiterverarbeitung passt. Die von [SimFin](https://simfin.com/) bereitgestellten Bulk-Daten sind in mehrere einzelne Exporte aufgeteilt. In unserem Experiment werden diese eingelesen und, nach dem Motto "Was nicht passt wird passend gemacht", in einen einzelnen Export (als CSV) geschrieben. Dazu wird eine Entwicklungsumgebung vorausgesetzt, welche in einem {% post_link data/environment/environment 'älteren Beitrag' %} beschrieben wurde.
 
 <!-- more -->
 
 ## Theorie
 Bevor mit dem praktischen Teil begonnen werden kann, folgen anbei noch einige theoretische Inhalte. Sie sollen dabei helfen, die bereitgestellte Lösungsvariante besser zu verstehen.
 
-### Datenformat
+### Datensätze
 
-SimFin bietet zwei verschiedene Datenformate an. Welche dies sind und wie sie sich voneinander unterscheiden, soll kurz erläutert werden:
+Auf der SimFin-Website (unter "Bulk Data") ist eine Übersicht der einzelnen Datensätze inklusive deren Attribute zu finden. Mit Hilfe von Filterfunktionen kann die Form des Exports bestimmt werden:
 
-#### Narrow
+* **Datensatz (engl. Dataset)**: Dieser Filter bestimmt, die im Export enthaltenen Attribute. Diese Selektion hat Einfluss auf die weiteren Filteroptionen (diese können zum Beispiel ausgeblendet werden, falls diese für den Export nicht relevant sind). Mehr dazu in einem der nächsten Abschnitte
+* **Markt (engl. Market)**: In der SimFin-Datenbank wird jede enthaltene Firma einem Aktienmarkt zugeteilt. Jeder Markt hat eine Währung, in welcher alle Kennzahlen der darin enthaltenen Unternehmen notiert sind. Im Moment existieren zwei Märkte, welche Fundamentaldaten enthalten (USA und Deutschland, bzw. USD und EUR)
+* **Zeitperiode (engl. Variant)**: Der Zeitintervall der Veröffentlichung der Daten. Die Option "Annual" liefert die Zahlen der Jahresabschlüsse der Firmen, "Quarterly" beinhaltet auch die Quartalszahlen und "Trailing Twelve Months (TTM)" die letzten 12 Monate
+* **Details**: Mit der Option "Full" (nur für zahlende Kunden) werden alle verfügbaren Kennzahlen für den gewählten Datensatz exportiert. "Normal" liefert eine reduzierte Menge an Attributen
 
-Hier gibt es für jedes Unternehmen pro Kennzahl pro Zeitperiode einen Eintrag. Für die Firma Apple sind 11 Geschäftsjahre (ohne Quartalszahlen) mit je 51 Kennzahlen vorhanden. Das sind bereits über 500 Zeilen für ein einziges Unternehmen. Dies erklärt die fast 3 Millionen Einträge in der heruntergeladenen CSV-Datei. Die Datei ist also vertikal aufgebaut.
-
-#### Wide
-
-Bei diesem Format haben wir pro Firma und Kennzahl eine Spalte (horizontaler Aufbau). Die Zeilen stellen Beobachtungszeitpunkte dar, wo mindestens ein Unternehmen eine Kennzahl veröffentlicht hat. Der Nachteil dieses Formates besteht darin, dass ein Unternehmen höchstens 4 Mal im Jahr ihre Zahlen veröffentlicht und es entstehen dadurch viele leer Einträge (Löcher) in der CSV-Datei.
+Die Option "Datensatz" enthält folgende (meist selbsterklärende) Auswahlmöglichkeiten:
+* Bilanz (engl. Balance)
+* Bilanz für Firmen aus dem Bankensektor
+* Bilanz für Firmen aus dem Versicherungssektor
+* Erfolgsrechnung (engl. Income Statement)
+* Erfolgsrechnung für Firmen aus dem Bankensektor
+* Erfolgsrechnung für Firmen aus dem Versicherungssektor
+* Geldflussrechnung (engl. Cash Flow)
+* Geldflussrechnung für Firmen aus dem Bankensektor
+* Geldflussrechnung für Firmen aus dem Versicherungssektor
+* Firmen (engl. Companies)
+* Märkte (engl. Markets)
+* Sketoren/Industrien (engl. Sector/Industry)
+* Aktienkurse (engl. Share Prices)
 
 ### SimFin Python Bibliothek
 
-SimFin bietet eine eigene Python-Bibliothek[^1] an, um die Daten aus einem Bulk-Export zu laden. Diese kann jedoch nur mit Dateien im [Wide](#Wide)-Format umgehen. Das GitHub-Repository beinhaltet ebenfalls einfache Beispiele. Die wichtigsten Funktionen und Klassen der Python-Dateien werden nun etwas genauer unter die Lupe genommen:
+SimFin bietet eine eigene Python-Bibliothek[^1] an, um die einzelnen Datensätze zu laden. Eine gute Einführung, in die Verwendung der Bibliothek, wird in den ersten 5 Kapiteln der zur Verfügung gestellten Tutorials vermittelt:
+* [Basics](https://github.com/SimFin/simfin-tutorials/blob/master/01_Basics.ipynb) (Einführung in die Basisfunktionen sowie in die Datenanalyse mit pandas)
+* [Resampling](https://github.com/SimFin/simfin-tutorials/blob/master/02_Resampling.ipynb) (Anzahl der Beobachtungspunkte erhöhen/verringern)
+* [Growth Returns](https://github.com/SimFin/simfin-tutorials/blob/master/03_Growth_Returns.ipynb) (Berechnung von Wachstumskennzahlen)
+* [Signals](https://github.com/SimFin/simfin-tutorials/blob/master/04_Signals.ipynb) (Berechnung von Kaufs-/Verkaufssignalen)
+* [Data Hubs](https://github.com/SimFin/simfin-tutorials/blob/master/05_Data_Hubs.ipynb) (Von SimFin berechnete Daten, zum Beispiel die Gesamtkapitalrendite, via Hubs beziehen)
 
-Die Klasse *SimFinDataset* in der Datei *extractor.py* hat einen Konstruktor mit folgenden Argumenten:
-* *dataFilePath*: Der Pfad zu dem heruntergeladenen Bulk Export
-* *csvDelimiter*: Der Delimiter, welche beim Herunterladen gewählt wurde. Standardeinstellung ist *semicolon*. Für Komma getrennte Exporte kann z.B. *comma* mitgegeben werden
-* *startDate*: Startdatum der Einträge (Ältere werden nicht geladen) im Format *YYYY-MM-DD*
-* *endDate*: Enddatum der Einträge (Neuere werden nicht geladen) im gleichen Format wie *startDate*
-* *excludeMissing*: Sollen unvollständige Einträge (z.B. eine Kennzahl fehlt) ausgelassen werden. Standardmässig werden alle geladen
-
-Danach sind die Daten in den unten stehenden Feldern abgelegt:
-* *numIndicators*: Anzahl der Indikatoren (Kennzahlen)
-* *numCompanies*: Anzahl der Firmen
-* *companies*: Firmen der Klasse *Company* als Array
-* *timePeriodsDates*: Alle Beobachtungszeitpunkte (Zeilen im CSV)
-
-Die Klasse *Company* in der Datei *extractor.py* repräsentiert ein einzelnes Unternehmen und hat folgende Eigenschaften:
-* *id*: Eine eindeutige Identifikationsnummer, um die einzelnen Unternehmen voneinander zu unterscheiden
-* *name*: Der Name der Firma
-* *ticker*: Das Kürzel
-* *industryCode*: Die Branchen-Zuordnung der Firma. Die ersten 3 Ziffern repräsentieren den Sektor, die Letzten 3 die Industrie innerhalb des Sektors. Die Zuordnungstabelle wurde vor einiger Zeit in einem Forum-Eintrag veröffentlicht[^2]
-* *finYearMonthEnd*: Der Monat, in welchem das Geschäftsjahr endet (als Ganzzahl, z.B. 2 für Februar)
-* *data*: Hier werden die Kennzahlen abgelegt (in einem Array mit Objekten der Klasse *Indicator*, welche wir unten behandeln)
-
-Eine weitere wichtige Klasse ist, wie oben erwähnt, die *Indicator*-Klasse in der Datei *extractor.py*:
-* *name*: Der Name der Kennzahl
-* *values*: Die dazugehörigen Werte der Kennzahl in einem Array
+Die Tutorials wurden mit [Jupyter Notebook](https://jupyter.org/) erstellt. Diese Dokumente enthalten Live Code, Formeln, Visualisierungen sowie normaler Text.
 
 ## Praktischer Teil
 
-Nun zum praktischen Teil. Für den Export soll pro Firma und Zeitpunkt nur eine Zeile existieren. Dies ist einfacher zu lesen und die meisten Datenverarbeitungswerkzeuge erwarten dieses Format.
-
-### Bulk Export herunterladen
-Nach der Anmeldung auf der SimFin-Website kann unter *Data Access* die Option *Bulk Download* gewählt werden. Es stehen verschiedene Varianten des Exports zur Verfügung. Die einzelnen Optionen werden auf der Website kurz und verständlich erklärt (Via "show explanation"). Für unser Experiment werden folgende Einstellungen verwendet:
-* *Dataset*: Stock prices + Fundamentals (Detailed)
-* *Options*
-  * *Update fundamentals & ratios on*: Period end-date
-  * *Time periods fundamentals*: TTM
-  * *General data format*: Wide
-  * *Delimiter string of CSV*: Semicolon
+Nun zum praktischen Teil. Für den Export sollen die verschiedenen Datensätze für alle verfügbaren Unternehmen in eine Export-Datei geschrieben werden. Damit muss für die zukünftige Datenverarbeitung nur eine Datei geladen werden.
 
 ### Vorgehensweise
 
-Nun können die Daten gelesen und in das gewünschte Format konvertiert werden. Die folgenden Schritte zeigen einen möglichen Ablauf eines Python-Programms:
+Die folgenden Schritte zeigen einen möglichen Ablauf eines Python-Programms (in Pseudocode):
 
-1. Laden des Exports mit Hilfe der Klasse *SimFinDataset*
-2. Jedes geladene Unternehmen durchgehen
-3. Alle Beobachtungszeitpunkte untersuchen
-4. Nur Zeitpunkte anschauen, welche auf ein Monatsende fallen
-5. Die Werte in einer Datenstruktur ablegen
-6. Eine neue Zeile in die resultierende CSV-Datei schreiben, falls diese Werte enthält, welche nicht zu folgender Liste gehören:
-  * *Share Price* (Aktienkurs)
-  * *Common Shares Outstanding* (Ausstehende Stammaktien)
-  * *Avg. Basic Shares Outstanding* (Durchschn. ausstehende Aktien)
-  * *Avg. Diluted Shares Outstanding* (Durchschn. ausstehende verwässerte Aktien)
-  * *Market Capitalisation* (Marktkapitalisierung)
-7. Schritte 2-6 wiederholen, bis alle Unternehmen abgearbeitet wurden
+* Alle verfügbaren Märkte laden
+  * Jeden Datensatz (Bilanz, Erfolgsrechnung sowie Geldflussrechnung) durchgehen
+    * Jeden Markt durchgehen
+      * Für den Markt die einzelnen Kennzahlen aus dem Datensatz laden
+    * Alle Resultate der einzelnen Märkte untereinander anfügen
+  * Alle Resultate der einzelnen Datensätze anhängen
+* Alle Unternehmensinformationen laden und wieder anhängen
+* Alle Industrien/Branchen laden und anhängen
+* Alle Märkte erneut durchgehen
+  * Die Aktienpreise laden und anhängen
+* Alle Wertsignale (zum Beispiel KGV) laden und anhängen
+* Alle Finanzsignale (zum Beispiel Gesamtkapitalrendite) laden und anhängen
 
-Für den oben erstellten Ablauf gibt es ein paar Ausnahmen:
-* Für den Aktienkurs muss ein Wochentag verwendet werden. Fällt der Geschäftsabschluss auf einen Samstag oder Sonntag, soll der Wert von dem davor liegenden Freitag genutzt werden.
-* Es kann vorkommen, dass Aussagen zu den ausstehenden Aktien nicht am Tag des Abschlusses protokolliert werden. Daher wird die letzte bereitgestellte (falls diese nach dem letzten Geschäftsabschluss vermerkt wurde) Zahl verwendet
-* Es sollen nur Zeilen geschrieben werden, welche mindestens eine Fundamentalkennzahl enthalten (ein Anzeichen dafür, dass es sich dabei um Quartals- oder Jahreszahlen handelt)
-
+Für den Aktienkurs muss ein Wochentag verwendet werden. Fällt das Datum des Jahres-/Quartalsabschlusses auf einen Samstag oder Sonntag, soll der Wert von dem davor liegenden Freitag genutzt werden.
 
 ## Lösungsbeschreibung
 
-Die Lösung befindet sich unterhalb dieses Abschnittes (kann zugeklappt werden). Es ist nur eine mögliche Lösung für dieses Problem. Nachfolgend werden die Kernpunkte des Skriptes erläutert. **Wichtiger Hinweis**: Damit das Skript funktioniert, müssen die beiden Dateien *extractor.py* und *processSimfin.py* sowie der SimFin-Export *output-semicolon-wide.csv* im gleichen Verzeichnis wie *bulkConverter.py* liegen.
+Die Lösung befindet sich unterhalb dieses Abschnittes (kann zugeklappt werden). Es ist nur eine mögliche Lösung für dieses Problem. Nachfolgend werden die Kernpunkte des Skriptes erläutert.
 
 {% include_code Lösungsdatei lang:python data/simfin_transformation/bulkConverter.py %}
 
-### CSV lesen und schreiben
-Der Export wird mit der Funktion *SimFinDataset* geladen, welche aus der SimFin Bibliothek stammt. Für das Schreiben der neuen Datei wird ein *csv.DictWriter*[^3] verwendet. Dieser ermöglicht es, Schlüssel/Wert-Paare direkt in die Ausgabedatei zu schreiben (ohne sich um die Reihenfolge kümmern zu müssen). Mit dem Attribut *fieldnames* werden die Schlüsselfelder (sowie ihre Reihenfolge) definiert. Um der Datei eine Kopfzeile hinzuzufügen, wird die Funktion *writeheader* einmalig (noch bevor die erste Datenzeile mit *writerow* geschrieben wird) aufgerufen.
+### Attribut-Namen als Konstanten
+Die Bibliothek beinhaltet die einzelnen Feldnamen als Konstanten. Somit ist das Feld "Report Date" in der Variable "REPORT_DATE" hinterlegt. Die Konstanten werden auf der SimFin-Seite ebenfalls aufgeführt.
 
-### Monatsende überprüfen
-Es sollen nur Beobachtungszeitpunkte näher angeschaut werden, welche den letzten Tag eines Monats repräsentieren. Mit Hilfe der Funktion *calendar.monthrange*[^4] wird anhand von Monat und Jahr der erste sowie letzte Tag ermittelt. Dies ist für den Februar sehr hilfreich, weil die Funktion Schaltjahre berücksichtigt.
+### CSV schreiben
+Für das Schreiben der neuen Datei wird die Funktion to_csv[^2] verwendet. Diese schreibt die Daten im pandas-DataFrame (mit den Feld-Namen als Kopfzeile) in eine CSV-Datei.
+
+### Datensätze konkatenieren
+Um die einzelnen Zwischenresultate zu einem kompletten Datensatz zusammen zu fügen, wird die concat[^3]-Funktion von pandas verwendet. Diese verknüpft die einzelnen Teilstücke mit Hilfe der Indizes. Der Parameter axis entscheidet darüber, ob die Daten rechts (axis=0) oder unterhalb (axis=1) angehängt werden. Eine andere Möglichkeit bietet die merge[^4]-Funktion, falls es keine Schnittmenge der Indizes gibt.
 
 ### Wochentag ermitteln
-Die Funktion *weekday* auf dem *datetime*[^5] Objekt ermittelt den dazugehörigen Wochentag. 0 steht für Montag, 6 für Sonntag.
+Die Funktion weekday auf dem datetime[^5] Objekt ermittelt den dazugehörigen Wochentag. 0 steht für Montag, 6 für Sonntag.
 
 ### Laufzeit und Ressourcen
-Die Durchlaufzeit des Skripts hängt stark von der Rechenpower der Maschine ab. Die Funktion zum Laden aller Einträge benötigt einige Gigabytes an Speicher und es kann zu einem MemoryError (vor allem bei 32bit Systemen) kommen. Sollte dies vorkommen, sollte man falls möglich ein anderes System verwenden. Die Einschränkungen mit Hilfe von *startDate*/*endDate* sollten die Menge an verwendetem Speicher reduzieren (danach können die einzelnen, kleineren Exporte zusammengefügt werden).
+Die Durchlaufzeit des Skripts hängt stark von der Rechenpower der Maschine ab. Bei Erstausführung werden alle benötigten Daten auf der lokalen Festplatte abgelegt. Dies braucht Zeit und einiges an Speicherkapazität (ca. 800 MB). Der finale Export beträgt danach nur noch um die 20 MB.
 
-[^1]: [SimFin Repository auf GitHub.com](https://github.com/SimFin/bd-extractor)
-[^2]: [Diskussion im SimFin-Forum zum Thema Industry Codes inkl. CSV-Datei](https://simfin.com/forum/discussion/44/industry-code)
-[^3]: [Offizielle Python-Dokumentation zu csv.DictWriter](https://docs.python.org/3/library/csv.html#csv.DictWriter)
-[^4]: [Offizielle Python-Dokumentation zu calendar.monthrange](https://docs.python.org/3.7/library/calendar.html)
+[^1]: [SimFin Python API](https://simfin.readthedocs.io/en/latest/)
+[^2]: [Offizielle pandas-Dokumentation zu to_csv](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.DataFrame.to_csv.html)
+[^3]: [Offizielle pandas-Dokumentation zu concat](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.concat.html)
+[^4]: [Offizielle pandas-Dokumentation zu merge](https://pandas.pydata.org/pandas-docs/stable/reference/api/pandas.merge.html)
 [^5]: [Offizielle Python-Dokumentation zu datetime](https://docs.python.org/3.7/library/datetime.html#datetime.datetime)

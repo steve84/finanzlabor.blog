@@ -146,7 +146,7 @@ Fazit: Nach 17 Jahren hat die Magic Formula Strategie von ihrem grossen Vorsprun
 
 ## Umsetzung
 
-Für die Umsetzung der Magic Formula Strategie werden wieder die Kennzahlen der SimFin-Datenbank ({% post_link data/gatherdata/gatherdata 'siehe Beitrag' %}) verwendet. Diese beinhaltet alle Zahlen, welche für die Berechnung benötigt werden. Jedoch können die einzelnen Firmen nicht einem Land zugeordnet werden, da diese Information in den Daten fehlt. Daher kann es vorkommen, dass im Endresultat auch Firmen aus anderen Ländern als den USA zu finden sind.
+Für die Umsetzung der Magic Formula Strategie werden wieder die Kennzahlen der SimFin-Datenbank ({% post_link data/gatherdata/gatherdata 'siehe Beitrag' %}) verwendet. Diese beinhaltet fast alle Zahlen, welche für die Berechnung benötigt werden.
 
 ### Zahlenbeispiel
 
@@ -179,7 +179,7 @@ $$
 
 ### Python-Skript
 
-Das nachfolgende Python-Skript untersucht Firmen innerhalb des SimFin-Datensatzes und erstellt Grafiken, welche die 20 besten Aktien anhand der Magic Formula enthalten. Kommentare innerhalb des Programmcodes sollen helfen, die einzelnen Schritte besser nachvollziehen und verstehen zu können.
+Das nachfolgende Python-Skript untersucht Firmen innerhalb des SimFin-Datensatzes und erstellt Grafiken, welche die 20 besten Aktien anhand der Magic Formula enthalten. Kommentare innerhalb des Programmcodes sollen helfen, die einzelnen Schritte besser nachvollziehen und verstehen zu können. Leider sind, in der aktuellen Version des Datensatzes, die beiden Werte "Immaterielle Vermögensgegenstände" und "Firmenwert" nicht mehr in der kostenlosen Variante enthalten. Daher kann die Kapitalrendite nicht mehr korrekt berechnet werden.
 
 {% include_code Lösungsdatei lang:python finance/magic_formula/magic_formula.py %}
 
@@ -187,20 +187,20 @@ Das nachfolgende Python-Skript untersucht Firmen innerhalb des SimFin-Datensatze
 
 Dieser Abschnitt stellt die Resultate des oben eingebundenen Skriptes vor. Nachdem die Firmen anhand von Marktkapitalisierung und Branchen gefiltert wurden, blieben 1'373 Unternehmungen übrig. Die letzten 4 Punkte zeigen die durchschnittlichen Werte (Median und arithmetisches Mittel) der Gewinnrendite (EY) und Kapitalrendite (ROC):
 
-* Total Geschäftsabschlüsse: 65'970
-* Total aktuelle Geschäftsabschlüsse: 2'258
-* Total Geschäftsabschlüsse nach Filterung von Marktkapitalisierung und Branche: 1'562
-* Total vollständige Geschäftsabschlüsse (alle Kennzahlen für die Magic Formula vorhanden): 1'373
-* Median EY: 4.946415%
-* Arithmetisches Mittel EY: 3.280395%
-* Median ROC: 17.128015%
-* Arithmetisches Mittel ROC: 61.977196%
+* Total Geschäftsabschlüsse: 13'861
+* Total aktuelle Geschäftsabschlüsse: 1'761
+* Total Geschäftsabschlüsse nach Filterung von Marktkapitalisierung und Branche: 1'271
+* Total vollständige Geschäftsabschlüsse (alle Kennzahlen für die Magic Formula vorhanden): 1'269
+* Median EY: 3.4467%
+* Arithmetisches Mittel EY: -2.1525%
+* Median ROC: 11.9094%
+* Arithmetisches Mittel ROC: 28.8957%
 
 Die Verteilung der einzelnen Werte befinden sich auf nachfolgender Grafik (Ausreisser wurden vorher entfernt):
 ![Verteilung der Gewinn- sowie Kaitalrendite aller untersuchten Unternehmen](density_plot.png)
 
 Die exakten Werte der Top-20-Unternehmen:
-![Gewinn- sowie Kaitalrendite der Top 20 (Der Eintrag für die Firma Zynerba Pharmaceuticals Inc. wurde zugunsten der Übersichtlichkeit weggelassen)](ey_roc.png)
+![Gewinn- sowie Kaitalrendite der Top 20 (Der Eintrag für die Firma Zynex Inc. wurde zugunsten der Übersichtlichkeit weggelassen)](ey_roc.png)
 
 Die einzelnen Ranglistenplätze der Firmen werden in der untenstehenden Illustration veranschaulicht:
 ![Rangierungen anhand der Magic Formula](ey_roc_rank.png)

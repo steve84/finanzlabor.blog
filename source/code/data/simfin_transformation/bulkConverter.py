@@ -1,108 +1,116 @@
+import pandas as pd
+import simfin as sf
+from simfin.names import *
 import calendar
-import csv
-from extractor import *
+from datetime import timedelta
 
 
-def getSharePrice(dataset, indicator, index):
-    if (
-        dataset.timePeriodsDates[index].weekday() == calendar.SATURDAY and
-        indicator.values[index-1] is not None
-    ):
-        return float(indicator.values[index-1])
-    elif (
-        dataset.timePeriodsDates[index].weekday() == calendar.SUNDAY and
-        indicator.values[index-2] is not None
-    ):
-        return float(indicator.values[index-2])
-
-
-def isEndOfMonth(actualDate):
-    lastDayOfMonth = calendar.monthrange(actualDate.year, actualDate.month)[1]
-    return lastDayOfMonth == actualDate.day
-
-
-def checkHasNoValue(indicatorName, indicator, index):
-    if type(indicatorName) is list:
-        return (indicator.name in indicatorName and
-                indicator.values[index] is None)
+def getDate(d):
+    if d.weekday() == calendar.SATURDAY:
+        return d - timedelta(days=1)
+    elif d.weekday() == calendar.SUNDAY:
+        return d - timedelta(days=2)
     else:
-        return (indicator.name == indicatorName and
-                indicator.values[index] is None)
+        return d
 
 
-def checkValuesOneYearBack(indicator, index):
-    start_index = max(0, index - 365)
-    one_year_back = reversed(range(start_index, index))
-    for year_index in one_year_back:
-        if indicator.values[year_index] is not None:
-            return float(indicator.values[year_index])
+# Wohin sollen die temporären Daten geladen werden
+sf.set_data_dir('pfad/zu/den/simfin/daten')
+# Kostenlose Variante
+sf.set_api_key(api_key='free')
 
-    return None
+# Die möglichen Datensätze
+datasets = ['income', 'balance', 'cashflow']
+
+df_markets = sf.load_markets()
+# Eine Liste aller verfügbaren Märkte
+market_list = df_markets.index.values.tolist()
+
+df_list = list()
+# Alle Datensätze durchgehen
+for ds in datasets:
+    frames = list()
+    # Alle Märkte
+    for mkt in market_list:
+        # Lade den Datensatz für den aktuellen Markt
+        frames.append(sf.load(dataset=ds, variant='annual',
+                              market=mkt, index=[SIMFIN_ID, REPORT_DATE],
+                              parse_dates=[REPORT_DATE, PUBLISH_DATE]))
+    df_list.append(pd.concat(frames))
+
+companies_list = list()
+for mkt in market_list:
+    # Lade alle Firmen
+    companies_list.append(sf.load_companies(index=SIMFIN_ID, market=mkt))
+
+df_companies = pd.concat(companies_list)
+df_companies[SIMFIN_ID] = df_companies.index
+
+# Lade alle Branchen
+df_industries = sf.load_industries()
+
+# Füge die einzelnen Teilstücke rechts aneinander
+df_all = pd.concat(df_list, axis=1)
+df_all[REPORT_DATE] = df_all.index.get_level_values(REPORT_DATE)
+# Entferne mögliche Duplikate
+df_all = df_all.loc[:, ~df_all.columns.duplicated()]
+# Füge die Branche dazu
+df_all = df_all.merge(
+    df_companies.merge(
+        df_industries,
+        how='left',
+        on=INDUSTRY_ID).set_index(SIMFIN_ID),
+    how='left',
+    on=SIMFIN_ID).drop(
+    TICKER + '_y',
+    axis=1)
+df_all[TICKER] = df_all[TICKER + '_x']
+df_all = df_all.drop(TICKER + '_x', axis=1)
+
+df_all = df_all.set_index([TICKER, REPORT_DATE])
+fin_sig_list = list()
+for mkt in market_list:
+    hub = sf.StockHub(market=mkt, refresh_days=30, refresh_days_shareprices=1)
+    # Lade die Finanzsignale für den aktuelle Markt
+    fin_sig_list.append(hub.fin_signals(variant='quarterly'))
+
+df_all = pd.concat([df_all, pd.concat(fin_sig_list)], axis=1)
 
 
-dataset = SimFinDataset('output-semicolon-wide.csv', 'semicolon')
+fin_price_list = list()
+for mkt in market_list:
+    hub = sf.StockHub(market=mkt, refresh_days=30, refresh_days_shareprices=1)
+    # Lade die Aktienpreise für den aktuelle Markt
+    fin_price_list.append(hub.load_shareprices(variant='daily'))
 
-pre_header = ['Name', 'Ticker', 'Industry Code', 'Date', 'FinYearMonthEnd']
+fin_prices = pd.concat(fin_price_list)
 
-fieldsShares = [
-          'Common Shares Outstanding',
-          'Avg. Basic Shares Outstanding',
-          'Avg. Diluted Shares Outstanding',
-]
-fieldsPrice = [
-          'Share Price',
-          'Market Capitalisation'
-]
-fieldsInEveryRow = fieldsPrice + fieldsShares
+df_all = df_all.reset_index(level=[REPORT_DATE])
+df_all['Share Price Date'] = df_all[REPORT_DATE].apply(getDate)
 
+# Füge die Aktienpreise rechts als neue Spalten an
+df_all = pd.merge(
+    df_all, fin_prices, how='left', left_on=[
+        TICKER, 'Share Price Date'], right_on=[
+            TICKER, 'Date'])
 
-with open('extracted_data.csv', 'w') as csvfile:
-    writer = csv.DictWriter(
-        csvfile, delimiter=";",
-        quoting=csv.QUOTE_MINIMAL,
-        fieldnames=(pre_header + [x.name for x in dataset.companies[0].data])
-    )
-    writer.writeheader()
-    for company in dataset.companies:
-        try:
-            # Go through every observation
-            for i in range(0, len(dataset.timePeriodsDates)):
-                # Check if end of month
-                if isEndOfMonth(dataset.timePeriodsDates[i]):
-                    row = dict()
-                    row[pre_header[0]] = company.name
-                    row[pre_header[1]] = company.ticker
-                    row[pre_header[2]] = company.industryCode
-                    row[pre_header[3]] = dataset.timePeriodsDates[i].date()
-                    row[pre_header[4]] = company.finYearMonthEnd
-                    hasValues = False
+val_signals_list = list()
+for mkt in ['us']:
+    hub = sf.StockHub(market=mkt, refresh_days=30, refresh_days_shareprices=1)
+    # Lade die Wertesignale für den aktuelle Markt
+    val_signals_list.append(hub.val_signals(variant='daily'))
 
-                    # Go through every indicator
-                    for indicator in company.data:
-                        indicatorName = indicator.name
-                        indicatorValue = indicator.values[i]
-                        # Special treatment for share price
-                        if checkHasNoValue('Share Price', indicator, i):
-                            row[indicatorName] = getSharePrice(dataset,
-                                                               indicator,
-                                                               i)
-                        # Special treatment for outstanding shares
-                        if checkHasNoValue(fieldsShares, indicator, i):
-                            value = checkValuesOneYearBack(indicator, i)
-                            if value:
-                                row[indicatorName] = value
+val_signals = pd.concat(val_signals_list)
 
-                        # Check if value was found for the given indicator
-                        if indicatorName not in row.keys():
-                            if indicatorValue is not None:
-                                row[indicatorName] = float(indicatorValue)
-                                if indicatorName not in fieldsInEveryRow:
-                                    hasValues = True
-                            else:
-                                row[indicatorName] = None
+df_all['Value Signals Date'] = df_all[REPORT_DATE].apply(getDate)
+# Füge die Wertsignale rechts als neue Spalten an
+df_all = pd.merge(
+    df_all, val_signals, how='left', left_on=[
+        TICKER, 'Value Signals Date'], right_on=[
+            TICKER, 'Date'])
 
-                    if hasValues:
-                        writer.writerow(row)
-        except ValueError as e:
-            print(e)
-            continue
+# Verwerfe Einträge welche kein Jahresabschluss sind
+df_all = df_all.dropna(subset=[FISCAL_YEAR])
+
+# Exportiere die Daten in ein CSV
+df_all.to_csv('extracted_data.csv', sep=';')

@@ -1,5 +1,5 @@
 # Total market capitalisation
-df['MC_sum'] = df['Market Capitalisation'].sum()
+df['MC_sum'] = df[MARKET_CAP].sum()
 # Percentage of total market capitalisation of each company
 df['MC_percentage'] = (df['Market Capitalisation'] / df['MC_sum']) * 100
 # Sort companies by market capitalisation

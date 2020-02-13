@@ -96,7 +96,7 @@ Leider sind nur wenige Fundamentalkennzahlen verfügbar. Google Finance ist idea
 
 Das Ziel von [SimFin](https://simfin.com/) ist, Fundamentaldaten für Privatinvestoren frei verfügbar zu machen. Mit Hilfe von automatisierter Datensammlung und Machine Learning Algorithmen werden die Informationen aufbereitet. Danach werden diese mit Hilfe der Community validiert/korrigiert. Im Moment (Stand Ende September 2019) werden 2'550 Firmen (mehrheitlich US-Aktien) abgedeckt und ca. 281'000 Geschäftsabschlüsse wurden verarbeitet. Die Daten können mit Hilfe zweier uns nun bekannten Methoden abgerufen werden:
 * *API Zugriff*: Als normaler Benutzer können 2'000 Anfragen pro Tag gemacht werden. Für das zehnfache an Aufrufen ist eine Premium-Abo notwendig (SimFin+ regular, 9.99 Euro pro Monat). Für unlimitierten Zugriff werden 29.99 Euro pro Monat fällig
-* *Bulk Download*: Diese Möglichkeit steht allen registrierten Benutzern offen. Die Daten werden als CSV-Datei angeboten und es kann zwischen 4 verschiedenen Datensätzen (Kurs- und Fundamentaldaten, detaillierte Kurs- und Fundamentaldaten, nur Fundamentaldaten, nur detaillierte Fundamentaldaten) gewählt werden. Es kann ebenfalls das Intervall der Aufzeichnungen bestimmt werden (Jahres- oder Quartalszahlen)
+* *Bulk Download*: Diese Möglichkeit steht allen registrierten Benutzern offen. Die Daten werden als CSV-Datei angeboten und es kann zwischen 3 Hauptdatensätzen (Bilanz, Erfolgsrechnung sowie Geldflussrechnung) gewählt werden. Kennzahlen von Unternehmen, welche in der Bank- sowie Versicherungbranche tätig sind, werden getrennt von den anderen Branchen bereitgestellt. Die einzelnen Firmen sind einem Aktienmarkt eines bestimmten Landes zugeordnet. Aktuell gibt es zwei Märkte, welche gewählt werden können (USA und Deutschland). Es kann ebenfalls das Intervall der Aufzeichnungen bestimmt werden (Jahres- oder Quartalszahlen).
 
 ### Quandl
 
@@ -133,7 +133,7 @@ https://wallmine.com/screener/csv?d=d&f=e&o=m&page=282&r=cu
 
 ## Ausblick
 
-Für die weiteren Verarbeitungsschritte sind wir auf eine solide Datenbasis angewiesen. In einem der nächsten Beiträge werde ich zeigen, wie die Daten von SimFin bezogen und in ein eigenes Format
+Für die weiteren Verarbeitungsschritte sind wir auf eine solide Datenbasis angewiesen. In einem {% post_link data/simfin_transformation/simfin_transformation 'nächsten Beitrag'%} werde ich zeigen, wie die Daten von SimFin bezogen und in ein eigenes Format konvertiert werden.
 
 [^1]: [Dev Insider: Was ist REST API?](https://www.dev-insider.de/was-ist-rest-api-a-667357)
 [^2]: [Einführung in JSON](https://www.json.org/json-de.html)
