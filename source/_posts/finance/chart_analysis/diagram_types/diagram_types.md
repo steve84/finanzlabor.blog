@@ -1,7 +1,7 @@
 ---
 title: Technische Analyse mit Python – Teil 1 - Diagramm-Typen und Handelsvolumen
 p: finance/chart_analysis/diagram_types/gaming_stocks.md
-date: 2020-04-27 20:00:00
+date: 2023-04-27 20:00:00
 tags:
 - Technische Analyse
 - Data Visualization
@@ -42,7 +42,7 @@ TA-Lib wird im ersten Teil der Serie noch nicht verwendet, die Installation dien
 Auf der Seite von Christoph Gohlke wird unter TA-Lib die Version, anhand der oben ermittelten Informationen, heruntergeladen. Die beiden Ziffern nach den Kleinbuchstaben cp stehen für die Python-Major-Version (cp37 für die Version 3.7.x), win32 für 32-Bit-Systeme und win-amd64 für 64-Bit-Systeme. Nachdem das Herunterladen der Datei abgeschlossen ist, wird diese mit Hilfe des folgenden Befehls installiert:
 
 {% codeblock lang:bash %}
-python install TA_Lib-0.4.17-cp37-cp37m-win_amd64.whl
+pip install TA_Lib-0.4.17-cp37-cp37m-win_amd64.whl
 {% endcodeblock %}
 
 Somit steht der Erstellung eines neuen Charts nichts mehr im Wege.
