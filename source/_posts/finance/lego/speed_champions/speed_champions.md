@@ -29,7 +29,33 @@ Um an die gewünschten Informationen zu kommen, wurden mehrere Quellen verwendet
 
 Dieser Blog-Beitrag beinhaltet nur die Auswertung der gesammelten Daten. Das Vorgehen für die Sammlung der Daten sowie deren Visualisierung wird zu einem späteren Zeitpunkt veröffentlicht.
 
-Um die "Speed Champions" miteinander vergleichen zu können, wurden die Sets, welche mehr als ein Fahrzeug oder zusätzliche, grössere Accessoires (z.B. eine Werkstatt oder ein Forschungszentrum) beinhalten, ausgeschlossen. Durch diese Einschränkungen bleiben 23 Modelle übrig, welche im Rahmen dieses Beitrages näher unter die Lupe genommen wurden. Die verwendeten Daten wurden Ende April dieses Jahr aufgezeichnet.
+Um die "Speed Champions" miteinander vergleichen zu können, wurden die Sets, welche mehr als ein Fahrzeug oder zusätzliche, grössere Accessoires (z.B. eine Werkstatt oder ein Forschungszentrum) beinhalten, ausgeschlossen. Durch diese Einschränkungen bleiben 23 Modelle (siehe Tabelle) übrig, welche im Rahmen dieses Beitrages näher unter die Lupe genommen wurden. Die verwendeten Daten wurden Ende April dieses Jahr aufgezeichnet.
+
+|Set-Nr.|Produkt-Beschreibung                           |Veröffentlichungsjahr|UVP (CHF)|
+|-----|--------------------------------|----|----|
+|75899|LaFerrari                       |2015|19.9|
+|75908|458 Italia GT2                  |2015|19.9|
+|75909|McLaren P1                      |2015|19.9|
+|75910|Porsche 918 Spyder              |2015|19.9|
+|75870|Chevrolet Corvette Z06          |2016|19.9|
+|75871|Ford Mustang GT                 |2016|19.9|
+|75872|Audi R18 e-tron quattro         |2016|19.9|
+|75873|Audi R8 LMS ultra               |2016|19.9|
+|75877|Mercedes-AMG GT3                |2017|19.9|
+|75878|Bugatti Chiron                  |2017|19.9|
+|75879|Scuderia Ferrari SF16-H         |2017|19.9|
+|75880|McLaren 720S                    |2017|19.9|
+|75884|1968 Ford Mustang Fastback      |2018|19.9|
+|75885|Ford Fiesta M-Sport WRC         |2018|19.9|
+|75886|Ferrari 488 GT3 'Scuderia Corsa'|2018|19.9|
+|75887|Porsche 919 Hybrid              |2018|19.9|
+|75890|Ferrari F40 Competizione        |2019|19.9|
+|75891|Chevrolet Camaro ZL1 Race Car   |2019|19.9|
+|75892|McLaren Senna                   |2019|19.9|
+|75895|1974 Porsche 911 Turbo 3.0      |2019|19.9|
+|76895|Ferrari F8 Tributo              |2020|26.9|
+|76896|Nissan GT-R NISMO               |2020|26.9|
+|76897|1985 Audi Sport quattro S1      |2020|26.9|
 
 ## Analyse
 
