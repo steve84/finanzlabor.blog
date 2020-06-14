@@ -1,84 +1,103 @@
 ---
-title: Technische Analyse mit Python – Teil 1 - Diagramm-Typen und Handelsvolumen
+title: "Technische Analyse – Teil II: Grundlagen"
 p: finance/chart_analysis/diagram_types/gaming_stocks.md
-date: 2023-04-27 20:00:00
+date: 2020-06-14 18:00:00
 tags:
 - Technische Analyse
 - Data Visualization
-- Python
+- Aktien
 categories: Finanzen
 toc: true
 thumbnail: /gallery/thumbnails/finance/chart_analysis/diagram_types/thumbnail.jpg
 ---
 
-Alle bisherigen Beiträge auf diesem Blog befassten sich ausschliesslich mit der Analyse von Fundamentaldaten. In der, in den nächsten Wochen folgenden Serie von Beiträgen, wird das Thema Chartanalyse (bezw. technische Analyse) behandelt.
-
-In diesem Artikel geht es um die Darstellung von Aktienkursen mit Hilfe von diversen Python-Bibliotheken. Deren Installation wird im ersten Abschnitt erläutert, danach werden die verschiedenen Diagramm-Typen vorgestellt. Grafiken mit unterschiedlichen Zeitintervallen inklusive Handelsvolumen werden im praktischen Teil des Beitrags erstellt.
+Diagramme sind Grafiken, welche zur Darstellung von Daten, Sachverhalten oder Informationen verwendet werden. In der technischen Analyse beinhalten diese in der Regel ein zweidimensionales kartesisches Koordinatensystem, welche aus einer Abszissen- (horizontal) und einer Ordinatenachse (vertikal), welche orthogonal (im rechten Winkel) aufeinander stehen, bestehen. Der Schnittpunkt der beiden Achsen wird Ursprung genannt. Auf der x-Achse (Abszisse) wird im Normalfall die Zeit, auf der y-Achse der Preis abgetragen. Da weder Zeit noch Preis negative Werte annehmen können, werden die Datenpunkte im ersten Quadrant des Koordinatensystems abgebildet. Um gewisse Sachverhalte besser darstellen zu können, kann es vorkommen, dass nur bestimmte Abschnitte der beiden Achsen sichtbar sind. Bewegt sich eine Preis im beobachteten Zeitfenster zwischen 30 und 50 USD, werden die Bereiche von 0 bis 25 sowie 55+ nicht dargestellt. Moderne Chart-Software führt diese Optimierung automatisch aus, sobald eine vordefinierte oder fixe Zeitspanne ausgewählt wurde. Die Mehrheit der Diagramme verwenden lineare Koordinaten – Die Differenz zwischen zwei Koordinatenpunkten, auf der dazugehörigen Achse, haben immer den gleichen Wert. Bei einer logarithmischen Skala wird der Wertunterschied zwischen zwei Koordinaten immer grösser, je weiter weg man sich vom Ursprung bewegt.
 
 <!-- more -->
 
-## Installation von Python-Bibliotheken
+Es besteht die Möglichkeit, die Preisentwicklung in verschiedenen Zeitspannen wiederzugeben. Nach Abschluss eines solchen Intervalls werden die fünf Messgrössen (Eröffnungs-, Höchst-, Tiefst- und Schlusskurs sowie Volumen) festgehalten. Eine Dauer von unter vier Stunden wird für kurzfristigere Analysen (Daytrading), längere Zeiträume für langfristiges handeln verwendet.
 
-Um die nachfolgenden Zeichnungen zu erzeugen, wird eine Entwicklungsumgebung vorausgesetzt. Wie diese aufgesetzt wird, wurde bereits in einem {% post_link data/environment/environment 'älteren Beitrag' %} erklärt.
+Inhaltsverzeichnis der Serie "Technische Analyse":
 
-Folgende Bibliotheken werden verwendet:
-* yfinance[^1] (Aktienkurse von Yahoo Finance)
-* mplfinance[^2] (Darstellung von Aktienkursen)
-* ta-lib (Hilfsmittel für technische Analysen)
-* pandas (Datenanalyse)
+* {% post_link finance/chart_analysis/introduction/introduction 'Einführung (Begriffsdefinition, Dow Theorie)' %}
+* *Grundlagen (verschiedene Diagrammtypen, Zeitintervalle, Widerstands- und Unterstützunglinien)*
+* Trendlinien/-kanäle
+* Volumen und Lücken (Gaps)
+* Preismuster (Double Top, Flaggen, Rechtecke, uvm.)
+* Kerzenmuster (Hanging Man, Marubozu, Spinning Top, uvm.)
+* Fibonacci (Geschichte, Definition, Retracement Levels)
+* Technische Indikatoren (Gleitende Durchschnitte, Bollingerbänder)
+* Oszillatoren (RSI, MACD, Momentum, uvm.)
+* Technische Umsetzung mit Python (Installation, Diagramme zeichnen, Mustererkennung)
 
-Die einzelnen Pakete können via Anaconda Prompt installiert werden:
+## Chart-Typen
 
-{% codeblock lang:bash %}
-pip install yfinance mplfinance pandas
-{% endcodeblock %}
+Es existieren unzählige verschiedene Diagrammtypen. In diesem Kapitel werden fünf davon näher vorgestellt und mit Beispielen ergänzt.  Als Datenquelle dient die Kursentwicklung des iShares ACWI ETFs von der Firma MSCI Inc. ETFs iShares ACWI, welcher den Referenzindex MSCI All Coutry World Index (ACWI) abbildet. Der Fond wird an der NASDAQ in US Dollar gehandelt.
 
-### TA-Lib
+### Linie (Line)
 
-TA-Lib wird im ersten Teil der Serie noch nicht verwendet, die Installation dient als Vorbereitung für die weiteren Teile. Um die Bibliothek auf der Entwicklungsumgebung zu installieren, sollte ein vorkompiliertes Paket verwendet werden. Um die korrekte Datei herunterzuladen, müssen zuerst Informationen über Betriebssystem und installierte Python-Version beschafft werden:
-* Python-Version ermitteln: *python \-\-version*
-* Windows-Systemtyp: Mit der [Hilfestellung von Microsoft](https://support.microsoft.com/de-ch/help/13443/windows-which-version-am-i-running) ermitteln, ob ein 32 oder 64-Bit System verwendet wird
+Das Linien-Diagramm ist eines der bekanntesten Diagramm-Typen überhaupt. Dabei werden die abgetragenen Datenpunkte durch gerade Linien miteinander verbunden. Damit werden normalerweise die Schlusskurse einer Aktie visualisiert. Auf dem Beispiel-Diagramm sind die täglichen Schlusskurse seit Jahresbeginn (YTD) eingezeichnet. Die beiden Trend-Phasen (Beginn der Corona-Krise sowie die anschliessende Erholung)
 
-Auf der Seite von Christoph Gohlke wird unter TA-Lib die Version, anhand der oben ermittelten Informationen, heruntergeladen. Die beiden Ziffern nach den Kleinbuchstaben cp stehen für die Python-Major-Version (cp37 für die Version 3.7.x), win32 für 32-Bit-Systeme und win-amd64 für 64-Bit-Systeme. Nachdem das Herunterladen der Datei abgeschlossen ist, wird diese mit Hilfe des folgenden Befehls installiert:
+![MSIC ACWI ETF, Typ: Linie (Line), Periode: 1 Tag](line_chart_1d_ACWI.png)
 
-{% codeblock lang:bash %}
-pip install TA_Lib-0.4.17-cp37-cp37m-win_amd64.whl
-{% endcodeblock %}
+### Kerzen (Candlestick)
 
-Somit steht der Erstellung eines neuen Charts nichts mehr im Wege.
+Der Kerzenkörper (engl. body) zeigt den Eröffnungskurs sowie den Schlusskurs an. Ist dieser grün (bzw. weiss), war dieser am Ende der Beobachtung höher als zu Beginn. Ein roter (bzw. schwarze) Körper zeigt das Gegenteil an. Das Ende des Kerzendochts (engl. shadows oder wicks) zeigt den höchsten beziehungsweise tiefsten Wert innerhalb einer Beobachtung. Im unten abgebildeten Kerzen-Chart zum ACWI ETF sind nicht nur die Schlusskurse, sondern auch die Geschichte der Entstehung derjenigen, ersichtlich. Die Entstehung einer Lücke (Gap), welche in einem späteren Beitrag dieser Serie vorgestellt wird, ist in einem Linien-Diagramm nicht sichtbar. Diese, am 11. Juni 2020 entstandene Gegebenheit, ist für manche Chart-Techniker ein wichtiger Hinweis für den weiteren Kursverlauf.
 
-## Praktischer Teil
+![MSIC ACWI ETF, Typ: Kerzen (Candlestick), Periode: 1 Tag](candle_chart_1d_ACWI.png)
 
-Mplfinance unterstützt zurzeit (oder in einer der nächsten Versionen) folgende Diagramm-Typen:
+Es existieren Ableitungen wie zum Beispiel die Heikin-Ashi-Kerzen, welche mit Hilfe der OHLC-Werte berechnet werden:
 
-* Kerzen (engl. Candlestick): Der Kerzenkörper zeigt den Eröffnungskurs sowie den Schlusskurs an. Ist dieser grün (bzw. weiss), war der am Ende der Beobachtung höher als zu Beginn. Eine rote (bzw. schwarze) Kerze zeigt das Gegenteil an. Das Ende des Kerzendochts zeigt den höchsten beziehungsweise tiefsten Wert innerhalb der Beobachtung.
-* OHLC (Open, High, Low, Close): Hat im Gegensatz zu den Kerzen keinen ausgefüllten Körper sonder markiert Eröffnung (links) und Schluss (rechts) mit einem simplen Querstrich
-* Linie (engl. Line): Zeigt nur die Schlusskurse an und verbindet die einzelnen Beobachtungen miteinander
-* Renko: Dieser Chart-Typ zeigt nur eine Veränderung an, wenn der Kurs eine vordefinierte Veränderung erfährt. Alle Elemente haben die gleiche Länge und unterscheiden sich nur durch ihre Farbe (grün: positive Bewegung, rot: negative Bewegung) und Position (jedes Element schliesst direkt an seinen Vorgänger an). Lange Seitwärtsbewegungen ohne grosse Schwankungen sind daher nicht auf dem Diagramm ersichtlich.
+$$
+C_t = {1 \over 4 (P_Ot + C_t + H_t + L_t)}
+$$
 
-Um eines der oben erwähnten Diagramme als Grafik zu erstellen, werden aktuelle Börsendaten benötigt. Mit der installierten Anwendung *yfinance* können die Daten von Yahoo Finance bezogen werden. Dazu wird lediglich, dass zum Wertpapier zugehörige Symbol benötigt. Die Symbol-Bezeichnungen können auf der Website von [Yahoo Finance](https://finance.yahoo.com/) gefunden werden. Dazu wird einfacher der Name des gesuchten Wertpapiers in die Suche eingegeben, danach kann das Kennzeichen aus den Vorschlägen entnommen werden (links vor den Namen).
+$$
+Open = {1 \over 2 ({Open of prev. Bar} + Close of prev. Bar)}
+$$
 
-Mit der *history*-Methode können historische Kursdaten geladen werden. Als Parameter können *period* (Zeitraum der Beobachtungen) und *interval* (Häufigkeit der Beobachtungen) mitgegeben werden. Alle möglichen Werte können aus dem Blogartikel des Entwicklers entnommen werden.
+$$
+High = {Max[High, Open, Close]}
+$$
 
-Die einzelnen Charts können mit mplfinance kreiert und als Datei abgespeichert werden. Die Dokumentation beinhaltet einige Beispiele und kann bei Fragen und Problemen konsultiert werden. Leider ist diese auf eine neuere Version der Software aufgebaut. So können zum Beispiel noch keine Renko-Diagramme gezeichnet werden. Mit der Methode *plot* werden die Kurse zum Leben erweckt.
+$$
+Low = {Min[Low, Open, Close]}
+$$
 
-Die Bibliothek bietet auch die Möglichkeit, das Handelsvolumen in die diversen Kursverläufe zu integrieren. Diese werden in den unteren Bereich der Grafik integriert und zeigen die Anzahl der gehandelten Wertpapiere pro Zeitintervall auf.
+Dabei handelt es sich um eine sehr einfache Form der Berechnung, es existieren noch weit komplexere Formeln für die Konstruktion des Kerzentyps. Durch die Glättung dieser Werte wirkt die Kerzenabfolge harmonischer. Damit werden zum Beispiel rote „Störkerzen" in einem positiven Trend, mit mehrere grünen Kerzen, eliminiert.
 
-### Diagramme mit Python erstellen
+![MSIC ACWI ETF, Typ: Heikin-Ashi-Kerzen, Periode: 1 Tag](heikin_ashi_candle_chart_1d_ACWI.png)
 
-Das nachfolgende Code-Stück erstellt 4 verschiedene Bilder. Als Grundlage dienen die Kurse des ETFs iShares ACWI, welcher den Referenzindex MSCI All Coutry World Index (ACWI) abbildet. Der ETF wird an der NASDAQ in US Dollar gehandelt. Alle Graphen, mit Ausnahme des Letzten, verfügen über einen Intervall von einem Tag. Der Letzte signalisiert nur jede Handelswoche eine Beobachtung. Alle drei möglichen Diagramm-Typen sind vertreten und eines der Kerzen-Diagramme enthält zusätzlich das dazugehörige Handelsvolumen.
+### Balken (Bar)
+Dieser Diagrammtyp hat im Gegensatz zu den Kerzen keinen ausgefüllten Körper sonder markiert Eröffnung (links) und Schluss (rechts) mit einem simplen Querstrich. Diese schlankere Abwandlung der Kerzencharts ist für die Kombination mit anderen Diagramm-Typen (zum Beispiel eine Überlagerung des gleitenden Durchschnittes in Form einer Linie) ideal.
 
-{% include_code Diagramm-Typen mit Python erstellen lang:python finance/chart_analysis/diagram_types/diagram_types.py %}
+![MSIC ACWI ETF, Typ: Balken (Bar), Periode: 1 Tag](bar_chart_1d_ACWI.png)
 
-Während der Ausführung der Python-Datei in der Kommandozeile wurden folgende Bilder erstellt:
+### Renko
+Dieser Chart-Typ zeigt nur eine Veränderung an, wenn der Kurs eine vordefinierte Veränderung erfährt. Die Zeitachse hat daher keinen linearen Verlauf wie die bis hierhin vorgestellten Typen. Die einzelnen Elemente haben alle die gleiche Länge und Höhe, sie unterscheiden sich nur durch ihre Farbe (grün: positive Bewegung, rot: negative Bewegung) und Position (jedes Element schliesst direkt an der oberen oder unteren Ecke seines Vorgängers an). Lange Seitwärtsbewegungen ohne grosse Schwankungen sind daher nicht auf dem Diagramm ersichtlich. Um von einer Aufwärtsbewegung in eine Abwärtsbewegung (oder umgekehrt) zu wechseln, muss der Preis sich um mindestens das Zweifache der vordefinierten Veränderung bewegen. In der, mit Hilfe von tradingview erstellten Grafik, sind die beiden aktuellsten Trendphasen sehr gut ersichtlich. Es wurde ein Betrag von 3 USD als Blockhöhe festgelegt und es braucht daher eine Gegenbewegung von 6 USD um einen Farbwechsel zu bewirken Allgemein ist das Renko-Diagramm perfekt dazu geeignet, um primäre Trendphasen zu visualisieren. Die Striche unter- oder oberhalb der Renko-Bauklötze zeigen an, ob in der Zeitdauer zwischen aktuellem und nachfolgendem Block ein Preis, welcher eine Trendwende herbei gefügt hätte, existiert hat. Da es sich dabei nicht um den Schlusskurs gehandelt hat, wurde kein neuer Block in entgegengesetzter Farbe an die bestehende Kette angehängt. Diese Hilfslinien treten meistens kurz vor und kurz nach einer Trendumkehrung auf.
 
-![Typ: Kerzen (Candlestick), Periode: 1 Tag](candle_chart_1d_ACWI.png)
-![Typ: OHLC, Periode: 1 Tag](ohlc_chart_1d_ACWI.png)
-![Typ: Linie (Line) inkl. Volumen, Periode: 1 Tag](line_chart_1d_ACWI.png)
-![Typ: Kerzen (Candlestick), Periode: 5 Tage](candle_chart_1w_ACWI.png)
+![MSIC ACWI ETF, Typ: Renko, Periode: 1 Tag](renko_chart_1d_ACWI.png)
 
-Der nächste Teil der Serie befasst sich mit Unterstützungs -und Trendlinien, gleitende Durchschnitte  und Bändern.
+### Point and Figure
+Die „Point and Figure"-Diagramme (kurz P&F) haben grosse Ähnlichkeit mit den Renko-Diagrammen. Bewegungen, welche die geforderte Preisdifferenz übersteigen, werden mit X‘s (positive Bewegung) und O‘s (negative Bewegung) in die Grafik eingezeichnet. Zusätzlich wird noch die Mindestanzahl definiert, welche benötigt wird, um eine Umkehrung herbeizuführen. Im Gegensatz zu den Renko-Charts (mindestens 2) ist dieser Wert frei wählbar. Oft verwendete Grössen für diesen Parameter sind 1, 2 oder 3. Der Titel eines solchen Charts beinhaltet meistens diese beiden Informationen. Die Zeichenfolge „1 x 3" bedeutet, dass sich der Preis um mindestens 1 Einheit verändern muss, um auf der Grafik sichtbar zu werden. Beträgt die Differenz 3 Einheiten, wird eine neue Spalte mit dem anderen Zeichen begonnen. Daher besteht eine Spalte aus mindestens 3 Symbolen (beziehungsweise 1 für eine 1-Punkt-Umkehrung, 2 für eine 2-Punkte-Umkehrung). Für das Beispiel einer 3-Punkte-Umkehrung wurde eine geforderte Preisdifferenz von 1.5 USD festgelegt. Auch hier sind die beiden Corona-Trendphasen in den letzten beiden Spalten ersichtlich. Aktuell ist der Kurs noch 1.19 USD davon entfernt, eine Umkehrung bei 72 USD herbeizuführen (letztes X bei 76.50 USD, aktueller Preis 73.19 USD, Betrag für die Umkehrung 3 x 1.5 USD = 4.5 USD). Bei einer 2-Punkte-Umkehrung würde die letzte Spalte aus 2 O‘s bestehen.
 
-[^1]: [Blog-Beitrag über die Verwendung von yfinance](https://aroussi.com/post/python-yahoo-finance)
-[^2]: [Wiki-Seit von mplfinance (inkl. diverser Beispiele)](https://github.com/matplotlib/mplfinance)
-[^3]: [Seite mit vorkompilierten TA-Lib Paketen](https://www.lfd.uci.edu/~gohlke/pythonlibs)
+![MSIC ACWI ETF, Typ: Point and Figure, Periode: 1 Tag](pf_chart_1d_ACWI.png)
+
+## Unterstützungs-/Widerstandslinien
+
+Die Unterstützungs- beziehungsweise Widerstandslinie ist eine horizontale Gerade, an welcher die Preisbewegungen mehrfach abprallen und sich nach der Berührung in die gegen gesetzte Richtung weiter bewegen. Je häufiger eine solche Linie getestet (touchiert) wird, umso signifikanter wird diese. Wird diese imaginäre Marke nach mehrmaligem testen durchbrochen, findet ein Rollenwechsel statt. Dabei wird ein Widerstand zu einer Unterstützung und umgekehrt. Dieser Rollentausch ist im Kerzen-Diagramm der Unilever-Aktie gegen Ende von Q1 2019 gut ersichtlich.
+
+![Unilever NV, Typ: Kerzen (Candlestick), Periode: 1 Tag](candle_chart_1d_support_resistance_UNA.AS.png)
+
+Das Zeichnen einer solchen Geraden ist keine exakte Wissenschaft und es gibt mehrere Vorgehensweisen um diese zu erstellen. Mehrheitlich werden die beiden Enden der Preisentwicklung innerhalb einer Zeitperiode verwendet. Dazu wird die Linie mit Hilfe eines Kerzen-Charts bestmöglich an die Enden der einzelnen Kerzendochte konstruiert. Eine gewisse Ungenauigkeit muss jedoch in Kauf genommen werden, da nicht jeder Docht exakt auf der gezeichneten Linie enden wird. Dieses Problem ist auf dem Kerzendiagramm der Nestlé-Aktie gut ersichtlich. Die eingezeichnete Widerstandslinie wird fünfmal getestet und wird im ersten Quartal 2019 durchbrochen. Bei den Schnittpunkten 2 bis 4 endet die Verlängerung der Kerze fast exakt auf der gezogenen Geraden. Der obere Docht der sechsten Kerze endet mit einem deutlich grösseren Abstand als seine Nachfolger.
+
+![Nestlé SA, Typ: Kerzen (Candlestick), Periode: 1 Tag](candle_chart_5d_support_resistance_NESN.SW.png)
+
+In der Nähe solcher Linien ist häufig ein erhöhtes Handelsvolumen zu beobachten. Die Wahrscheinlichkeit, dass sich der Preis in der nahen Zukunft weiter von der berührten Linie wegbewegt (abprallt), steigt. Oft entstehen die Marken bei runden Zahlen, da sich die menschliche Psyche damit wohler fühlt. Manche Broker runden exotische Beträge automatisch auf die nächste Zwischenstufe auf (z.B. in Stufen von 5 Rappen beziehungsweise Cents) oder ab.
+
+## Ausblick
+
+Widerstands- und Unterstützungslinien sind eine Spezialform von Trendlinien, welche im nächsten Artikel der Serie, zusammen mit den Trendkanälen, erklärt werden.
+
+
+[^1]: ["Heikin-Ashi: A Better Candlestick", Investopedia](https://www.investopedia.com/trading/heikin-ashi-better-candlestick)
