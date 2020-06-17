@@ -46,22 +46,22 @@ Der Kerzenkörper (engl. body) zeigt den Eröffnungskurs sowie den Schlusskurs a
 
 ![MSIC ACWI ETF, Typ: Kerzen (Candlestick), Periode: 1 Tag](candle_chart_1d_ACWI.png)
 
-Es existieren Ableitungen wie zum Beispiel die Heikin-Ashi-Kerzen, welche mit Hilfe der OHLC-Werte berechnet werden:
+Es existieren Ableitungen wie zum Beispiel die Heikin-Ashi-Kerzen, welche mit Hilfe der OHLC-Werte ($P_O$, $P_H$, $P_L$ und $P_C$) - des vorhergehenden $t-1$ sowie aktuellen Tages $t$ - berechnet werden:
 
 $$
-C_t = {1 \over 4 (P_Ot + C_t + H_t + L_t)}
-$$
-
-$$
-Open = {1 \over 2 ({Open of prev. Bar} + Close of prev. Bar)}
+P_{C_{t}} = {\frac{1}{4} (P_{O_{t}} + P_{C_{t}} + P_{H_{t}} + P_{L_{t}})}
 $$
 
 $$
-High = {Max[High, Open, Close]}
+P_{O_{t}} = {\frac{1}{2} (P_{O_{t-1}} + P_{C_{t-1}})}
 $$
 
 $$
-Low = {Min[Low, Open, Close]}
+P_{H_{t}} = {Max[P_{H_{t}}, P_{O_{t}}, P_{C_{t}}]}
+$$
+
+$$
+P_{L_{t}} = {Min[P_{L_{t}}, P_{O_{t}}, P_{C_{t}}]}
 $$
 
 Dabei handelt es sich um eine sehr einfache Form der Berechnung, es existieren noch weit komplexere Formeln für die Konstruktion des Kerzentyps. Durch die Glättung dieser Werte wirkt die Kerzenabfolge harmonischer. Damit werden zum Beispiel rote „Störkerzen" in einem positiven Trend, mit mehrere grünen Kerzen, eliminiert.
