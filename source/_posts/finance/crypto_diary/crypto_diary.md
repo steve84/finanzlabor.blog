@@ -17,6 +17,36 @@ Fast vier Jahre hat es gedauert, bis ich mir die Zeit genommen hatte, in die unb
 
 **Hinweis in eigner Sache (Werbung)**: Ich verwende für den Kauf/Verkauf von Kryptowährungen die Börse Binance (die Gründe dafür werden in den nächsten Zeilen aufgeführt). Diese betreibt das [Binance Referral Program](https://www.binance.com/en/activity/referral), welches einen Bruchteil der Transaktionskosten an die Kunden zurückzahlt (Kickback). Wenn Ihr euch über [meinen Link](https://accounts.binance.com/de/register?ref=BNYR5DG3) anmeldet, erhaltet ihr 10 Prozent meiner anfallenden Gebühren (Ich erhalte ebenfalls 10 Prozent). Weitere Informationen zum Programm können der Binance-Webseite entnommen werden. Haben euch die nachfolgenden Zeilen beim Einstieg in die Krypto-Szene geholfen, wäre ich euch dankbar, wenn ihr euch über [diesen Link](https://accounts.binance.com/de/register?ref=BNYR5DG3) anmelden würdet. Bei Fragen könnte ihr euch auch direkt bei mir melden (kontakt@finanzlabor.blog). Ich bedanke mich bereits schon jetzt für eure Unterstützung. Nun wünsche ich viel Spass beim Lesen.
 
+## 6. Januar 2021
+
+Nun ging es darum, einen monatlichen Dauerauftrag von meiner Bank zu Binance zu erstellen. Um den Betrag der Überweisung zu bestimmen, habe ich zu Beginn des Jahres meine Budgetplanung aktualisiert. Dabei komme ich auf eine Sparrate von ca. 46%, davon möchte ich zirka 2.5% in Kryptowährungen anlegen. Um die gewünschte Allokation im Gesamtportfolio bis Ende des Jahres 2021 herzustellen, müssen zusätzliche Beträge überwiesen werden.
+
+## 27. Dezember 2020
+
+Nun war mein Fiat-Konto wieder auf ein paar Cent geschrumpft und ich hatte Zeit, mir einen Überblick über die Crypto-Welt zu verschaffen. Ich wusste bereits, was für einen Zweck Bitcoin und Ethereum haben, aber wofür werden die Anderen verwendet? Mit dieser Frage im Hinterkopf machte ich mich im Internet auf die Suche nach Antworten. Leider habe ich nirgends direkt etwas brauchbares dazu gefunden, sondern bin über Umwege auf die Plattform [messari.io](https://messari.io/) gestossen. Dabei handelt es sich um eine Webseite, welche "Crypto Research, Data and Tools" anbietet. Diese lässt sich via API ansprechen und war für mich der ideale Datenlieferant für meine Recherchen. Die Schnittstelle liefert für jedes Crypto-Projekt verschiedene Metadaten (Sektor, Anzahl aktive Projekte, Hashrate, uvm.) und historische Preise.
+
+Als Erstes wollte ich nun herausfinden, wie stark die einzelnen Coins miteinander korrelieren. Ziel dieser Betrachtung war die Bestimmung eines Kryptoportfolios mit möglichst hoher Diversifikation. Ebenfalls wollte ich die gängige Aussage ("Bitcoin ist die Flut, die alle Boot zum Schwimmen bringt") einiger Kryptoinvestoren untersuchen. Daher erstellte ich zwei Korrelationsmatrizen, eine anhand der 25 grössten Projekte (gemessen an der Marktkapitalisierung) sowie der einzelnen Sektor-Platzhirsche (erneut anhand der Marktkapitalisierung). Dabei entstanden folgende Bilder:
+
+![Korrelation Top 25 Marktkapitalisierung](marketCapCorrel.png)
+
+Weitere Bilder:
+[Korrelation Top 25 Marktkapitalisierung 100 Tage](marketCapCorrel100.png), [Korrelation Top 25 Marktkapitalisierung 1 Jahr](marketCapCorrel365.png)
+[Korrelation Top Sektoren 100 Tage](sectorCorrel100.png), [Korrelation Top Sektoren 1 Jahr](sectorCorrel365.png), [Korrelation Top Sektoren](sectorCorrel.png)
+
+Die nächste Frage welche mich beschäftige, war die Performance der einzelnen Währungen (absolut und in Relation zu Bitcoin). Daraus resultierten die nachfolgenden Grafiken, welche die monatlichen Bewegungen der einzelnen Werte in Prozent anzeigen (wobei die Y-Achse beim aktuellen Monat beginnt). Dabei ist auch zu sehen, dass einige der Branchen-Krösusse erst seit einigen Monaten existieren.
+
+![Performance Top 25 Marktkapitalisierung](marketCapPerf.png)
+
+Weitere Bilder:
+[Performance in Relation zu Bitcoin Top 25 Marktkapitalisierung](marketCapPerfToBTC.png)
+[Performance Top Sektoren](sectorPerf.png), [Performance in Relation zu Bitcoin Top Sektoren](sectorPerfToBTC.png)
+
+## 26. Dezember 2020
+
+Nun treffe ich erneut auf das {% post_link finance/stock_selection/stock_selection 'Auswahl-Paradoxon (wie bei den Einzelaktien)' %} und bin vor lauter verfügbaren Kryptowährungen komplett überfordert. Welche Funktion haben sie? Wer steckt dahinter? Wie lange gibt es diese bereits? Welche soll ich nun kaufen? Mir war jetzt bewusst, dass ich mir mehr Zeit nehmen muss, um tiefer in Materie einzutauchen. Nur so wird es möglich sein, eine Investitionsstrategie für mich auszuarbeiten.
+
+Plötzlich stiess ich jedoch auf eine Nachricht, welche mein geplantes Vorgehen komplett über den Haufen geworfen hatte. Kurz vor Weihnachten wurde Ripple (XRP), eine der aktuell grössten Kryptowährungen auf dem Markt, von der amerikanischen Börsenaufsicht SEC verklagt[^9]. Der Kurs fiel um 75-Prozent, ich nutze die entstandene Einstiegschance (es handelt sich hierbei um keine Anlageempfehlung, es handelt sich dabei um eine riskante Wette). Eine Niederlage vor Gericht wäre ein Schlag ins Gesicht für die ganze Kryptoszene, die Zukunft von Bitcoin und Co. wäre meiner Meinung nach in Gefahr.
+
 ## 5. Dezember 2020
 
 Nachdem die Registrierung abgeschlossen, die 2-Faktoren-Authentisierung aktiviert und meine Identität durch das Hochladen der Vorder- und Rückseite meiner Identitätskarte, Aufnahme eines Selbstportraits sowie Hinterlegung eines Dokumentes bestätigt war, konnte ich mit der Transferierung von FIAT-Geld beginnen. Der Begriff *fiat* stammt auf dem Lateinischen und bedeutet: "Ein Objekt ohne inneren Wert, welches als Tauschmittel verwendet wird". Dies ist im Moment nur mit Euro kostenlos möglich (es kann jedoch sein, dass deine Bank für die Ausführung einer SEPA-Überweisung einen gewissen Betrag in Rechnung stellt). Ich versuchte die Transaktion via TransferWise abzuwickeln, was jedoch nicht möglich war. In den Nutzungsbedienungen wird diese Einschränkung klar formuliert (bei Revolut ebenfalls). Der Transfer wurde danach via PostFinance durchgeführt, nach einigen Tagen war der Betrag zum Investieren bereit.
@@ -49,3 +79,4 @@ Während meiner Arbeit in der IT-Branche hörte ich zum ersten Mal etwas von ein
 [^6]: [Dr. Julian Hosp, Krypographie Crashkurs, Teil 15 "Bitcoin Mining im Detail erklärt", youtube.com](https://youtu.be/4jd9qk3wq3Q)
 [^7]: [Kostenvergleich der Krypto-Börsen, cryptoradar.co](https://cryptoradar.co/de/bitcoin-kaufen)
 [^8]: [Ranking der Krypto-Börsen anhand der Marktkapitalisierung, coinmarketcap.com](https://coinmarketcap.com/de/rankings/exchanges/)
+[^9]: [US-Börsenaufsicht SEC erhebt Anklage gegen Blockchain-Unternehmen Ripple, handelsblatt.com](https://www.handelsblatt.com/finanzen/maerkte/devisen-rohstoffe/kryptowaehrung-us-boersenaufsicht-sec-erhebt-anklage-gegen-blockchain-unternehmen-ripple/26745598.html)
