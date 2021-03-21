@@ -17,6 +17,72 @@ Fast vier Jahre hat es gedauert, bis ich mir die Zeit genommen hatte, in die unb
 
 **Hinweis in eigner Sache (Werbung)**: Ich verwende für den Kauf/Verkauf von Kryptowährungen die Börse Binance (die Gründe dafür werden in den nächsten Zeilen aufgeführt). Diese betreibt das [Binance Referral Program](https://www.binance.com/en/activity/referral), welches einen Bruchteil der Transaktionskosten an die Kunden zurückzahlt (Kickback). Wenn Ihr euch über [meinen Link](https://accounts.binance.com/de/register?ref=BNYR5DG3) anmeldet, erhaltet ihr 10 Prozent meiner anfallenden Gebühren (Ich erhalte ebenfalls 10 Prozent). Weitere Informationen zum Programm können der Binance-Webseite entnommen werden. Haben euch die nachfolgenden Zeilen beim Einstieg in die Krypto-Szene geholfen, wäre ich euch dankbar, wenn ihr euch über [diesen Link](https://accounts.binance.com/de/register?ref=BNYR5DG3) anmelden würdet. Bei Fragen könnte ihr euch auch direkt bei mir melden (kontakt@finanzlabor.blog). Ich bedanke mich bereits schon jetzt für eure Unterstützung. Nun wünsche ich viel Spass beim Lesen.
 
+
+## 7. März 2021
+
+Nun wollte ich noch ein wenig tiefer in die Krypto-Materie eintauchen. Dazu habe ich mir, mit Hilfe der API von [messari.io](https://messari.io/), einige weitere Informationen zu den einzelnen Projekten beschafft:
+
+* Art der Einführung
+* Initiale Verteilung (Investoren, Oranisationen/Gründer und "Pre-mined" Rewards/Airdrops)
+* Konsensus-Mechanismen
+* Emissionstypen
+* Maximale Anzahl an Coins/Token
+* Aktivität der Projekt(weiter)entwicklung
+* Präsenz in den sozialen Medien
+
+Nun folgen die einzelnen Tabellen, welche ich aus diesen Daten erstellt habe. Zusätzlich habe ich einige weiterführendn Informationen zusammen getragen, welche bei der Interpretation der Inhalte helfen sollen. Der Herausgeber der Schnittstelle verfügt über eine eigene Erklärungsseite[^10], welche jedoch nur in englischer Sprache verfügbar ist.
+
+Es gibt verschiedene Vorgehensweisen, um eine neue Währung in den Markt einzuführen. Ich habe versucht, die einzelnen Varianten in meinen eigenen Worten zu beschreiben:
+* **Fair Launch**: Bei der Einführung ist die komplette Menge der verfügbaren Coins/Token erwerbbar
+* **Crowdsale**: Ähnlich wie "Fair Launch". Es existieren jedoch bereits vorgeschürfte (pre-mined) Coins/Token, welche vorerst nicht für die Öffentlichkeit zugänglich sind
+* **Centralized Distribution**: Die Coins/Token werden von einer zentralen Stelle aus verwaltet und gesteuert
+* **Ledger Fork**: Der Coin/Token ist durch einen Fork (Gabelung) eines bestehenden Coins/Token entstanden
+* **Private Sale**: Die komplette, initial herausgegebenen Menge an Coins/Token ist nur für eine vordefinierte Gruppe verfügbar. So können zum Beispiel Aktionäre, in Form von Coins/Token der herausgebenden Aktiengesellschaft, sich in einer anderen Form an der Firma beteiligen
+* **Airdrop**: Die Coins/Token werden unter den Interessenten kostenlos verteilt
+* **Initial Exchange Offering**: Ähnlich wie ein IPO in der Aktien-Welt
+
+Die meisten Projekte verteilten bei der Einführung ihre Coins in mehrere Töpfe auf um diese auf verschiedene Empfängergruppen zu verteilen.
+
+![Initiale Versorgung Top 25 Marktkapitalisierung (Stand 20.03.2021)](crypto_marketcap_supply.png)
+Weiteres Bild: [Initiale Versorgung Top Sektoren (Stand 20.03.2021)](crypto_sector_supply.png)
+
+Um die nachfolgende Tabelle zu verstehen, müssen zuerst die beiden Begriffe Mint und Burn erklärt werden. Mint (Prägung) bedeutet die Erweiterung des bestehenden Angebots eines Vermögenswertes (durch Erschaffung eines Coins/Tokens), Burn (Verbrennung) die Reduzierung des Angebots (durch Zerstörung des Coins/Tokens).
+
+* **Burn and Mint**: Das ausstehende Angebot des Vermögenswerts (Assets) kann sowohl schrumpfen als auch zunehmen, abhängig von der Netzwerknutzung und deren Auswirkungen auf deflationäre (Burn) und inflationäre (Mint) Mechanismen
+* **Deflationary**: Das ausstehende Angebot des Vermögenswerts schrumpft im Laufe der Zeit aufgrund von programmatischen oder nicht-programmatischen Burn-Mechanismen. Beachten Sie, dass in einigen Fällen ein Mindestvorrat festgelegt ist und die Verbrennungsmechanismen bei Erreichen dieses Wertes stoppen.
+* **Fixed Supply**: Das ausstehende Angebot des Vermögenswerts ist fest. Es gibt keine inflationären oder deflationären Mechanismen.
+* **Inflationary**: Das ausstehende Angebot des Vermögenswerts erhöht sich im Laufe der Zeit aufgrund von Prägemechanismen. Beachten Sie, dass in einigen Fällen eine Angebotsobergrenze festgelegt ist und die Prägemechanismen bei Erreichen dieser Obergrenze aufhören.
+
+![Konsensus-Mechanismen Top 25 Marktkapitalisierung (Stand 20.03.2021)](crypto_marketcap_consensus.png)
+Weiteres Bild: [Konsensus-Mechanismen Top Sektoren (Stand 20.03.2021)](crypto_sector_consensus.png)
+
+Um die Korrektheit eines generierten Blockes zu validieren, existieren verschiedene Konsens-Mechanismen. Eine gute Zusammenstellung der einzelnen Methoden ist auf der Seite coin-ratgeber.de[^11] zu finden.
+
+Die meisten Krypto-Projekte stellen den Programmcode der Öffentlichkeit zur Verfügung. Dies erlaubt die Mitarbeit interessierter Software-Entwickler auf der ganzen Welt. Die Dateien werden auf der Plattform GitHub verwaltet, welche die Kollaboration unter den Entwicklern vereinfacht. Diese ermöglicht es, den Projekten zu folgen (GitHub Beobachter) oder als Lesezeichen gespeichert (GitHub Sterne) zu werden. Möchten Programmänderungen der Versionsverwaltung mitgeteilt werden, müssen diese zuerst in sogenannte "Commits" verpackt werden. Diese beinhalten eine oder mehrere geänderte Datei(en) und eine Meldung, welche den Grund oder Zweck der Anpassungen beschreibt. Nach einiger Zeit wird mit Hilfe der Änderungen eine neue Version gebaut, welche danach die aktuell betriebene Software ersetzt.
+
+![Software-Entwicklung Top 25 Marktkapitalisierung (Stand 20.03.2021)](crypto_marketcap_dev.png)
+Weiteres Bild: [Software-Entwicklung Top Sektoren (Stand 20.03.2021)](crypto_sector_dev.png)
+
+Eine weitere spannende Informationsquelle ist der Social-News-Aggregator Reddit. Die Anzahl aktiver Benutzer beziehungsweise Abonnenten auf dieser Plattform könnten vielleicht etwas über die aktuelle Akzeptanz eines Projektes aussagen.
+
+![Social Media Top 25 Marktkapitalisierung (Stand 20.03.2021)](crypto_marketcap_social_media.png)
+Weiteres Bild: [Social Media Top Sektoren (Stand 20.03.2021)](crypto_sector_social_media.png)
+
+## 22. Februar 2021
+
+Die Zahlen sind alle rot und zweistellig im Minus. Ich verspürte den inneren Drang, meine monatliche Investitionssumme sofort in eine der Kryptowährungen zu investieren. Fomo ("Fear of missing out", die Angst etwas zu verpassen) heisst der, in letzter Zeit oft verwendete Begriff dazu. Ich schritt zur Tat: Bitcoin war mit etwa 13 Prozent im Minus, als ich meinen ersten Kaufauftrag eingestellt hatte (etwas unter dem Kurs, welcher zuletzt festgestellt wurde). Es passierte das Gegenteil meiner Annahme, der Kurs erholte sich in grossen Schritten und meine Order wurde nicht ausgeführt. Es folgte eine grüne Kerze nach der anderen.  Ich wollte unbedingt meine ersten BTCs in meiner Wallet haben und zog den Preis nach. Nach zwei weiteren erfolglosen Versuchen wurde die Transaktion durchgeführt (bei 43'038 Euro pro Bitcoin). Die Ernüchterung folgte während den nachfolgenden Tagen. Nach einer kurzfristigen Erholung stürzte der Kurs um weitere 18 Prozent (14 Prozent im Vergleich zu meinem Trade) ab. Die Moral der Geschichte: Nicht einer verpassten Möglichkeit hinterher rennen. Die nächste Chance lässt meist nicht lange auf sich warten (Anfang Januar war der letzte grössere Rücksetzer um fast 30 Prozent).
+
+Die restlichen 20 Prozent meines verfügbaren monatlichen Guthabens wurden in LINK (Chainlink) investiert (bei 22,5 Euro pro Link). Ich habe mich aus folgenden Gründen für die beiden Investments entschieden:
+
+* Bitcoin (BTC)
+    * Immer mehr Institutionelle sind investiert
+    * Macht über 60 Prozent des gesamten Krypto-Marktkapitals aus
+    * Die Anzahl ist beschränkt
+* Chainlink (LINK)
+    * Es existieren bereits Projekte, welche die Dienstleistung in Anspruch nehmen (Aave, Polkadot)
+    * Ist der Sektor-Leader im Bereich "Oracle Networks"
+    * Die Anzahl ist beschränkt
+
 ## 6. Januar 2021
 
 Nun ging es darum, einen monatlichen Dauerauftrag von meiner Bank zu Binance zu erstellen. Um den Betrag der Überweisung zu bestimmen, habe ich zu Beginn des Jahres meine Budgetplanung aktualisiert. Dabei komme ich auf eine Sparrate von ca. 46%, davon möchte ich zirka 2.5% in Kryptowährungen anlegen. Um die gewünschte Allokation im Gesamtportfolio bis Ende des Jahres 2021 herzustellen, müssen zusätzliche Beträge überwiesen werden.
@@ -27,19 +93,19 @@ Nun war mein Fiat-Konto wieder auf ein paar Cent geschrumpft und ich hatte Zeit,
 
 Als Erstes wollte ich nun herausfinden, wie stark die einzelnen Coins miteinander korrelieren. Ziel dieser Betrachtung war die Bestimmung eines Kryptoportfolios mit möglichst hoher Diversifikation. Ebenfalls wollte ich die gängige Aussage ("Bitcoin ist die Flut, die alle Boot zum Schwimmen bringt") einiger Kryptoinvestoren untersuchen. Daher erstellte ich zwei Korrelationsmatrizen, eine anhand der 25 grössten Projekte (gemessen an der Marktkapitalisierung) sowie der einzelnen Sektor-Platzhirsche (erneut anhand der Marktkapitalisierung). Dabei entstanden folgende Bilder:
 
-![Korrelation Top 25 Marktkapitalisierung](marketCapCorrel.png)
+![Korrelation Top 25 Marktkapitalisierung (Stand 20.03.2021)](marketCapCorrel.png)
 
 Weitere Bilder:
-[Korrelation Top 25 Marktkapitalisierung 100 Tage](marketCapCorrel100.png), [Korrelation Top 25 Marktkapitalisierung 1 Jahr](marketCapCorrel365.png)
-[Korrelation Top Sektoren 100 Tage](sectorCorrel100.png), [Korrelation Top Sektoren 1 Jahr](sectorCorrel365.png), [Korrelation Top Sektoren](sectorCorrel.png)
+[Korrelation Top 25 Marktkapitalisierung 100 Tage (Stand 20.03.2021)](marketCapCorrel100.png), [Korrelation Top 25 Marktkapitalisierung 1 Jahr (Stand 20.03.2021)](marketCapCorrel365.png)
+[Korrelation Top Sektoren 100 Tage (Stand 20.03.2021)](sectorCorrel100.png), [Korrelation Top Sektoren 1 Jahr (Stand 20.03.2021)](sectorCorrel365.png), [Korrelation Top Sektoren (Stand 20.03.2021)](sectorCorrel.png)
 
 Die nächste Frage welche mich beschäftige, war die Performance der einzelnen Währungen (absolut und in Relation zu Bitcoin). Daraus resultierten die nachfolgenden Grafiken, welche die monatlichen Bewegungen der einzelnen Werte in Prozent anzeigen (wobei die Y-Achse beim aktuellen Monat beginnt). Dabei ist auch zu sehen, dass einige der Branchen-Krösusse erst seit einigen Monaten existieren.
 
-![Performance Top 25 Marktkapitalisierung](marketCapPerf.png)
+![Performance Top 25 Marktkapitalisierung (Stand 20.03.2021)](marketCapPerf.png)
 
 Weitere Bilder:
-[Performance in Relation zu Bitcoin Top 25 Marktkapitalisierung](marketCapPerfToBTC.png)
-[Performance Top Sektoren](sectorPerf.png), [Performance in Relation zu Bitcoin Top Sektoren](sectorPerfToBTC.png)
+[Performance in Relation zu Bitcoin Top 25 Marktkapitalisierung (Stand 20.03.2021)](marketCapPerfToBTC.png)
+[Performance Top Sektoren (Stand 20.03.2021)](sectorPerf.png), [Performance in Relation zu Bitcoin Top Sektoren (Stand 20.03.2021)](sectorPerfToBTC.png)
 
 ## 26. Dezember 2020
 
@@ -80,3 +146,5 @@ Während meiner Arbeit in der IT-Branche hörte ich zum ersten Mal etwas von ein
 [^7]: [Kostenvergleich der Krypto-Börsen, cryptoradar.co](https://cryptoradar.co/de/bitcoin-kaufen)
 [^8]: [Ranking der Krypto-Börsen anhand der Marktkapitalisierung, coinmarketcap.com](https://coinmarketcap.com/de/rankings/exchanges/)
 [^9]: [US-Börsenaufsicht SEC erhebt Anklage gegen Blockchain-Unternehmen Ripple, handelsblatt.com](https://www.handelsblatt.com/finanzen/maerkte/devisen-rohstoffe/kryptowaehrung-us-boersenaufsicht-sec-erhebt-anklage-gegen-blockchain-unternehmen-ripple/26745598.html)
+[^10]: [Messari Classifications, messari.io](https://messari.io/article/messari-classifications)
+[^11]: [Konsensus-Mechanismen bie Kryptowährungen, coin-ratgeber.de](https://coin-ratgeber.de/einfuehrung-konsensus-mechanismen-bei-kryptowaehrungen/)

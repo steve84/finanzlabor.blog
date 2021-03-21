@@ -30,7 +30,14 @@ Euer Laborleiter
 
 ## Über den Laborleiter
 
-Die Leitung des Finanzlabors hat eine Person aus der Schweiz mit Baujahr 1984 inne. Neben dieser Tätigkeit arbeitet er als Software-Entwickler in einem kleinen KMU. In seiner Freizeit beschäftigt er sich mit Finanzthemen und übt verschiedene Sportarten aus.
+<img src="steve.jpg" style="float: left; padding-right: 10px; padding-bottom: 10px; padding-top: 27px"/>
+Mein Name ist Steve und ich bin der Leiter des Finanzlabors (seit Oktober 2019). Neben dieser Tätigkeit arbeitete ich als Software-Entwickler in einem kleinen KMU in der Stadt Bern (Schweiz). In meiner Freizeit beschäftigte ich mich mit Finanzthemen, Datenanalysen und übe verschiedene Sportarten (Fussball, Badminton, Wandern) aus.
+
+An der Börse bin ich seit Ende 2016. Die immer tieferen Zinsen auf meinem Sparkonto haben mich dazu bewogen, mein Geld optimaler anzulegen. Begonnen hat alles mit dem Buch ["Was Sie über Geldanlage wissen sollten – Ein Wegweiser für Privatanleger"](https://www.nzz-libro.ch/9783038100331/was-sie-ueber-geldanlage-wissen-sollten) von Michael Felber (erschienen im Verlag "Neue Zürcher Zeitung", Deutscher Finanzbuchpreis 2012). Danach folgten die beiden Klassiker "Souverän investieren mit Indexfonds und ETFs" (Gerd Kommer, campus Verlag) und "Rich Dad Poor Dad" (Robert T. Kiyosaki, FinanzBuch Verlag).
+
+Ich verfolge eine sogenannte Core-Satellite-Strategie mit einem Kern (80 Prozent des Portfolios) aus ETFs (Abbildung der weltweiten Marktkapitalisierung) und mehreren Satelliten (20 Prozent bestehend aus Einzelaktien, Kryptowährungen und Sachwerten).
+
+Ebenfalls habe ich ein Faible für Daten und Grafiken ("Bilder sagen mehr als tausend Worte").
 
 ## Social Media
 Der Finanzlabor-Blog ist auf den wichtigsten sozialen Medien vertreten:
