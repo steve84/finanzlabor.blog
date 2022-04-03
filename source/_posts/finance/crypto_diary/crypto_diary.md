@@ -18,6 +18,19 @@ Fast vier Jahre hat es gedauert, bis ich mir die Zeit genommen hatte, in die unb
 **Hinweis in eigner Sache (Werbung)**: Ich verwende für den Kauf/Verkauf von Kryptowährungen die Börse Binance (die Gründe dafür werden in den nächsten Zeilen aufgeführt). Diese betreibt das [Binance Referral Program](https://www.binance.com/en/activity/referral), welches einen Bruchteil der Transaktionskosten an die Kunden zurückzahlt (Kickback). Wenn Ihr euch über [meinen Link](https://accounts.binance.com/de/register?ref=BNYR5DG3) anmeldet, erhaltet ihr 10 Prozent meiner anfallenden Gebühren (Ich erhalte ebenfalls 10 Prozent). Weitere Informationen zum Programm können der Binance-Webseite entnommen werden. Haben euch die nachfolgenden Zeilen beim Einstieg in die Krypto-Szene geholfen, wäre ich euch dankbar, wenn ihr euch über [diesen Link](https://accounts.binance.com/de/register?ref=BNYR5DG3) anmelden würdet. Bei Fragen könnte ihr euch auch direkt bei mir melden (kontakt@finanzlabor.blog). Ich bedanke mich bereits schon jetzt für eure Unterstützung. Nun wünsche ich viel Spass beim Lesen.
 
 
+## 16. Oktober 2021
+Seitdem Binance im Sommer 2021 den Geldtransfer via SEPA-Überweisung nicht mehr anbietet, habe ich kein Geld mehr auf die Börse übertragen können/wollen. In den letzten Tagen bin ich endlich dazu gekommen, mir einen neuen Weg dafür zu suchen. Dazu musste ich einen neuen Account bei einer Exchange eröffnen, welche diese Art von Überweisungen noch akzeptiert. Dabei bin ich auf [CoinMetro](https://coinmetro.com) gestossen. Nach einigen fehlgeschlagenen Versuchen konnte ich den KYC-Prozess doch noch erfolgreich abschliessen. Nun ging es darum, das eingezahlte Kapital von dieser Börse nach Binance zu transferieren. Leider musste ich den ersten Versuch abbrechen, da nach einem Transfer von USD Coins (Stable Coin) im Wert von 50 Euro nur noch etwa 7 Euro bei der Zieldestination angekommen wären. Grund dafür sind die hohen Gas-Fees auf der Ethereum Blockchain. Nun ging es darum, eine kostengünstigere Alternative zu finden, welche auch von CoinMetro angeboten wird. Nach Konsulation eines [Blog-Artikels](https://blog.nano.org/cryptocurrency-fee-comparison-which-crypto-has-the-lowest-fees-4e9118590e1f) zu diesem Thema, habe ich mich für Ripple (XRP) entschieden (extrem schneller Transfer). Anbei nun meine Vorgehensweise:
+
+* SEPA-Überweisung nach CoinMetro im Wert von 50 Euro
+* Umwandlung der 49 Euro (nach Abzug der Gebühr von pauschal einem Euro) nach Ripple (Kurs von 0.885928 XRP/EUR , 55.3 XRP)
+* Wallet-Informationen von Binance für Ripple ermitteln
+* Auf CoinMetro Abhebung („Withdraw“) initialisieren
+* Eingabe der Ziel-Wallet und Durchführen des Transfers zu Binance
+* Bestätigung der Übertragung nach Binance abwarten
+* Ripple in einen Stable Coin umwandeln (zum Beispiel nach USD Tether)
+
+Bei tiefen Beträgen entsteht bereits eine sehr hohe Gebühr für die SEPA-Überweisung (im diesem Beispiel 2 Prozent), dazu kommen noch die Spreads (tiefes Handelsvolumen) sowie die Transferkosten (etwa 0.15 Prozent) für die Nutzung der Ripple-Infrastruktur. Dies ist jedoch immer noch um einiges günstiger als die Binance-Kreditkartengebühren von 3.5% beziehungsweise 10$ (der höhere Betrag der beiden). Ein Dauerauftrag von wöchentlich 50 Euro sollte daher besser zu einem monatlichen Auftrag im Wert von 200 Euro umgewandelt werden.
+
 ## 7. März 2021
 
 Nun wollte ich noch ein wenig tiefer in die Krypto-Materie eintauchen. Dazu habe ich mir, mit Hilfe der API von [messari.io](https://messari.io/), einige weitere Informationen zu den einzelnen Projekten beschafft:

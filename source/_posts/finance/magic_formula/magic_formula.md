@@ -80,11 +80,11 @@ Im Buch vergleicht Greenblatt die Performance der grössten 1'000 Aktien (anhand
 
 In einem anderen Vergleich werden 2'500 US-Aktien anhand der Formel bewertet und nach Rang aufsteigend sortiert. Danach wird die Rangliste in 10 Gruppen mit je 250 Wertpapieren aufgeteilt (Gruppe 1 beinhaltet Rang 1 bis 250, Gruppe 2 251 bis 500, usw.). Dann wird das CAGR der einzelnen Gruppen berechnet (von 1988 bis 2004) und miteinander verglichen. Greenblatt stellte fest, dass jede dieser Gruppen seinen Nachfolger outperformen konnte (z.B. Gruppe 1 mit 17.9% schlägt Gruppe 2 mit 15.6%, Gruppe 2 schlägt Gruppe 3 mit 14.89, usw.).
 
-Aktuelle Zahlen sind auf der Meetinvest-Seite[^3] einsehbar:
+Aktuellere Zahlen (2005 bis 2018) sind auf Seekinging Alpha[^3] einsehbar:
 
-* Performance September 2002: 13.96%
-* Performance September 2019: 1'457.36%
-* CAGR: 31.45%
+* Performance: 104.62%
+* CAGR: 5.49%
+* Maximaler Drawdown: 62.92%
 
 Es existieren auch einige Wikifolio-Zertifikate, zum Beispiel DE000LS9LMM2[^4]. Die Performance nach drei Jahren beträgt 3 Prozent und das investierte Kapital beläuft sich auf 12'000 CHF.
 
@@ -211,6 +211,6 @@ Die Branchen-Verteilung der Top-20 der Magic Formula Strategie:
 
 [^1]: [Artikel zum Thema Net Working Capital von welt-der-bwl.de](https://welt-der-bwl.de/Net-Working-Capital)
 [^2]: [Artikel (engl.) zum Thema Net Fixed Assets von stockopedia.com](https://www.stockopedia.com/ratios/net-fixed-assets-533/))
-[^3]: [Rendite-Diagramm der Magic Formula auf meetinvest.com](https://meetinvest.com/stockscreener/joel-greenblatt/magic-formula)
+[^3]: [Artikel zur Magic Formula inklusive Rendite-Diagramm auf seekingalpha.com](https://seekingalpha.com/article/4176166-magic-formula-lost-sparkle)
 [^4]: [Eines von vielen Wikifolio-Zertifikaten zur Magic Formula](https://www.wikifolio.com/de/ch/w/wf000mafog)
 [^5]: [Tracking-Differenz des iShares S&P 500](https://www.trackingdifferences.com/ETF/ISIN/IE00B5BMR087)

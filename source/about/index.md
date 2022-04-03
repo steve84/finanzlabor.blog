@@ -31,7 +31,7 @@ Euer Laborleiter
 ## Über den Laborleiter
 
 <img src="steve.jpg" style="float: left; padding-right: 10px; padding-bottom: 10px; padding-top: 27px"/>
-Mein Name ist Steve und ich bin der Leiter des Finanzlabors (seit Oktober 2019). Neben dieser Tätigkeit arbeitete ich als Software-Entwickler in einem kleinen KMU in der Stadt Bern (Schweiz). In meiner Freizeit beschäftigte ich mich mit Finanzthemen, Datenanalysen und übe verschiedene Sportarten (Fussball, Badminton, Wandern) aus.
+Mein Name ist Steve und ich bin der Leiter des Finanzlabors (seit Oktober 2019). Neben dieser Tätigkeit arbeitete ich als Software-Entwickler in meinem eigenen Unternehmen [Kelt 9](https://www.kelt9.ch), welches ich (zusammen mit meinem Geschäftspartner) im Jahre 2021 gegründet habe. In meiner Freizeit beschäftigte ich mich mit Finanzthemen, Datenanalysen und übe verschiedene Sportarten (Fussball, Badminton, Wandern) aus.
 
 An der Börse bin ich seit Ende 2016. Die immer tieferen Zinsen auf meinem Sparkonto haben mich dazu bewogen, mein Geld optimaler anzulegen. Begonnen hat alles mit dem Buch ["Was Sie über Geldanlage wissen sollten – Ein Wegweiser für Privatanleger"](https://www.nzz-libro.ch/9783038100331/was-sie-ueber-geldanlage-wissen-sollten) von Michael Felber (erschienen im Verlag "Neue Zürcher Zeitung", Deutscher Finanzbuchpreis 2012). Danach folgten die beiden Klassiker "Souverän investieren mit Indexfonds und ETFs" (Gerd Kommer, campus Verlag) und "Rich Dad Poor Dad" (Robert T. Kiyosaki, FinanzBuch Verlag).
 

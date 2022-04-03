@@ -56,6 +56,8 @@ Bekannte Investoren wie Peter Lynch oder Benjamin Graham haben eigene Investment
 
 {% youtube djWy2B35EEY %}
 
+*Hinweis*: Leider wurde der Service Anfang 2022 eingestellt. Die Betreiber sind jedoch offen für ein Kaufangebot. Es besteht also noch eine kleine Chance, dass die Dienstleistung bald wieder zur Verfügung stehen wird.
+
 ### Digitale Beliebtheit
 
 Bei diesem Ansatz werden die potentiellen Unternehmen anhand ihrer Präsenz in den sozialen Medien bewertet. Dabei können Kennzahlen wie das Wachstum der Anzahl Follower, die Anzahl der Nennungen (Hashtags) oder die Stimmung (engl. sentiment) analysiert werden. Ein Vergleich mit Hilfe von Google Trends (Anzahl Suchanfragen innerhalb einer bestimmten Zeit und Region) kann ebenfalls bei der Entscheidung hilfreich sein. Weitere Kriterien könnten die Sorgfältigkeit (Schreibfehler in den Mitteilungen) und die Kommunikation (wird auf Fragen oder Kritik eingegangen) sein. Es existieren diverse kostenpflichtige Tools, welche Analysen der Social Media Kanäle anbieten.
