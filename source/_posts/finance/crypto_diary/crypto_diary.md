@@ -1,7 +1,7 @@
 ---
 title: Mein Krypto-Tagebuch
 p: finance/crypto_diary/crypto_diary.md
-date: 2021-01-30 09:00:00
+date: 2021-10-16 09:00:00
 tags:
 - Theorie
 - Kryptowährungen
@@ -19,12 +19,12 @@ Fast vier Jahre hat es gedauert, bis ich mir die Zeit genommen hatte, in die unb
 
 
 ## 16. Oktober 2021
-Seitdem Binance im Sommer 2021 den Geldtransfer via SEPA-Überweisung nicht mehr anbietet, habe ich kein Geld mehr auf die Börse übertragen können/wollen. In den letzten Tagen bin ich endlich dazu gekommen, mir einen neuen Weg dafür zu suchen. Dazu musste ich einen neuen Account bei einer Exchange eröffnen, welche diese Art von Überweisungen noch akzeptiert. Dabei bin ich auf [CoinMetro](https://coinmetro.com) gestossen. Nach einigen fehlgeschlagenen Versuchen konnte ich den KYC-Prozess doch noch erfolgreich abschliessen. Nun ging es darum, das eingezahlte Kapital von dieser Börse nach Binance zu transferieren. Leider musste ich den ersten Versuch abbrechen, da nach einem Transfer von USD Coins (Stable Coin) im Wert von 50 Euro nur noch etwa 7 Euro bei der Zieldestination angekommen wären. Grund dafür sind die hohen Gas-Fees auf der Ethereum Blockchain. Nun ging es darum, eine kostengünstigere Alternative zu finden, welche auch von CoinMetro angeboten wird. Nach Konsulation eines [Blog-Artikels](https://blog.nano.org/cryptocurrency-fee-comparison-which-crypto-has-the-lowest-fees-4e9118590e1f) zu diesem Thema, habe ich mich für Ripple (XRP) entschieden (extrem schneller Transfer). Anbei nun meine Vorgehensweise:
+Seitdem Binance im Sommer 2021 den Geldtransfer via SEPA-Überweisung nicht mehr anbietet, habe ich kein Geld mehr auf die Börse übertragen können/wollen. In den letzten Tagen bin ich endlich dazu gekommen, mir einen neuen Weg dafür zu suchen. Dazu musste ich einen neuen Account bei einer Exchange eröffnen, welche diese Art von Überweisungen noch akzeptiert. Dabei bin ich auf [CoinMetro](https://coinmetro.com) gestossen. Nach einigen fehlgeschlagenen Versuchen konnte ich den KYC-Prozess doch noch erfolgreich abschliessen. Nun ging es darum, das eingezahlte Kapital von dieser Börse nach Binance zu transferieren. Leider musste ich den ersten Versuch abbrechen, da nach einem Transfer von USD Coins (Stable Coin) im Wert von 50 Euro nur noch etwa 7 Euro bei der Zieldestination angekommen wären. Grund dafür sind die hohen Gas-Fees auf der Ethereum Blockchain. Nun ging es darum, eine kostengünstigere Alternative zu finden, welche auch von CoinMetro angeboten wird. Nach Konsultation eines [Blog-Artikels](https://blog.nano.org/cryptocurrency-fee-comparison-which-crypto-has-the-lowest-fees-4e9118590e1f) zu diesem Thema, habe ich mich für Ripple (XRP) entschieden (extrem schneller Transfer). Anbei nun meine Vorgehensweise:
 
 * SEPA-Überweisung nach CoinMetro im Wert von 50 Euro
 * Umwandlung der 49 Euro (nach Abzug der Gebühr von pauschal einem Euro) nach Ripple (Kurs von 0.885928 XRP/EUR , 55.3 XRP)
 * Wallet-Informationen von Binance für Ripple ermitteln
-* Auf CoinMetro Abhebung („Withdraw“) initialisieren
+* Auf CoinMetro Abhebung ("Withdraw") initialisieren
 * Eingabe der Ziel-Wallet und Durchführen des Transfers zu Binance
 * Bestätigung der Übertragung nach Binance abwarten
 * Ripple in einen Stable Coin umwandeln (zum Beispiel nach USD Tether)
