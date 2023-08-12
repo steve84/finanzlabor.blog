@@ -8,7 +8,8 @@ tags:
 - Medienempfehlung
 categories: Medienempfehlungen
 toc: true
-thumbnail: /gallery/thumbnails/media/video/corona_vs_others/thumbnail.jpg
+thumbnail: /gallery/thumbnails/media/video/corona_vs_others/thumbnail_square.jpg
+cover: /gallery/thumbnails/media/video/corona_vs_others/thumbnail.jpg
 ---
 
 Zum Ende der letzten Woche habe ich ein sehr interessantes Video auf dem Youtube-Kanal von der Mission Money entdeckt. Das Fundstück beinhaltet verschiedene Grafiken und Tabellen zur gegenwärtigen Krise und vergleicht diese mit den letzten vier Rezessionen (von 1991, 2003, 2009 und 2012). Es kann als Hilfestellung zur Einordnung der aktuellen Situation hilfreich sein.

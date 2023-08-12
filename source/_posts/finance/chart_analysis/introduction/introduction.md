@@ -7,7 +7,8 @@ tags:
 - Aktien
 categories: Finanzen
 toc: true
-thumbnail: /gallery/thumbnails/finance/chart_analysis/introduction/thumbnail.jpg
+thumbnail: /gallery/thumbnails/finance/chart_analysis/introduction/thumbnail_square.jpg
+cover: /gallery/thumbnails/finance/chart_analysis/introduction/thumbnail.jpg
 ---
 
 Alle bisherigen Beiträge auf diesem Blog befassten sich ausschliesslich mit der Analyse von Fundamentaldaten. In der, in den nächsten Monaten folgenden Serie von Beiträgen, wird das Thema Chart-Analyse (auch technische Analyse genannt) behandelt.

@@ -8,7 +8,8 @@ tags:
 - Data Visualization
 categories: Finanzen
 toc: true
-thumbnail: /gallery/thumbnails/finance/index_creation/thumbnail.jpg
+thumbnail: /gallery/thumbnails/finance/index_creation/thumbnail_square.jpg
+cover: /gallery/thumbnails/finance/index_creation/thumbnail.jpg
 ---
 
 Im heutigen Blog-Artikel werden verschiedene Aktienindex-Arten sowie das dazugehörige Regelwerk vorgestellt. Im praktischen Teil wird ein nach Freefloat-Marktkapitalisierung gewichteter Index entworfen.

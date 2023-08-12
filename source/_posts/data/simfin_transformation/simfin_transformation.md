@@ -8,7 +8,8 @@ tags:
 - Anaconda
 categories: Data Mining
 toc: true
-thumbnail: /gallery/thumbnails/data/simfin_transformation/thumbnail.jpg
+thumbnail: /gallery/thumbnails/data/simfin_transformation/thumbnail_square.jpg
+cover: /gallery/thumbnails/data/simfin_transformation/thumbnail.jpg
 ---
 Dieser Blog-Beitrag beschäftigt sich mit der Transformation von Daten. Es kann vorkommen, dass die Struktur von Datenexporten nicht für die Weiterverarbeitung passt. Die von [SimFin](https://simfin.com/) bereitgestellten Bulk-Daten sind in mehrere einzelne Exporte aufgeteilt. In unserem Experiment werden diese eingelesen und, nach dem Motto "Was nicht passt wird passend gemacht", in einen einzelnen Export (als CSV) geschrieben. Dazu wird eine Entwicklungsumgebung vorausgesetzt, welche in einem {% post_link data/environment/environment 'älteren Beitrag' %} beschrieben wurde.
 

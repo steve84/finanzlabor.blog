@@ -8,7 +8,8 @@ tags:
 - Lego
 categories: Finanzen
 toc: true
-thumbnail: /gallery/thumbnails/finance/tangible_assets/thumbnail.jpg
+thumbnail: /gallery/thumbnails/finance/tangible_assets/thumbnail_square.jpg
+cover: /gallery/thumbnails/finance/tangible_assets/thumbnail.jpg
 ---
 Es geht gegen Ende das Jahres zu und die meisten Leute starten in die wohlverdienten Weihnachtsferien. Der ideale Zeitpunkt um die eigene finanzielle Situation zu beurteilen und gegebenenfalls eine neue Strategie für das nächste Jahrzehnt auszuarbeiten. Die grossen Aktienindizes befinden sich nahe an ihrem Allzeithoch, Negativzinsen bleiben weiterhin bestehen und die Stimmen, welche vor einem Börsencrash warnen, werden immer lauter. Auf der Suche nach einer alternativen Investitionsmöglichkeit stossen die Anleger vermehrt auf den Bereich der Sachwerte. In diesem Artikel werden die verschiedenen Möglichkeiten innerhalb dieses Assets aufgezeigt, diverse Tipps für die Auswahl des eigenen Portfolios sowie Empfehlungen für den eigenen Wissensaufbau gegeben.
 

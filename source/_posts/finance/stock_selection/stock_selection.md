@@ -6,7 +6,8 @@ tags:
 - Aktien
 categories: Finanzen
 toc: true
-thumbnail: /gallery/thumbnails/finance/stock_selection/thumbnail.jpg
+thumbnail: /gallery/thumbnails/finance/stock_selection/thumbnail_square.jpg
+cover: /gallery/thumbnails/finance/stock_selection/thumbnail.jpg
 ---
 Die Anzahl an Einzelaktien, welche an den verschiedenen Börsen handelbar sind, ist schier unendlich. Die Auswahl einer oder mehrere Investitionen für das private Portfolio ist nicht immer ganz so einfach. Dieses Phänomen heisst Auswahlparadoxon (engl. choice overload). Bei einer grossen Auswahl an Produkten kauft der Mensch lieber nichts (aus Angst einen Fehlkauf zu tätigen). Bei einer kleineren Anzahl an möglichen Optionen steigen jedoch die Chancen, dass mindestens ein Artikel gewählt wird.  Daher weichen die meisten Anleger auf einen breit gestreuten Indexfonds aus oder lassen das Geld auf dem Sparkonto liegen. Dieser Beitrag stellt verschiedene Möglichkeiten vor, um einzelne Firmen für eine Investition zu finden. Dabei handelt es sich um eine Auflistung von Methoden, welche vom Autor dieses Artikels stammt. Diese ist natürlich nicht vollständig und es gibt dabei auch keine Garantie auf Erfolg. Die Frage, nach der Vorgehensweise zur Auswahl von Einzelaktien, sollte Teil eines jeden Gespräches unter Privatinvestoren sein.
 

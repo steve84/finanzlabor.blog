@@ -8,7 +8,8 @@ tags:
 - Experiment
 categories: Programmierung
 toc: false
-thumbnail: /gallery/thumbnails/programming/fear_greed_api/thumbnail.jpg
+thumbnail: /gallery/thumbnails/programming/fear_greed_api/thumbnail_square.jpg
+cover: /gallery/thumbnails/programming/fear_greed_api/thumbnail.jpg
 ---
 
 Der heutige, eher etwas kürzere Beitrag beschäftigt sich mit der Beschaffung und Darstellung des *Fear and Greed* Index mit Hilfe der Python-Bibliothek mplfinance (Visualisierung von Börsendaten). Die Daten werden über eine nicht offizielle (diese wird von der CNN-Webseite verwendet) API bezogen und in die benötigten Software-Objekte verwandelt. Zum Schluss wird der Verlauf mit einem MSCI-Weltindex verglichen. Dabei kommt eine verblüffende Beobachtung ans Tageslicht...
@@ -72,9 +73,9 @@ Das Resultat validieren:
 df
 ```
 
-|| x                             | y            | rating    | Close        | Open      | High      | Low       |
-|-------------------------------|--------------|-----------|--------------|-----------|-----------|-----------|
-| x                             |
+|                               | x            | y         | rating       | Close     | Open      | High      | Low       |
+|-------------------------------|--------------|-----------|--------------|-----------|-----------|-----------|-----------|
+| x |
 | 2021-07-19 00:00:00.000000000 | 1.626653e+12 | 13.807443 | extreme fear | 13.807443 | 13.807443 | 13.807443 | 13.807443 |
 | 2021-07-20 00:00:00.000000000 | 1.626739e+12 | 20.633333 | extreme fear | 20.633333 | 20.633333 | 20.633333 | 20.633333 |
 | 2021-07-21 00:00:00.000000000 | 1.626826e+12 | 24.466667 | extreme fear | 24.466667 | 24.466667 | 24.466667 | 24.466667 |
@@ -118,8 +119,8 @@ df_all = df_all.drop(columns=['rating', 'x', 'y'])
 df_all
 ```
 
-|| Close_fng  | Open_fng  | High_fng  | Low_fng   | Open_acwi | High_acwi | Low_acwi  | Close_acwi |
-|------------|-----------|-----------|-----------|-----------|-----------|-----------|------------|
+|            | Close_fng | Open_fng  | High_fng  | Low_fng   | Open_acwi | High_acwi | Low_acwi  | Close_acwi |
+|------------|-----------|-----------|-----------|-----------|-----------|-----------|------------|-----------|
 | 2021-07-19 | 13.807443 | 13.807443 | 13.807443 | 13.807443 | 60.240002 | 60.279999 | 59.169998  | 59.570000 |
 | 2021-07-20 | 20.633333 | 20.633333 | 20.633333 | 20.633333 | 59.910000 | 60.369999 | 59.650002  | 60.259998 |
 | 2021-07-21 | 24.466667 | 24.466667 | 24.466667 | 24.466667 | 60.470001 | 60.700001 | 60.389999  | 60.680000 |
@@ -188,7 +189,7 @@ df_all[['Close_fng','Close_acwi']].corr()
 ```
 
 
-|| Close_fng  | Close_acwi |
-|------------|------------|
-| Close_fng  | 1.000000   | 0.751183 |
-| Close_acwi | 0.751183   | 1.000000 |
+|            | Close_fng  | Close_acwi |
+|------------|------------|------------|
+| Close_fng  | 1.000000   | 0.751183   |
+| Close_acwi | 0.751183   | 1.000000   |

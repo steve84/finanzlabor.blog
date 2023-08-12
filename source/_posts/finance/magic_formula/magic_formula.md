@@ -11,7 +11,8 @@ tags:
 - Python
 categories: Finanzen
 toc: true
-thumbnail: /gallery/thumbnails/finance/magic_formula/thumbnail.jpg
+thumbnail: /gallery/thumbnails/finance/magic_formula/thumbnail_square.jpg
+cover: /gallery/thumbnails/finance/magic_formula/thumbnail.jpg
 ---
 Die Magic Formula von Joel Greenblatt ist eine der bekanntesten Anlagetechniken des 21. Jahrhunderts. In diesem Beitrag wird die Formel vorgestellt und in einem praktischen Teil angewendet. Zum Schluss werden die besten 20 Aktien, welche durch die Formel ermittelt wurden, in visualisierter Form vorgestellt. Nachmachen ausdrücklich empfohlen!
 

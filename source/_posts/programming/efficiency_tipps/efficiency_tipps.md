@@ -7,7 +7,8 @@ tags:
 - Selbstmanagement
 categories: Programmierung
 toc: true
-thumbnail: /gallery/thumbnails/programming/efficiency_tipps/thumbnail.jpg
+thumbnail: /gallery/thumbnails/programming/efficiency_tipps/thumbnail_square.jpg
+cover: /gallery/thumbnails/programming/efficiency_tipps/thumbnail.jpg
 ---
 
 Um produktiv und mit neuem Elan in das neue Jahr zu starten, habe ich 10 Tipps für Euch zusammengestellt. Diese sind nicht nur für die Software-Entwicklung anwendbar, sondern auch für alltägliche Herausforderungen gültig. Am Schluss des Beitrages gibt es das Ganze noch als Zusammenfassung in Form eines Bildes, welches sich ideal als Hintergrundbild oder Merkzettel am Monitor eignet. Nun wünsche ich Euch viel Spass beim Lesen und ein erfolgreiches 2021.

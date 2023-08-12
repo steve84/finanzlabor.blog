@@ -8,7 +8,8 @@ tags:
 - Aktien
 categories: Finanzen
 toc: true
-thumbnail: /gallery/thumbnails/finance/chart_analysis/diagram_types/thumbnail.jpg
+thumbnail: /gallery/thumbnails/finance/chart_analysis/diagram_types/thumbnail_square.jpg
+cover: /gallery/thumbnails/finance/chart_analysis/diagram_types/thumbnail.jpg
 ---
 
 Diagramme sind Grafiken, welche zur Darstellung von Daten, Sachverhalten oder Informationen verwendet werden. In der technischen Analyse beinhalten diese in der Regel ein zweidimensionales kartesisches Koordinatensystem, welches mit Hilfe einer Abszissen- (horizontal) und einer Ordinatenachse (vertikal), die orthogonal (im rechten Winkel) aufeinander stehen, konstruiert wird. Der Schnittpunkt der beiden Achsen wird Ursprung genannt. Auf der x-Achse (Abszisse) wird im Normalfall die Zeit, auf der y-Achse der Preis abgetragen. Da weder Zeit noch Preis negative Werte annehmen können, werden die Datenpunkte im ersten Quadrant des Koordinatensystems abgebildet. Um gewisse Sachverhalte besser darstellen zu können, kann es vorkommen, dass nur bestimmte Abschnitte der beiden Achsen sichtbar sind. Bewegt sich eine Preis im beobachteten Zeitfenster zwischen 30 und 50 USD, werden die Bereiche von 0 bis 25 sowie 55+ nicht dargestellt. Moderne Chart-Software führt diese Optimierung automatisch aus, sobald eine vordefinierte oder fixe Zeitspanne ausgewählt wurde. Die Mehrheit der Diagramme verwenden lineare Koordinaten: Die Differenz zwischen zwei Koordinatenpunkten, auf der dazugehörigen Achse, haben immer den gleichen Wert. Bei einer logarithmischen Skala wird der Wertunterschied zwischen zwei Koordinaten immer grösser, je weiter weg man sich vom Ursprung bewegt.

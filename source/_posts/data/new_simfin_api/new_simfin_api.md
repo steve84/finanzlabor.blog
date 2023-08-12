@@ -7,7 +7,8 @@ tags:
 - Python
 - Theorie
 categories: Data Mining
-thumbnail: /gallery/thumbnails/data/new_simfin_api/thumbnail.jpg
+thumbnail: /gallery/thumbnails/data/new_simfin_api/thumbnail_square.jpg
+cover: /gallery/thumbnails/data/new_simfin_api/thumbnail.jpg
 ---
 
 Zu Beginn des Jahres 2020 hat [SimFin](https://simfin.com/) einige Änderungen bezüglich der Bereitstellung Ihrer Bulk Daten vorgenommen. Dieser Beitrag fasst in einem ersten Teil die Neuheiten kurz zusammen und gibt im Anschluss einige weiterführende Informationen. Dieser Wechsel hat zur Folge, dass einige Artikel auf diesem Blog nicht mehr valide sind, diese werden solange mit einem Hinweis versehen. Die davon betroffenen Abschnitte werden in den nächsten Tagen an die neuen Gegebenheiten angepasst.

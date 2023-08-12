@@ -8,7 +8,8 @@ tags:
 - Experiment
 categories: Programmierung
 toc: false
-thumbnail: /gallery/thumbnails/programming/chart_plotting/thumbnail.jpg
+thumbnail: /gallery/thumbnails/programming/chart_plotting/thumbnail_square.jpg
+cover: /gallery/thumbnails/programming/chart_plotting/thumbnail.jpg
 ---
 
 Der heutige Beitrag behandelt die Beschaffung, Transformation und Darstellung von Kursdaten mit Hilfe der Python-Bibliotheken yfinance (ermöglicht den Bezug von Daten von Yahoo Finance) und mplfinance (Visualisierung von Börsendaten). Das nachfolgende Tutorial eignet sich für alle die, welche schnell und effizient ein Kursdiagramm eines Wertpapiers zeichnen und mit verschiedenen zusätzlichen Information (zum Beispiel Volumen, Trendlinien oder Verkauf-/Kaufsignale) versehen wollen.

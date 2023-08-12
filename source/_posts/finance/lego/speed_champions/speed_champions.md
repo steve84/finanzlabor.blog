@@ -8,7 +8,8 @@ tags:
 - Lego
 categories: Finanzen
 toc: true
-thumbnail: /gallery/thumbnails/finance/lego/speed_champions/thumbnail.jpg
+thumbnail: /gallery/thumbnails/finance/lego/speed_champions/thumbnail_square.jpg
+cover: /gallery/thumbnails/finance/lego/speed_champions/thumbnail.jpg
 ---
 Dieser Artikel beinhaltet eine Analyse der Lego-Serie "Speed Champions". Zu Beginn des Beitrages werden die Geschichte sowie die Fakten der Serie erläutert. Des Weiteren wird die Methodik/Vorgehen der Analyse beschrieben und die Resultate in übersichtlicher Form wiedergegeben. Zum Schluss werden die Faktoren für eine Preissteigerung und die Eignung für ein "Buy and Hold"-Portfolio beschrieben?
 

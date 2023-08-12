@@ -8,7 +8,8 @@ tags:
 - Blockchain
 categories: Finanzen
 toc: true
-thumbnail: /gallery/thumbnails/finance/crypto_diary/thumbnail.jpg
+thumbnail: /gallery/thumbnails/finance/crypto_diary/thumbnail_square.jpg
+cover: /gallery/thumbnails/finance/crypto_diary/thumbnail.jpg
 ---
 
 Fast vier Jahre hat es gedauert, bis ich mir die Zeit genommen hatte, in die unbekannte Welt der Blockchain-Technologie (beziehungsweise Kryptowährungen) einzutauchen. In den Weihnachtsferien 2020 habe ich mich umfassend mit den Themen beschäftigt und möchte nun die Leser diese Blogs auf meine Reise ins Unbekannte minehmen. Dieser Beitrag ist in Form eines Tagebuches gestaltet, dieser liest sich von unten nach oben und wird laufend ergänzt. Er soll aufzeigen, wie meine Herangehensweise an ein neues Thema war und welche Erkenntnisse ich auf meinem Weg gewonnen habe. Auf Erklärungen zu den Funktionsweisen der einzelnen Technologien versuche ich im Rahmen dieses Beitrages so gut wie möglich zu verzichten.

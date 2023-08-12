@@ -1,11 +1,11 @@
-var gulp = require('gulp');
-var uglify = require('gulp-uglify-es').default;
-var minifycss = require('gulp-clean-css');
-var htmlmin = require('gulp-htmlmin');
-var imagemin = require('gulp-imagemin');
-var replace = require('gulp-replace');
-var pump = require('pump');
-var Hexo = require('hexo');
+const gulp = require('gulp');
+const uglify = require('gulp-uglify');
+const minifycss = require('gulp-clean-css');
+const htmlmin = require('gulp-htmlmin');
+const replace = require('gulp-replace');
+const imagemin = require('gulp-imagemin');
+const pump = require('pump');
+const Hexo = require('hexo');
 
 function exec_hexo(fn, args, cb) {
   inhex.then(() => hexo.call(fn, args))
@@ -23,19 +23,17 @@ inhex = hexo.init();
 
 gulp.task('set_variables', (cb) => {
   pump([
-    gulp.src(['themes/icarus/_config.yml']),
-    replace('GULP_GITALK', '9992e6cc1af00d3d93f29c54bafba47ccc8df155'),
+    gulp.src(['_config.icarus.yml']),
     replace('GULP_GA', 'UA-146513464-1'),
-    gulp.dest('themes/icarus')
+    gulp.dest('./')
   ], cb);
 });
 
 gulp.task('reset_variables', (cb) => {
   pump([
-    gulp.src(['themes/icarus/_config.yml']),
-    replace('9992e6cc1af00d3d93f29c54bafba47ccc8df155', 'GULP_GITALK'),
+    gulp.src(['_config.icarus.yml']),
     replace('UA-146513464-1', 'GULP_GA'),
-    gulp.dest('themes/icarus')
+    gulp.dest('./')
   ], cb);
 });
 
@@ -77,10 +75,10 @@ gulp.task('minify-html', (cb) => {
 
 gulp.task('minify-img', (cb) => {
   pump([
-    gulp.src('./public/images/**/*'),
+    gulp.src('./public/img/**/*'),
     imagemin([
       imagemin.gifsicle({interlaced: true}),
-      imagemin.jpegtran({progressive: true}),
+      imagemin.mozjpeg({quality: 75, progressive: true}),
       imagemin.optipng({optimizationLevel: 5}),
       imagemin.svgo({
         plugins: [
@@ -89,11 +87,30 @@ gulp.task('minify-img', (cb) => {
         ]
       })
     ]),
-    gulp.dest('./public/images')
+    gulp.dest('./public/img/')
   ], cb);
 });
 
-gulp.task('compress', gulp.series('js-compress', 'minify-css', 'minify-html', 'minify-img'));
+gulp.task('minify-gallery', (cb) => {
+  pump([
+    gulp.src('./public/gallery/**/*'),
+    imagemin([
+      imagemin.gifsicle({interlaced: true}),
+      imagemin.mozjpeg({quality: 75, progressive: true}),
+      imagemin.optipng({optimizationLevel: 5}),
+      imagemin.svgo({
+        plugins: [
+          {removeViewBox: true},
+          {cleanupIDs: false}
+        ]
+      })
+    ]),
+    gulp.dest('./public/gallery/')
+  ], cb);
+});
+
+
+gulp.task('compress', gulp.series('js-compress', 'minify-css', 'minify-html', 'minify-img', 'minify-gallery'));
 
 gulp.task('generate', gulp.series('set_variables', 'hexo-clean', 'hexo-generate', 'reset_variables'));
 

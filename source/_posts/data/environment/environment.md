@@ -8,7 +8,8 @@ tags:
 - Anaconda
 categories: Data Mining
 toc: true
-thumbnail: /gallery/thumbnails/data/environment/thumbnail.jpg
+thumbnail: /gallery/thumbnails/data/environment/thumbnail_square.jpg
+cover: /gallery/thumbnails/data/environment/thumbnail.jpg
 ---
 
 Um Experimente mit Daten durchzuführen braucht es eine Entwicklungsumgebung. Darin wird Python verwendet, um kleine Programme zu schreiben. Diese Programmiersprache eignet sich ideal für Datenanalysen und ist relativ einfach zu lernen/lesen. Der Blog verwendet ausschliesslich Python in der Version 3. Das Ziel dieses Beitrages ist die Bereitstellung und erste Verwendung einer solchen Infrastruktur. Dazu braucht es nicht wirklich viel, die folgenden Unterkapitel beschreiben die einzelnen Schritte.

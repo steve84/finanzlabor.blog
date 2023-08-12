@@ -8,7 +8,8 @@ tags:
 - Data Visualization
 categories: Finanzen
 toc: true
-thumbnail: /gallery/thumbnails/finance/fear_greed_index/thumbnail.jpg
+thumbnail: /gallery/thumbnails/finance/fear_greed_index/thumbnail_square.jpg
+cover: /gallery/thumbnails/finance/fear_greed_index/thumbnail.jpg
 ---
 
 Von einem der bekanntesten und erfolgreichsten Investoren der Neuzeit stammt folgendes Zitat:

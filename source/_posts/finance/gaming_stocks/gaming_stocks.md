@@ -8,7 +8,8 @@ tags:
 - Data Visualization
 categories: Finanzen
 toc: true
-thumbnail: /gallery/thumbnails/finance/gaming_stocks/thumbnail.jpg
+thumbnail: /gallery/thumbnails/finance/gaming_stocks/thumbnail_square.jpg
+cover: /gallery/thumbnails/finance/gaming_stocks/thumbnail.jpg
 ---
 
 Laut einer Studie des Marktforschungsunternehmens [Newzoo](https://newzoo.com) (Globaler Leader in der Analyse von Spielen und eSports) soll der globale Games-Markt im Jahr 2021 einen Umsatz von 180.1 Mio. USD erzielen. Das würde ein Umsatzwachstum von 11 Prozent pro Jahr (CAGR[^1]) seit den letzten 10 Jahren bedeuten. Mit welcher Einzelaktie kann der Privatanleger von diesem Trend profitieren? Gibt es Indexfonds, welche diesen Markt abdecken?

@@ -7,7 +7,8 @@ tags:
 - Data Collection
 categories: Data Mining
 toc: true
-thumbnail: /gallery/thumbnails/data/gatherdata/thumbnail.jpg
+thumbnail: /gallery/thumbnails/data/gatherdata/thumbnail_square.jpg
+cover: /gallery/thumbnails/data/gatherdata/thumbnail.jpg
 ---
 
 In unserer Zeit werden Daten immer wichtiger. Jede Person hinterlässt auf der Welt digitale Spuren. Werden diese Informationen miteinander kombiniert, kann ein Profil dieses Individuums erstellt werden. Nun kann dieser Person spezifische Werbung eingeblendet werden. Daten werden von vielen Experten als die Währung des 21. Jahrhunderts angesehen.
@@ -124,12 +125,9 @@ https://wallmine.com/screener/csv?d=d&f=e&o=m&page=282&r=cu
 12. Nach dem Ersetzten des Parameters f durch das Resultat von Schritt 8 ist der Link nun komplett und kann in der Adresszeile des Browsers kopiert werden
 13. Die heruntergeladene CSV-Datei sollte nun alle verfügbaren Spalten enthalten
 
-<div class="justified-gallery">
-<!-- Need an empty line here for the following markdown to be rendered -->
 ![Schritt 6](notepadpp_schritt_6.png)
 ![Schritt 7](notepadpp_schritt_7.png)
 ![Schritt 8](notepadpp_schritt_8.png)
-</div>
 
 ## Ausblick
 

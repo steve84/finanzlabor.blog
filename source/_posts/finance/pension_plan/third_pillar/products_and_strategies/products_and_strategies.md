@@ -9,7 +9,8 @@ tags:
 - Altersvorsorge
 categories: Finanzen
 toc: true
-thumbnail: /gallery/thumbnails/finance/pension_plan/third_pillar/products_and_strategies/thumbnail.jpg
+thumbnail: /gallery/thumbnails/finance/pension_plan/third_pillar/products_and_strategies/thumbnail_square.jpg
+cover: /gallery/thumbnails/finance/pension_plan/third_pillar/products_and_strategies/thumbnail.jpg
 ---
 Vor fast 4 Jahren wurde VIAC - ein Produkt, welches das Sparen in die gebunde Vorsorge 3a ermöglicht - vorgestellt. Dieses bietet eine Aktiengewichtung von maximal 97 Prozent an, was zu dieser Zeit als Alleinstellungsmerkmal galt. Heute haben einige andere Institutionen nachgezogen und bieten ihre eigenen 3a-Lösungen der breiten Masse an. Dieser Artikel stellt in einem ersten Teil die verschiedenen Anbieter vor. Der Hauptteil zeigt die verschiedenen Möglichkeiten auf, um die einzelnen Investitionen zu unterschiedlichen Zeitpunkten (je nach Marktlage) - das sogenannte Market Timing - auszuführen. Die Entnahme kurz vor dem Ruhestand muss ebenfalls gut geplant werden. Zum Schluss wird ein mögliches Vorgehen für den kompletten Prozess skizziert.
 
