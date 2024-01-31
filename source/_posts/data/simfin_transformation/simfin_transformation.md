@@ -2,6 +2,7 @@
 title: SimFin Bulk Export transformieren
 p: data/simfin_transformation/simfin_transformation.md
 date: 2019-10-15 20:00:00
+updated: 2024-01-28 00:00:01
 tags:
 - Experiment
 - Python
@@ -37,10 +38,14 @@ Die Option "Datensatz" enthält folgende (meist selbsterklärende) Auswahlmögli
 * Geldflussrechnung (engl. Cash Flow)
 * Geldflussrechnung für Firmen aus dem Bankensektor
 * Geldflussrechnung für Firmen aus dem Versicherungssektor
+* Abgeleitete Kennzahlen und Verhältnisse (engl. Derived Figures & Ratios)
+* Abgeleitete Kennzahlen und Verhältnisse für Firmen aus dem Bankensektor
+* Abgeleitete Kennzahlen und Verhältnisse für Firmen aus dem Versicherungssektor
 * Firmen (engl. Companies)
 * Märkte (engl. Markets)
 * Sketoren/Industrien (engl. Sector/Industry)
 * Aktienkurse (engl. Share Prices)
+* Aktienkurs-Verhältnisse (engl. Share Price Ratios)
 
 ### SimFin Python Bibliothek
 
@@ -62,7 +67,7 @@ Nun zum praktischen Teil. Für den Export sollen die verschiedenen Datensätze f
 Die folgenden Schritte zeigen einen möglichen Ablauf eines Python-Programms (in Pseudocode):
 
 * Alle verfügbaren Märkte laden
-  * Jeden Datensatz (Bilanz, Erfolgsrechnung sowie Geldflussrechnung) durchgehen
+  * Jeden Datensatz (Bilanz, Erfolgsrechnung sowie Geldflussrechnung) durchgehen (auch Banken und Versicherungen)
     * Jeden Markt durchgehen
       * Für den Markt die einzelnen Kennzahlen aus dem Datensatz laden
     * Alle Resultate der einzelnen Märkte untereinander anfügen

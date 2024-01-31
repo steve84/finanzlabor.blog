@@ -15,12 +15,13 @@ def getDate(d):
 
 
 # Wohin sollen die temporären Daten geladen werden
-sf.set_data_dir('pfad/zu/den/simfin/daten')
-# Kostenlose Variante
-sf.set_api_key(api_key='free')
+sf.set_data_dir('~/simfin_data/')
+# API-Schlüssel, welcher nach kostenloser Registrierung verfügbar ist
+sf.set_api_key(api_key='YOUR_API_KEY')
 
 # Die möglichen Datensätze
 datasets = ['income', 'balance', 'cashflow']
+postfixes = ['', '-banks', '-insurance']
 
 df_markets = sf.load_markets()
 # Eine Liste aller verfügbaren Märkte
@@ -30,12 +31,17 @@ df_list = list()
 # Alle Datensätze durchgehen
 for ds in datasets:
     frames = list()
-    # Alle Märkte
-    for mkt in market_list:
-        # Lade den Datensatz für den aktuellen Markt
-        frames.append(sf.load(dataset=ds, variant='annual',
-                              market=mkt, index=[SIMFIN_ID, REPORT_DATE],
-                              parse_dates=[REPORT_DATE, PUBLISH_DATE]))
+    for pst in postfixes:
+        # Alle Märkte
+        for mkt in market_list:
+            # Lade den Datensatz für den aktuellen Markt
+            print('Load dataset %s%s for market %s' % (ds, pst, mkt))
+            try:
+                frames.append(sf.load(dataset='%s%s' % (ds, pst), variant='annual',
+                                    market=mkt, index=[SIMFIN_ID, REPORT_DATE],
+                                    parse_dates=[REPORT_DATE, PUBLISH_DATE]))
+            except:
+                print('No data available for dataset %s%s and market %s' % (ds, pst, mkt))
     df_list.append(pd.concat(frames))
 
 companies_list = list()
@@ -80,8 +86,11 @@ df_all = pd.concat([df_all, pd.concat(fin_sig_list)], axis=1)
 fin_price_list = list()
 for mkt in market_list:
     hub = sf.StockHub(market=mkt, refresh_days=30, refresh_days_shareprices=1)
-    # Lade die Aktienpreise für den aktuelle Markt
-    fin_price_list.append(hub.load_shareprices(variant='daily'))
+    try:
+        # Lade die Aktienpreise für den aktuelle Markt
+        fin_price_list.append(hub.load_shareprices(variant='daily'))
+    except:
+        print('Cannot load share prices for market %s' % mkt)
 
 fin_prices = pd.concat(fin_price_list)
 
@@ -95,10 +104,13 @@ df_all = pd.merge(
             TICKER, 'Date'])
 
 val_signals_list = list()
-for mkt in ['us']:
+for mkt in market_list:
     hub = sf.StockHub(market=mkt, refresh_days=30, refresh_days_shareprices=1)
-    # Lade die Wertesignale für den aktuelle Markt
-    val_signals_list.append(hub.val_signals(variant='daily'))
+    try:
+        # Lade die Wertesignale für den aktuelle Markt
+        val_signals_list.append(hub.val_signals(variant='daily'))
+    except:
+        print('Cannot load value signals for market %s' % mkt)
 
 val_signals = pd.concat(val_signals_list)
 
@@ -108,6 +120,10 @@ df_all = pd.merge(
     df_all, val_signals, how='left', left_on=[
         TICKER, 'Value Signals Date'], right_on=[
             TICKER, 'Date'])
+
+# Preis-Signale (price_signals), Volumen-Signale (volume_signals) und
+# Wachstums-Signale können analog der Werte-Signale noch
+# hinzugefügt werden
 
 # Verwerfe Einträge welche kein Jahresabschluss sind
 df_all = df_all.dropna(subset=[FISCAL_YEAR])

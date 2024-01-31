@@ -2,6 +2,7 @@
 title: Maximierung des 3. Säule Altersguthaben - Produkte und Vorgehensmodelle
 p: finance/magic_formula/magic_formula.md
 date: 2021-10-24 09:00:00
+updated: 2024-01-30 00:00:01
 tags:
 - Theorie
 - Aktien
@@ -35,19 +36,19 @@ Die untenstehende Tabelle vergleicht die einzelnen Anbieter miteinander. Dabei i
 
 |                              |VIAC                      |frankly                                             |finpension                    |
 |------------------------------|--------------------------|----------------------------------------------------|------------------------------|
-|Maximaler Aktienanteil (%)    |97                        |95                                                  |99                            |
+|Maximaler Aktienanteil (%)    |99                        |95                                                  |99                            |
 |Investitionszyklus            |Wöchentlich / Monatlich   |Wöchentlich                                         |Wöchentlich                   |
 |Manuelles Investieren         |Nein                      |Ja                                                  |Nein                          |
-|Gebühren (%)                  |0.45                      |0.46                                                |0.39                          |
+|Gebühren (%)                  |Maximal 0.52              |0.44 (All-In-Fee)                                   |0.39 (All-In-Fee)            |
 |Nachhaltiges Investieren      |Ja (Global Nachhaltig 100)|Ja (Extreme 95 Active)                              |Ja (finpension Nachhaltig 100)|
 |Maximale Anzahl Kontos        |5                         |5                                                   |5                             |
-|Strategie                     |VIAC Global 100           |Swisscanto IPF III Vorsorge Fonds 95 95 Pasiv NT CHF|Finpension Global 100         |
-|Aktienanteil Schweiz (%)      |37.5                      |29.63                                               |39.6                          |
+|Strategie                     |VIAC Global 100           |Swisscanto IPF III Vorsorge Fonds 95 Pasiv NT CHF   |Finpension Global 100         |
+|Aktienanteil Schweiz (%)      |39.4                      |30.05                                               |39.6                          |
 |Individuelle Strategie        |Ja                        |Nein                                                |Ja                            |
 |Übertragung in privates Depot |Nein                      |Ja                                                  |Nein                          |
-|Zinsatz auf Konto-Guthaben (%)|0.1                       |0.05                                                |Keine Angaben                 |
+|Zinsatz auf Konto-Guthaben (%)|1.15                      |0.80                                                |0.65                          |
 
-<p align=center><b>Faktenübersicht (Stand 23.10.2021)</b></p>
+<p align=center><b>Faktenübersicht (Stand 30.01.2024)</b></p>
 
 ## Die zwei Phasen im Leben einer 3. Säule
 
@@ -63,7 +64,7 @@ finpension und VIAC erstellen sofort nach dem Empfang von neuem Guthaben die gew
 
 ### Entsparphase
 
-In dieser Phase können nur die Depots umgeschichtet werden (zum Beispiel von Klassen mit hohem Risiko in solche mit niedrigerem). In den Topf, welches das nicht verwendete Kapital (wie beim Ansparen) bildet, kann nicht umverteilt werden. Die einzelnen Kontis können nur **als Ganzes bezogen** werden. Die grosse Herausforderung dieser Phase besteht darin, dass Geld so lange wie möglich mit hoher Rendite anzulegen und gleichzeitig hohe Kursverluste kurz vor dem Bezug zu vermeiden. Daher sollte ein **Schwellenwert** für das Konto oder eine **verbleibende Zeitdauer** bis zum Bezug definiert werden. Wird dieser Wert überschritten oder die Dauer unterschritten, wird das Konto abgesichert.
+In dieser Phase können bei finpension und VIAC nur die Depots umgeschichtet werden (zum Beispiel von Klassen mit hohem Risiko in solche mit niedrigerem). In den Topf, welches das nicht verwendete Kapital (wie beim Ansparen) bildet, kann nur bei frankly umverteilt werden. Die einzelnen Kontis können nur **als Ganzes bezogen** werden. Die grosse Herausforderung dieser Phase besteht darin, dass Geld so lange wie möglich mit hoher Rendite anzulegen und gleichzeitig hohe Kursverluste kurz vor dem Bezug zu vermeiden. Daher sollte ein **Schwellenwert** für das Konto oder eine **verbleibende Zeitdauer** bis zum Bezug definiert werden. Wird dieser Wert überschritten oder die Dauer unterschritten, wird das Konto abgesichert.
 
 ## Mögliches Vorgehensmodell
 

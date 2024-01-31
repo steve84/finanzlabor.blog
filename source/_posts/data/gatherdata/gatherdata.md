@@ -2,6 +2,7 @@
 title: Kostenlose Kennzahlen für Aktien beschaffen
 p: data/gatherdata/gatherdata.md
 date: 2019-10-05 00:00:01
+updated: 2024-01-07 00:00:01
 tags:
 - Theorie
 - Data Collection
@@ -18,7 +19,7 @@ Um diese Papiere zu finden, braucht es aktuelle, vollständige sowie korrekte Fu
 
 <!-- more -->
 
-*Disclaimer:* Der Autor hält Logitech Namensaktien in seinem Privatbesitz. Dieser Beitrag verwendet diese in mehreren, fiktiven Beispielen.
+*Aktualisiert am 07.01.2024*
 
 ## Methoden
 
@@ -29,8 +30,8 @@ Es existieren diverse Methoden um Daten von externen Dienstleistern zu beschaffe
 Mit Hilfe eines Computerprogramms werden Daten von einer Website extrahiert und auf einem Datenträger abgelegt. Die meisten Anbieter von Finanzdaten (z.B. [Morningstar](https://morningstar.com)) haben sich dagegen abgesichert und limitieren die Anzahl Aufrufe ihrer Online-Portale, welche von der gleichen Quelle stammen. Ein sogenannter Crawler für die Daten von [onvista](https://onvista.de) könnte so aussehen:
 
 1. Der [Aktien-Finder von onvista.de](https://www.onvista.de/aktien/finder/) verwendet eine (nicht dokumentierte) REST-API[^1] um alle Aktien, welche den eingegebenen Kriterien entsprechen, in einer Resultat-Liste anzuzeigen
-2. In der Antwort dieses API-Aufrufs (im JSON-Format[^2]) finden wir alle Aktien unter der Eigenschaft *stocks*, die Anzahl Treffer unter *totalHits*. Die wichtigste Information verbirgt sich jedoch unter *url*
-3. Diese Information verwenden wir nun, um die nächste Unterseite aufzurufen. Nehmen wir an, das erste Resultat unserer Suche lautet */aktien/AXA-Aktie-FR0000120628*. Nun erweitern wir dieses zu */aktien**/fundamental**/AXA-Aktie-FR0000120628* und wir landen auf der Seite mit den [Fundamentaldaten zur AXA](https://www.onvista.de/aktien/fundamental/AXA-Aktie-FR0000120628)
+2. In der Antwort dieses API-Aufrufs (im JSON-Format[^2]) finden wir alle Aktien unter der Eigenschaft *data/list*, die Anzahl Treffer unter *data/total*. Die wichtigste Information verbirgt sich jedoch unter *data/list[0]/urls/WEBSITE*
+3. Diese Information verwenden wir nun, um die nächste Unterseite aufzurufen. Nehmen wir an, das erste Resultat unserer Suche lautet */aktien/AXA-Aktie-FR0000120628*. Nun erweitern wir dieses zu */aktien**/kennzahlen**/AXA-Aktie-FR0000120628* und wir landen auf der Seite mit den [Fundamentaldaten zur AXA](https://www.onvista.de/aktien/kennzahlen/AXA-Aktie-FR0000120628)
 4. Nun extrahiert der Crawler alle benötigten Informationen und speichert diese in einem vordefinierten Format ab
 5. Die Schritte 3-4 werden wiederholt, bis alle Resultate aus Schritt 2 abgearbeitet sind
 
@@ -79,7 +80,7 @@ Wenden wir nun das Gelernte in der Praxis an. Anbei einige Beispiele zur Beschaf
 
 ### Google Finance
 
-Innerhalb von Goolge Docs gibt es die Möglichkeit, auf Finanzdaten von Google zuzugreifen. Mit Hilfe der Funktion GOOGLEFINANCE können diverse Kennzahlen ausgelesen werden. Auf der Hilfsseite werden alle verfügbaren Attribute (z.B. pe für das KGV) beschrieben. Der folgende Aufruf zeigt das aktuelle KGV der Logitech AG:
+Innerhalb von Goolge Docs gibt es die Möglichkeit, auf Finanzdaten von Google zuzugreifen. Mit Hilfe der Funktion GOOGLEFINANCE können diverse Kennzahlen ausgelesen werden. Auf der Hilfsseite[^5] werden alle verfügbaren Attribute (z.B. pe für das KGV) beschrieben. Der folgende Aufruf zeigt das aktuelle KGV der Logitech AG:
 
 {% codeblock KGV von Logitech lang:excel %}
 =GOOGLEFINANCE("LOGN", "pe")
@@ -93,41 +94,51 @@ Und der aktuelle Kurs (inkl. Währung) der gleichen Firma:
 
 Leider sind nur wenige Fundamentalkennzahlen verfügbar. Google Finance ist ideal für die Beschaffung von historischen Kursdaten.
 
+### Yahoo Finance
+Auch das Portal Yahoo Finance stellt Daten zu einzelnen Finanzprodukten zur Verfügung. Diese können entweder über den Browser oder über Software-Bibliotheken abgerufen werden. Ein Beispiel für Letzteres ist das Python-Paket yfinance. Der nachfolgende Programm-Code zeigt bezieht ebenfalls das KGV der Firma Logitech:
+
+{% codeblock KGV von Logitech lang:python %}
+import yfinance as yf
+
+logi = yf.Ticket('LOGI')
+print(logi.info['forwardPE'])
+# 24.1671
+{% endcodeblock %}
+
+In einem {% post_link programming/chart_plotting/chart_plotting 'anderen Blog-Beitrag' %} wird aufgezeigt, wie mit Hilfe einer weiteren Bibliothek, Kursdiagramme visualisiert werden können.
+
 ### SimFin
 
-Das Ziel von [SimFin](https://simfin.com/) ist, Fundamentaldaten für Privatinvestoren frei verfügbar zu machen. Mit Hilfe von automatisierter Datensammlung und Machine Learning Algorithmen werden die Informationen aufbereitet. Danach werden diese mit Hilfe der Community validiert/korrigiert. Im Moment (Stand Ende September 2019) werden 2'550 Firmen (mehrheitlich US-Aktien) abgedeckt und ca. 281'000 Geschäftsabschlüsse wurden verarbeitet. Die Daten können mit Hilfe zweier uns nun bekannten Methoden abgerufen werden:
-* *API Zugriff*: Als normaler Benutzer können 2'000 Anfragen pro Tag gemacht werden. Für das zehnfache an Aufrufen ist eine Premium-Abo notwendig (SimFin+ regular, 9.99 Euro pro Monat). Für unlimitierten Zugriff werden 29.99 Euro pro Monat fällig
-* *Bulk Download*: Diese Möglichkeit steht allen registrierten Benutzern offen. Die Daten werden als CSV-Datei angeboten und es kann zwischen 3 Hauptdatensätzen (Bilanz, Erfolgsrechnung sowie Geldflussrechnung) gewählt werden. Kennzahlen von Unternehmen, welche in der Bank- sowie Versicherungbranche tätig sind, werden getrennt von den anderen Branchen bereitgestellt. Die einzelnen Firmen sind einem Aktienmarkt eines bestimmten Landes zugeordnet. Aktuell gibt es zwei Märkte, welche gewählt werden können (USA und Deutschland). Es kann ebenfalls das Intervall der Aufzeichnungen bestimmt werden (Jahres- oder Quartalszahlen).
+Das Ziel von [SimFin](https://simfin.com/) ist, Fundamentaldaten für Privatinvestoren frei verfügbar zu machen. Mit Hilfe von automatisierter Datensammlung und Machine Learning Algorithmen werden die Informationen aufbereitet. Danach werden diese mit Hilfe der Community validiert/korrigiert. Im Moment (Stand Anfang Januar 2024) werden zirka 5'000 Firmen (mehrheitlich US-Aktien) abgedeckt und ca. 51'000 Geschäftsabschlüsse wurden verarbeitet. Die Daten können mit Hilfe zweier uns nun bekannten Methoden abgerufen werden:
+* *API Zugriff*: Als registierter Benutzer (genannt SimFin Free) können 2 Anfragen pro Sekunde gemacht werden. Damit sind Daten der letzten 7 Jahre abrufbar (mit dem günstisten Abo sind es 10 Jahre). SimFin stellt eine eigene Python-Bibliothek zur Verfügung[^6]
+* *Bulk Download*: Diese Möglichkeit steht allen registrierten Benutzern (SimFin Free) offen. Die Datensätze sind jedoch um 12 Monate verzögert (die aktuellsten Daten müssen via API bezogen werden) und werden als CSV-Datei angeboten. Diese sind über mehrere Kategorien verteilt (z.B. generelle Informationen zu der Firma, Erfolgsrechnung sowie Geldflussrechnung).  Die einzelnen Firmen sind einem Aktienmarkt eines bestimmten Landes zugeordnet. Aktuell gibt es drei Märkte, welche gewählt werden können (USA, China und Deutschland). Es kann ebenfalls das Intervall der Aufzeichnungen bestimmt werden (Jahres- oder Quartalszahlen)
 
-### Quandl
+### Nasdaq Data Link (Quandl)
 
-Ähnlich wie SimFin bietet [Quandl](https://www.quandl.com) Datensätze im Bereich Finanzen an. Es werden jedoch auch andere Asset-Klassen wie zum Beispiel Immobilien oder Rohstoffe abgedeckt. Die Website stellt die Daten nicht selber zur Verfügung sondern vermittelt zwischen Datenbezüger und Datenanbieter. Die meisten Angebote sind kostenpflichtig, es existieren jedoch auch einige kostenlose. Unter *Explore* kann man nach verschiedenen Datensätzen filtern. Hier einige meiner Favoriten:
+**Hinweis vom 07.01.2024**: Wurde von Quandl nach Nasdaq Data Link umbenannt. Ebenfalls sind einige der unten aufgeführten Datensätze aktuell nicht verfügbar.
+
+Ähnlich wie SimFin bietet [Nasdaq Data Link](https://data.nasdaq.com) (ehemals Quandl) Datensätze im Bereich Finanzen an. Es werden jedoch auch andere Asset-Klassen wie zum Beispiel Immobilien oder Rohstoffe abgedeckt. Die Website stellt die Daten nicht selber zur Verfügung sondern vermittelt zwischen Datenbezüger und Datenanbieter. Die meisten Angebote sind kostenpflichtig, es existieren jedoch auch einige kostenlose. Unter *Explore* kann man nach verschiedenen Datensätzen filtern. Hier einige meiner Favoriten:
 * *Aktienpreise an den verschiedenen Börsen*: Frankfurt (Name des Datensatzes: FSE, kostenlos), Euronext (EURONEXT, kostenlos)
 * *Fundamentaldaten*: Robur Global Select Stock Fundamentals (RB1, Premium), Core US Fundamentals (SF1, Premium)
 
-Ich habe vor einiger Zeit den Robur Datensatz für einen Monat (100 USD) gekauft. Danach habe ich das Angebot wieder gekündigt, da ich eine gewisse Zeit mit leicht veralteten Daten arbeiten konnte.
+Ich habe vor einiger Zeit den Robur Datensatz (RB1) für einen Monat (100 USD) gekauft. Danach habe ich das Angebot wieder gekündigt, da ich eine gewisse Zeit mit leicht veralteten Daten arbeiten konnte.
 
-### Wallmine
-Ein weiterer guter Datenlieferant. Leider gibt es hier keine Möglichkeit alle Daten zu beziehen. Auch Kennzahlen von vergangenen Geschäftsjahren sucht man hier vergeblich. Unter *Tools* - *Stock screener* existieren diverse Filteroptionen, danach können bis zu 1'000 Einträge als CSV heruntergeladen werden. Beim Export gibt es einen kleinen Trick, damit die Datei alle verfügbaren Spalten enthält:
+### Alpha Vantage
+Alpha Vantage ist ein weiterer guter Datenlieferant, welcher eine eigene Schnittstelle anbietet. Diese stellt Kurs- und Fundamentaldaten sowie technische Indikatoren bereit. Für den kostenlosen Zugang ist eine Registierung nötig, danach können 25 Abfragen pro Tag gesendet werden. Nachfolgendes Beispiel zeigt die Ermittlung des KGVs von IBM auf (der Demo-Zugang ist auf die Firma IBM beschränkt):
 
-1. Standardmässig werden nur die Kennzahlen des aktiven Tabs (z.B. Financial, Technical, Momentum, usw.) exportiert. Mit dem Wechsel auf das Tab *Custom* besteht die Möglichkeit die Felder des Exports zu bestimmen
-2. Nach dem Öffnen der Entwicklertools (F12-Taste) und dem Selektieren (Ctrl + Shift + C) des Dropdrown-Feldes mit dem Namen *Choose a column* wird das HTML-Element *select* sichtbar (innerhalb des Entwicklertools)
-3. Nach einem Rechtsklick auf dieses Element erscheint ein Kontextmenü und mit Hilfe von *Kopieren* - *Äusseres HTML* (Firefox) oder *Copy* - *Copy outerHTML* (Chrome)
-4.  Der Inhalt wird nun in einen Texteditor kopiert (z.B. Notepad++) und die erste und letzte Zeile (*select*-Tags) entfernt. Nun sind nur noch *option*-Elemente vorhanden (diese Repräsentieren die Auswahlmöglichkeiten der Dropdown-Liste)
-5. Die erste Zeile wird ebenfalls gelöscht (mit dem Inhalt *Choose a column*), da sie als Platzhalter dient
-6. Durch das Ersetzen von ''<option value="'' durch '' wird der vordere Teil entfernt (siehe erstes Bild in der unteren Bildstrecke)
-7. Nun wird mit Hilfe eines regulären Ausdruckes der hintere Teil entfernt (">(.\*)</option> ersetzen durch ''). Wichtig: Beim Suchen/Ersetzen-Dialog in Notepad++ muss die Option *Reguläre Ausdrücke* unter Suchoptionen aktiviert sein
-8. Zum Schluss ersetzten wir '\r\n' durch ein Komma (auch hier muss *Reguläre Ausdrücke* aktiv sein)
-9. Nun werden die Entwicklertools geschlossen und es wird die erste Option in der Dropdown-Liste ausgewählt (im Moment *Exchange*, Stand September 2019)
-10. Nun wird der Link *Export to CSV* kopiert (Rechte Maustaste - *Adresse des Links kopieren* und ebenfalls in einen Texteditor kopiert
-11. Das erste Element *Exchange* hat den Wert *e* (siehe erste Zeichen vor dem ersten Komma nach Schritt 8) und dieses wird im Link aus Schritt 10 wieder verwendet (der Link sieht je nach verwendeten Filteroptionen anders aus):
-https://wallmine.com/screener/csv?d=d&f=e&o=m&page=282&r=cu
-12. Nach dem Ersetzten des Parameters f durch das Resultat von Schritt 8 ist der Link nun komplett und kann in der Adresszeile des Browsers kopiert werden
-13. Die heruntergeladene CSV-Datei sollte nun alle verfügbaren Spalten enthalten
+{% codeblock KVG von IBM lang:python %}
+import requests
 
-![Schritt 6](notepadpp_schritt_6.png)
-![Schritt 7](notepadpp_schritt_7.png)
-![Schritt 8](notepadpp_schritt_8.png)
+# replace the "demo" apikey below with your own key from https://www.alphavantage.co/support/#api-key
+url = 'https://www.alphavantage.co/query?function=OVERVIEW&symbol=IBM&apikey=demo'
+r = requests.get(url)
+data = r.json()
+
+print(data['PERatio'])
+# 20.54
+{% endcodeblock %}
+
+Das gewünschte Symbol kann mit Hilfe der *Ticker Search*[^7] Funktion ermittelt werden. In der API-Dokumentation[^8] sind noch weitere Beispiele zu finden.
 
 ## Ausblick
 
@@ -136,4 +147,8 @@ Für die weiteren Verarbeitungsschritte sind wir auf eine solide Datenbasis ange
 [^1]: [Dev Insider: Was ist REST API?](https://www.dev-insider.de/was-ist-rest-api-a-667357)
 [^2]: [Einführung in JSON](https://www.json.org/json-de.html)
 [^3]: [Wiki-Seite von selfhtml zum Thema XMLHttpRequest](https://wiki.selfhtml.org/wiki/JavaScript/XMLHttpRequest)
-[^4]: [Wikipedia-Seite zum CSV-Dateiformat](https://de.wikipedia.org/wiki/CSV_(Dateiformat)
+[^4]: [Wikipedia-Seite zum CSV-Dateiformat](https://de.wikipedia.org/wiki/CSV_(Dateiformat))
+[^5]: [Hilfsseite der Google Docs Funktion GOOGLEFINANCE](https://support.google.com/docs/answer/3093281?hl=de)
+[^6]: [GitHub-Projekt der SimFin-Bibliothek (Python)](https://github.com/SimFin/simfin)
+[^7]: [Alpha Vantage Symbolsuche](https://www.alphavantage.co/documentation/#symbolsearch)
+[^8]: [Alpha Vantage API-Dokumentation](https://www.alphavantage.co/documentation/)
