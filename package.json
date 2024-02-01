@@ -9,17 +9,17 @@
     "server": "hexo clean && hexo server"
   },
   "hexo": {
-    "version": "6.3.0"
+    "version": "7.1.1"
   },
   "dependencies": {
-	"gulp": "^4.0.2",
-	"gulp-clean-css": "^4.3.0",
-	"gulp-htmlmin": "^5.0.1",
-	"gulp-imagemin": "^7.1.0",
-	"gulp-uglify": "^3.0.2",
-	"gulp-replace": "^1.1.4",
-    "hexo": "^6.3.0",
-    "hexo-fontawesome": "^2.3.0",
+    "gulp": "^4.0.2",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-imagemin": "^7.1.0",
+    "gulp-uglify": "^3.0.2",
+    "gulp-replace": "^1.1.4",
+    "hexo": "^7.1.0",
+    "hexo-fontawesome": "^2.4.0",
     "hexo-footnotes": "^1.0.2",
     "hexo-generator-archive": "^2.0.0",
     "hexo-generator-category": "^2.0.0",
@@ -31,6 +31,7 @@
     "hexo-renderer-marked": "^6.0.0",
     "hexo-renderer-stylus": "^3.0.0",
     "hexo-server": "^3.0.0",
+    "hexo-tag-embed": "^1.0.0",
     "hexo-theme-icarus": "file:themes/icarus"
   }
 }
